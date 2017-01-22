@@ -5,11 +5,13 @@
 /usr/lib/vino/vino-server &
 ```
 
+
 ## stop:
 ```
-user@system:~$ *pkill vino-server
+pkill vino-server
 ```
-   
+
+
 ## auto-start
 Place in auto-start of DE:
 ```
@@ -17,16 +19,22 @@ Place in auto-start of DE:
 ```
 
 
-# AUTHENTICATION ISSUE: ""
+
+# AUTHENTICATION ISSUE: "No supported authentication methods!"
+On server side:
 ```
 gsettings set org.gnome.Vino require-encryption false
 ```
+
+
 
 # CONFIGURATION
 ```
 gnome-control-center
 ```
-  
+
+
+
 # INSTALLATION
 ```
 apt-get install vino
