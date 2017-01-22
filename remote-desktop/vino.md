@@ -20,8 +20,8 @@ Place in auto-start of DE:
 
 
 
-# AUTHENTICATION ISSUE: "No supported authentication methods!"
-On server side:
+# AUTHENTICATION ISSUE
+When receiving a "No supported authentication methods!" message on the client. Execute the following command on the server's side:
 ```
 gsettings set org.gnome.Vino require-encryption false
 ```
