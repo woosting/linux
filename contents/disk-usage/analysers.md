@@ -1,11 +1,4 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-22T20:58:32+01:00
-
-====== analysers ======
-Created Sunday 22 January 2017
-
-@disk @usage @analyzers:
+Disk usage analyzers:
 
 * **NCurses Disk Usage** - Ncdu is a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don't have an entire graphical setup available, but it is a useful tool even on regular desktop systems. Ncdu aims to be fast, simple and easy to use, and should be able to run in any minimal POSIX-like environment with ncurses installed.
 * **gt5** - Quite similar to ncdu, but a different approach.
@@ -19,12 +12,21 @@ Created Sunday 22 January 2017
 * **fsv** - 3D visualization.
 * **Philesight** - Web-based clone of Filelight.
 
-===== Notes =====
+_Application:_ Find disk space hoggers.
 
-Many in the list haven't received updates for a while.
+_Note:_ Many in the list haven't received updates for a while.
 
-===== References =====
+_Note:_ Albeit more powerfull than 'du' they are also significantly bigger.
 
-Adapted from: [[http://rainnic.altervista.org/en/node/381|Rainnic in the Clouds]]
+_Note:_ Most (if not all) will have to be installed manually.
 
-Alternative: [[Home:find|Find large files using find]]
+_Alternative:_ Use 'find' to explitly find large files from the cli.
+
+## References
+
+Adapted from: [Rainnic in the Clouds][1]
+
+
+<!-- REFERENCES -->
+
+[1]: http://rainnic.altervista.org/en/node/381
