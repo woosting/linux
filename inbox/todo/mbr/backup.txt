@@ -1,0 +1,29 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-20T13:56:35+01:00
+
+====== backup ======
+Created Friday 20 January 2017
+
+===== MBR Backup: Back up & Restore Master Boot Record in Windows 7 / 8 =====
+
+The Master Boot Record (MBR) is a special type of boot sector for @windows, placed at the very beginning of the storage device. It tells your computer what to do when it starts. It also contains information on how your hard drive is partitioned. If the @mbr is damaged or corrupted, whether by a boot sector virus, malware or by other means, you may find that the data on your hard drive is irretrievably lost.
+
+{{./pasted_image001.png}}
+
+===== Backup Master Boot Record =====
+
+MBR Backup helps you create a @backup of your Master Boot Record. If you ever need to restore it you know you will have a valid copy available. It offers two ways of backing up your MBR – to a file or by printing it.
+
+Printing it is actually the best method to back up your MBR, for several reasons:
+
+* With a printout you always have a physical copy of the MBR to hand
+* No chance of saving the MBR to a file on the hard drive that gets corrupted
+* The MBR is only 512 bytes in size. Typing it in manually will be the least of your concerns if all your data is gone
+
+===== References =====
+* Adapted from: http://www.thewindowsclub.com/mbr-backup-helps-you-backup-your-master-boot-record
+* MBR Backup download: [[http://www.misec.net/products/mbr-backup/|misec.net]].
+
+===== Attachments =====
+* Downloaded 2017-01-20: [[./MBRBackup.exe]] 

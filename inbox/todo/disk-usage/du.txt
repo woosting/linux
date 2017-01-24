@@ -1,0 +1,17 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-22T20:58:14+01:00
+
+====== du ======
+Created Sunday 22 January 2017
+
+Recursive Human-readable @disk @usage ( @du ) summary:
+
+* **user@system:~$** ''du -hs''
+* **user@system:~$** ''du -hs /home/* | sort -h''
+
+===== Notes =====
+
+The 1st command: human-readable (''-h'') summarizes (''-s'') disk usage of the current directory.
+
+The 2nd command: does the same but for each file and directories in ''/home/*'' (i.e. all home-dirs) separately, and additionally has it piped to ''sort -h'' to create a human-readable sorted list (which could - in turn - be stored in /appended to a file).

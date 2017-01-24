@@ -1,0 +1,30 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-22T20:58:32+01:00
+
+====== analysers ======
+Created Sunday 22 January 2017
+
+@disk @usage @analyzers:
+
+* **NCurses Disk Usage** - Ncdu is a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don't have an entire graphical setup available, but it is a useful tool even on regular desktop systems. Ncdu aims to be fast, simple and easy to use, and should be able to run in any minimal POSIX-like environment with ncurses installed.
+* **gt5** - Quite similar to ncdu, but a different approach.
+* **tdu** - Another small ncurses-based disk usage visualization utility.
+* **TreeSize** - GTK, using a treeview.
+* **Baobab** - GTK, using pie-charts, a treeview and a treemap. Comes with GNOME.
+* **GdMap** - GTK, with a treemap display.
+* **KDirStat** - KDE, with a treemap display.
+* **QDiskUsage** - Qt, using pie-charts.
+* **xdiskusage** - FLTK, with a treemap display.
+* **fsv** - 3D visualization.
+* **Philesight** - Web-based clone of Filelight.
+
+===== Notes =====
+
+Many in the list haven't received updates for a while.
+
+===== References =====
+
+Adapted from: [[http://rainnic.altervista.org/en/node/381|Rainnic in the Clouds]]
+
+Alternative: [[Home:find|Find large files using find]]

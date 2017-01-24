@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-23T13:40:28+01:00
+
+====== vino ======
+Created Monday 23 January 2017
+
+===== Start / Stop =====
+@start, @stop @auto_start @Vino (respectivily):
+* **user@system:~$** ''/usr/lib/vino/vino-server &''
+* **user@system:~$** ''pkill vino-server''
+* Place: ''/usr/lib/vino/vino-server'' in the auto-start definitions of your DE
+
+===== Installation / configuration =====
+@install and @configure @Vino:
+1. **root@system:~#** ''apt-get install vino''
+2. **user@system(on DE terminal emulator):~$ ** ''gnome-control-center''
+
+===== Authentication issue =====
+@VNC clients' "**No supported authentication methods!**" workaround:
+* **root@system:~#** gsettings set org.gnome.Vino require-encryption false

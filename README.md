@@ -4,10 +4,10 @@ A collection of GNU/Linux (Debian) related notes; stored mostly for personal ref
 Recommended tooling:
 
 * [GitHub][1] to contribute (!) **online**
-* [Atom][2] to edit, preview, browse on **desktop**
 * [Vim][3] to edit on **cli**
 * [grep -r][4] to search the collection contents for specific information **cli**
-* [Sumatra PDF reader][5] to view the occasional embedded .pdf file
+* [Atom][2] to edit, preview, browse on **desktop**
+* [Sumatra PDF reader][5] to view the occasional embedded .pdf file on **desktop**
 
 However, the contents should perfectly be readeable in any text-only editor, as markdown syntax is used.
 

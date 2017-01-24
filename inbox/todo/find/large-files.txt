@@ -1,0 +1,23 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-22T21:10:26+01:00
+
+====== large-files ======
+Created Sunday 22 January 2017
+
+@find top 10 of @large @files or @directories and save the results to a file:
+
+* **user@system:~$** ''find . -type f -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {} | grep -v "Permission denied" > largest_files.txt && more largest_files.txt''
+* **user@system:~$** ''find . -type d -print0 | xargs -0 du | sort -n | tail -10 | cut -f2 | xargs -I{} du -sh {} | grep -v "Permission denied" > largest_directories.txt && more largest_directories.txt''
+
+===== Notes =====
+
+The 1st command would find big //files// (-type f)//.//
+
+The 2nd command would find big //directories// (-type d).
+
+===== References =====
+
+Adapted from: [[http://rainnic.altervista.org/en/node/381|Rainnic in the Clouds]]
+
+Alternatives: Dedicated disk usage programs

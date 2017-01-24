@@ -1,0 +1,12 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-22T12:57:44+01:00
+
+====== disk usage ======
+Created Sunday 22 January 2017
+
+Investigate @disk @usage:
+
+* [[+du]] (by default included in most distros)
+* [[+analysers]] (that more powerfull but need to be installed)
+* [[find:large-files]] (to explicitly search for disk space @hoggers)

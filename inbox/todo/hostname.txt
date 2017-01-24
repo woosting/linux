@@ -1,0 +1,21 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-16T17:17:25+01:00
+
+====== hostname ======
+Created Monday 16 January 2017
+
+===== Procedure =====
+To @change the @hostname on a @debian system:
+
+==== Vanilla ====
+1. Update the hostname definition: //root@system:~#// **vim /etc/hostname**
+2. UPdate the hosts file: //root@system:~#// **vim /etc/hosts**
+3. Reboot the system.
+
+==== Systemd ====
+1. //root@system:~#// **hostnamectl set-hostname <mymachine>**
+Note: This method depends on dbus so be sure to install that first!
+
+===== References =====
+* Debian wiki: https://wiki.debian.org/HowTo/ChangeHostname - [[./HowTo_ChangeHostname - Debian Wiki.pdf|SNAPSHOT]]

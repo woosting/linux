@@ -1,0 +1,24 @@
+Content-Type: text/x-zim-wiki
+Wiki-Format: zim 0.4
+Creation-Date: 2017-01-22T13:51:19+01:00
+
+====== open-connection ======
+Created Sunday 22 January 2017
+
+To @connect (e.g. to @push / @pull) to @Github using an @rsa @key from an open connection:
+* **user@system:~$** ''vim ~/.ssh/config'' and add:
+{{{code: lang="sh" linenumbers="True"
+Host github.com
+	Hostname github.com
+	IdentityFile ~/.ssh/id_rsa.github
+	IdentitiesOnly yes
+}}}
+
+
+==== Method rationale ====
+@ssh looks for the user's **~/.ssh/config** and uses the default (**~/.ssh/id_rsa**) if not specified otherwise. The **IdentitiesOnly yes** is required to prevent the [[https://serverfault.com/questions/450796/how-could-i-stop-ssh-offering-a-wrong-key/450807#450807|SSH default behavior]] of sending the identity file matching the default filename for each protocol. If you have a file named **~/.ssh/id_rsa** that will get tried //before// your **~/.ssh/id_rsa.github** without this option.
+
+==== References ====
+* Adapted from (StackOverflow): [[http://stackoverflow.com/a/11251797/6737459|Specify private SSH-key to use when executing shell command with or without Ruby?]]
+* Also see (StackOverflow): [[http://stackoverflow.com/questions/2419566/best-way-to-use-multiple-ssh-private-keys-on-one-client|Best way to use multiple SSH private keys on one client]]
+* Also see (ServerFault): [[http://serverfault.com/questions/450796/how-could-i-stop-ssh-offering-a-wrong-key/450807#450807|How could I stop ssh offering a wrong key?]]
