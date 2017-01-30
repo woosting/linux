@@ -18,7 +18,7 @@ Clear usb partions
 7. Type: `Format fs=Fat32 Quick` and press Enter.
 8. Type: `Exit` and press Enter.
 
-![Diskpart](diskpart-restore-usb.png)
+![Diskpart](clear-usb-partitions_diskpart.png)
 
 ## Linux
 
