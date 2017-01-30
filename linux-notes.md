@@ -1,4 +1,4 @@
-# linux-notes
+linux-notes
 A collection of GNU/Linux (Debian) related notes; stored mostly for personal reference purposes.
 
 Recommended tooling:
