@@ -1,5 +1,5 @@
-Clear usb partions
-========================
+# Clear usb partions
+Perform any of the following when an usb flashdrive (usbstick / thumbdrive) has gone bad beyound repair using regular tooling (and have _everything_ deleted from it).
 
 ## Microsoft Windows (7)
 
@@ -18,7 +18,7 @@ Clear usb partions
 7. Type: `Format fs=Fat32 Quick` and press Enter.
 8. Type: `Exit` and press Enter.
 
-![Diskpart](clear-usb-partitions_diskpart.png)
+![Diskpart](clear_usb-flashdisk_partitions_diskpart.png)
 
 ## Linux
 
@@ -46,7 +46,7 @@ Clear usb partions
 ## Alternatives
 
 - GUI oriented (Windows) tool:[SDFormatter][2]
-- GUI oriented (Windows) tool:[BOOTICE][3] 
+- GUI oriented (Windows) tool:[BOOTICE][3]
 
 # References
 
