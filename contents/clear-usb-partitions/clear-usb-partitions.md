@@ -18,7 +18,7 @@ Perform any of the following when an usb flashdrive (usbstick / thumbdrive) has 
 7. Type: `Format fs=Fat32 Quick` and press Enter.
 8. Type: `Exit` and press Enter.
 
-![Diskpart](clear_usb-flashdisk_partitions_diskpart.png)
+![Diskpart](clear-usb-partitions_diskpart.png)
 
 ## Linux
 
