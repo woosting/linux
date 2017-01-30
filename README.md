@@ -3,11 +3,11 @@ A collection of GNU/Linux (Debian) related notes; stored mostly for personal ref
 
 Recommended tooling:
 
-* [GitHub][1] to contribute (!) **online**
-* [Vim][3] to edit on **cli**
-* [grep -r][4] to search the collection contents for specific information **cli**
-* [Atom][2] to edit, preview, browse on **desktops*
-* [Sumatra PDF reader][5] to view the occasional embedded .pdf file on Microsoft Windows **desktops**
+* [GitHub][1] to contribute (!) **online**.
+* [Vim][3] to edit on **cli**.
+* [grep -r][4] to search the collection contents for specific information **cli**.
+* [Atom][2] to edit, preview, browse the Markdown (.md) diles on **desktops**.
+* [Sumatra PDF reader][5] to view the occasional embedded .pdf file on Microsoft Windows **desktops**.
 
 However, the contents should perfectly be readeable in any text-only editor, as markdown syntax is used.
 
