@@ -2,7 +2,7 @@
 
 List all software installed from particular component (non-free, contrib):
 
-```
+```shell
 # search installed packages sorted and filtered on `contrib` or `non-free`
 $ dpkg-query -W -f='${Section}\t${Package}\n' | sort | egrep ^contrib\|^non-free
 
