@@ -19,13 +19,13 @@ Pin: release a=stable,c=non-free
 Pin-Priority: -1
 
 # Enable package firmware-iwlfifi from non-free tree
-Package: *
-Pin: release a=stable,c=contrib
+Package: firmware-iwlwifi
+Pin: release a=stable,c=non-free
 Pin-Priority: 600
 
 # Propriety supporting
 Package: *
-Pin: release a=stable,c=non-free
+Pin: release a=stable,c=contrib
 Pin-Priority: 600
 ```
 
@@ -42,7 +42,7 @@ With higher numbered [pin priorities][3] prevailing over the lower ones, and:
 ## References:
 
 - Adapted from (Debian Wiki): [AptPreferences][1]
-- Adapted from (APT HOWTO - Obsolete Documentation: [Chapter 3 - Managing packages][2]
+- Adapted from (APT HOWTO - Obsolete Documentation): [Chapter 3 - Managing packages][2]
 - Adapted from (HowtoForge): [A Short Introduction To Apt-Pinning][3]
 
 <!-- REFERENCES -->
