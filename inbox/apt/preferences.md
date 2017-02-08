@@ -41,7 +41,7 @@ With higher numbered [pin priorities][3] prevailing over the lower ones, and:
 
 - Adapted from (Debian Wiki): [AptPreferences][1]
 - Adapted from (APT HOWTO - Obsolete Documentation: [Chapter 3 - Managing packages][2]
-
+- Adapted from (HowtoForge): [A Short Introduction To Apt-Pinning][3]
 
 <!-- REFERENCES -->
 
