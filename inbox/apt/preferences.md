@@ -1,6 +1,8 @@
-## Preferences (pinning)
+# Preferences
 
-In /etc/sources.list:
+## Pinning
+
+In `/etc/sources.list`:
 
 ```shell
 deb http://ftp.us.debian.org/debian stable main contrib non-free
@@ -8,7 +10,7 @@ deb http://ftp.us.debian.org/debian stable main contrib non-free
 
 So adding the `contrib` and `non-free`.
 
-In /etc/apt/sources.list:
+In `/etc/apt/sources.list`:
 
 ```shell
 # Disable packages from non-free tree by default
