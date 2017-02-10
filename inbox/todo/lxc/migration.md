@@ -1,4 +1,4 @@
-# Migrate (move) or store LXC containers
+# Migrate (move) or backup (store) LXC containers
 
 ## Procedure
 
