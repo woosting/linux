@@ -3,7 +3,8 @@
 To @move / @migrate @lxc $containers between host systems.
 
 1. Shutdown the container:
-  ```shell
+
+ ```shell
 $ lxc-stop -n $NAME
 ```
 2. Archive container rootfs & config:
