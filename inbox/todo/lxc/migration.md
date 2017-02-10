@@ -21,6 +21,7 @@ $ rsync -avh <container_fs>.tar.gz user@newserver:/var/lib/lxc/
 $ mkdir /var/lib/lxc/$NAME/
 $ cd /var/lib/lxc/$NAME/
 $ tar --numeric-owner -xzvf <container_fs>.tar.gz ./
+```
 
 ## Notes
 
