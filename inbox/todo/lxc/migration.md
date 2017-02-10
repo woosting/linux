@@ -33,7 +33,8 @@ $ tar --numeric-owner -xzvf <container_fs>.tar.gz ./
 ## Notes
 
 - The `--numeric-owner` flag is very important! Without it, the container may not boot because the uid/gids get mangled in the extracted filesystem. When tar creates an archive with that flag raised, it preserves user / group ownership information. By default, when extracting, tar tries to resolve the archive user/group ownership names with the ids on the system running tar. This is intended to ensure that user ownership is resolved on the new system, in case the UID numeric values differ between systems. This is bad for an LXC filesystem because the numeric uid/gid ownership is intended to be preserved for the whole filesystem. If it gets resolved to a different value, bad things happen.
-- If you're using an overlay backed container, you'll also need to migrate the container this new one is based off of. Lastly, you might see a few warnings about skipped socket files: `//tar: /var/lib/lxc/$NAME/rootfs/dev/log: socket ignored//` I've ignored this error, and haven't had any issues with any of the containers I manage.
+- If you're using an overlay backed container, you'll also need to migrate the container this new one is based off of.
+- Lastly, you might see a few warnings about skipped socket files: `//tar: /var/lib/lxc/$NAME/rootfs/dev/log: socket ignored//` I've ignored this error, and haven't had any issues with any of the containers I manage.
 
 
 ## References
