@@ -29,6 +29,10 @@ $ cd /var/lib/lxc/$NAME/
 $ tar --numeric-owner -xzvf <container_fs>.tar.gz ./
 ```
 
+5. Start the container on the new location
+  ```shell
+$ mkdir /var/lib/lxc/$NAME/
+```
 
 ## Notes
 
