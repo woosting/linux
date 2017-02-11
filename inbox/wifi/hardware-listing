@@ -1,6 +1,9 @@
-lspci [package:[ciutils]] is the standard tool to query the devices connected to any pci compatible bus:
+# PCI (WiFi) hardware (chipset) listing
 
-- `lspci -nn`
+lspci [package:[ciutils][2]] is the standard tool to query the devices connected to any pci compatible bus:
+
+```shell
+$ lspci -nn
 
     00:00.0 Host bridge [0600]: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub [8086:27a0] (rev 03)
     00:02.0 VGA compatible controller [0300]: Intel Corporation Mobile 945GM/GMS, 943/940GML Express Integrated Graphics Controller [8086:27a2] (rev 03)
@@ -23,7 +26,7 @@ lspci [package:[ciutils]] is the standard tool to query the devices connected to
     03:00.0 Network controller [0280]: Intel Corporation PRO/Wireless 3945ABG Network Connection [8086:4227] (rev 02)
     15:00.0 CardBus bridge [0607]: Texas Instruments PCI1510 PC card Cardbus Controller [104c:ac56]
     16:00.0 Ethernet controller [0200]: ADMtek 21x4x DEC-Tulip compatible 10/100 Ethernet [1317:1985] (rev 11)
-
+```
 # References
 
 Adapted from: [HowToIdentifyADevice PCI][1]
