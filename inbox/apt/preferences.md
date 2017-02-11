@@ -8,9 +8,9 @@ In `/etc/sources.list`:
 deb http://ftp.us.debian.org/debian stable main contrib non-free
 ```
 
-So adding the `contrib` and `non-free`.
+So adding the `contrib` and `non-free` components to the exisiting lines.
 
-In `/etc/apt/sources.list`:
+In `/etc/apt/preferences`:
 
 ```shell
 # Disable packages from non-free tree by default
@@ -44,9 +44,11 @@ With higher numbered [pin priorities][3] prevailing over the lower ones, and:
 - Adapted from (Debian Wiki): [AptPreferences][1]
 - Adapted from (APT HOWTO - Obsolete Documentation): [Chapter 3 - Managing packages][2]
 - Adapted from (HowtoForge): [A Short Introduction To Apt-Pinning][3]
+- Adapted from (ServerFault): [How do I enable non-free packages on Debian?][4]
 
 <!-- REFERENCES -->
 
 [1]:https://wiki.debian.org/AptPreferences
 [2]:https://www.debian.org/doc/manuals/apt-howto/ch-apt-get.en.html
 [3]:https://www.howtoforge.com/a-short-introduction-to-apt-pinning
+[4]:http://serverfault.com/a/580700/372187
