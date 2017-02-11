@@ -1,4 +1,4 @@
-# Battery power check from CLI
+# Battery power status check from CLI
 
 ```shell
 $ acpi
