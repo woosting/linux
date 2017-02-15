@@ -1,7 +1,6 @@
 # Network Time Protocol (NTP)
 
-Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over networks.
-
+> Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over networks. ~ [Wikipedia][1]
 
 1. Install ntp:
 ```shell
@@ -27,6 +26,8 @@ $ date
 Wed, Feb 15, 2017 10:30:18 AM
 ```
 
+## REFERENCES
+Adapted from: [NTP - Debian Wiki][5]
 
 <!-- REFERENCES -->
 
@@ -34,3 +35,4 @@ Wed, Feb 15, 2017 10:30:18 AM
 [2]:http://www.pool.ntp.org/zone/@
 [3]:http://www.pool.ntp.org/zone/europe
 [4]:http://www.pool.ntp.org/zone/nl
+[5]:https://wiki.debian.org/NTP
