@@ -17,7 +17,7 @@ TOTAL       246 GB
 ```
 
 *Mount /tmp with:
- - `nosuid,nodev` flags (anti hacking)
+ - `nosuid,nodev,noexec` flags (anti hacking)
  - small block size called "news" (less space waste).
 
 
