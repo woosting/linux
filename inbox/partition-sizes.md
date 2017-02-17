@@ -3,16 +3,16 @@
 ## Debian Jessie 8.7 (Desktop)
 
 ```
-/boot         1 GB - Kernels (250 MB) + rescue cd image (750 MB).
-/            40 GB - Desktop programs, otherwise 10-20 GB.
-/swap        24 GB - Hybernation (1.5xRAM), otherwise 4 GB minimum.
-/tmp*         5 GB - DVD imaging, otherwise 1 GB is sufficient.
-/var         40 GB - Accumulating files: log/web/mail/mysql data, 5 GB minimum
-/home        80 GB - Rest
------------------- +
+/boot    ¼ -  1 GB - Kernels (250 MB) + rescue cd image (750 MB).
+/       10 - 40 GB - Desktop programs
+/swap    4 - 24 GB - Hybernation (1.5xRAM)
+/tmp*    1 -  5 GB - DVD imaging
+/var     5 - 40 GB - Accumulating files (log/web/mail/mysql data)
+/home    5 - 80 GB - Rest
+-------------------- +
 Subtotal:   190 GB
-Unallocated  56 GB (to expand LVM volumes with later (easier than shrinking)
------------------- +
+Unallocated  56 GB - To expand LVM volumes later (easier than shrinking)
+-------------------- +
 TOTAL       246 GB
 ```
 
