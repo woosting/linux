@@ -2,35 +2,34 @@ Content-Type: text/x-zim-wiki
 Wiki-Format: zim 0.4
 Creation-Date: 2017-01-16T22:45:09+01:00
 
-====== automation ======
+# automation
 Created Monday 16 January 2017
 
-===== Possibilities =====
-To use @rsa-keys / @ssh-keys whilst maintaining a certain level @convenience balanced in a trade-off with @security. Luckily there are a number of options. The most appropriate solution depends on the usage scenario and desired level of security:
+## Possibilities
+To use rsa-keys / ssh-keys whilst maintaining a certain level convenience balanced in a trade-off with security. Luckily there are a number of options. The most appropriate solution depends on the usage scenario and desired level of security:
 
-==== ssh-key with passphrase, no `ssh-agent` ====
+### ssh-key with passphrase, no `ssh-agent`
 
 Now the passphrase has to be entered every time the key is used for authentication. While this is the best option from a security standpoint, it offers the worst usability. This may also lead to a weak passphrase being chosen in order to lessen the burden of entering it repeatedly.
 
-==== ssh-key with passphrase, with `ssh-agent` ====
+### ssh-key with passphrase, with `ssh-agent`
 
 Adding the following to `~/.bash_profile` will automatically start `ssh-agent` and load the ssh-key(s) on login:
 
-{{{code: lang="sh" linenumbers="True"
+```shell
 if [ -z "$SSH_AUTH_SOCK" ] ; then
   eval `ssh-agent -s`
   ssh-add
 fi
-}}}
-
+```
 
 Now the passphrase must be entered upon every login. While slightly better from a usability perspective, this has the drawback that `ssh-agent` prompts for the passphrase regrdless of if the key is to be used or not during the login session.
 
-On desktops, ssh-agents included with the desktop environment, such as the [[https://wiki.gnome.org/Projects/GnomeKeyring/Ssh|Gnome Keyring SSH Agent]], can be a better approach as they typically can be made to prompt for the passphrase the first time the ssh-key is used during a login session and store the decrypted private key in memory until the end of the session.
+On desktops, ssh-agents included with the desktop environment, such as the [Gnome Keyring SSH Agent][1], can be a better approach as they typically can be made to prompt for the passphrase the first time the ssh-key is used during a login session and store the decrypted private key in memory until the end of the session.
 
-==== ssh-key with passphrase, with `keychain` ====
+### ssh-key with passphrase, with `keychain`
 
-`[[http://github.com/funtoo/keychain|keychain]]` is a small utility which manages `ssh-agent` on your behalf and 
+`[[http://github.com/funtoo/keychain|keychain]]` is a small utility which manages `ssh-agent` on your behalf and
 allows the `ssh-agent` to remain running when the login session ends. On subsequent logins, `keychain` will connect to the existing `ssh-agent` instance. In practice, this means that the passphrase must be be entered only during the first login after a reboot. On subsequent logins, the unencrypted key from the existing `ssh-agent` instance is used. This can also be useful for allowing passwordless RSA/DSA authentication in `cron` jobs without passwordless ssh-keys.
 
 To enable `keychain`, install it and add something like the following to `~/.bash_profile`:
@@ -70,3 +69,6 @@ Note that as the passphrase is stored in plaintext in the script, from a securit
 * Why can I see password prompts through redirecting output?: http://superuser.com/questions/569432/why-can-i-see-password-prompts-through-redirecting-output
 * Using expect to pass a password to ssh: http://stackoverflow.com/questions/459182/using-expect-to-pass-a-password-to-ssh
 * The Expect Home Page: http://expect.sourceforge.net/
+
+
+[1]:https://wiki.gnome.org/Projects/GnomeKeyring/Ssh
