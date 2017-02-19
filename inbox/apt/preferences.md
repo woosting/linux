@@ -58,19 +58,20 @@ Installing Debian's `firmware-iwlwifi` (intel propriety firmware) package and ON
 ```shell
 # === STABLE ===
 
-# Enable all packages from STABLE free tree by default
+# Enable all packages from STABLE main tree by default,
+# with a high priority to make it the preferred source:
 Package: *
 Pin: release a=stable,c=main
 Pin-Priority: 900
 
 # ---
 
-# Disable packages from STABLE non-free tree by default
+# Disable packages from STABLE non-free tree by default:
 Package: *
 Pin: release a=stable,c=non-free
 Pin-Priority: -1
 
-# Disable packages from STABLE contrib tree by default
+# Disable packages from STABLE contrib tree by default:
 Package: *
 Pin: release a=stable,c=contrib
 Pin-Priority: -1
@@ -78,18 +79,18 @@ Pin-Priority: -1
 
 # === STRETCH ===
 
-# Disable packages from STRETCH non-free tree by default
+# Disable packages from STRETCH by default:
 Package: *
 Pin: release n=stretch
 Pin-Priority: -1
 
 # ---
 
-# Enable package firmware-iwlfifi from STRETCH non-free tree
+# Enable package firmware-iwlfifi from STRETCH non-free tree:
 Package: firmware-iwlwifi
 Pin: release n=stretch,c=non-free
 Pin-Priority: 600
-
+```
 
 ## References:
 
