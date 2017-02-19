@@ -53,7 +53,9 @@ With higher numbered [pin priorities][3] prevailing over the lower ones as expla
 > P < 0
 >     prevents the version from being installed
 
-## Example case (WARNING!!! THIS LEAD TO A SYSTEM WITHOUT X)
+## Example case
+
+> !!! WARNING!!! THIS LEAD TO A SYSTEM WITHOUT X !!!
 
 Installing Debian's `firmware-iwlwifi` (intel propriety firmware) package and ONLY that package on a LENOVO T460 from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free / stretch:
 
