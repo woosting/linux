@@ -13,19 +13,21 @@ So adding the `contrib` and `non-free` components to the exisiting lines.
 In `/etc/apt/preferences`:
 
 ```shell
-# Disable packages from non-free tree by default
+# Disable PROPRIETARY packages by default
 Package: *
 Pin: release a=stable,c=non-free
 Pin-Priority: -1
 
-# Enable package firmware-iwlfifi from non-free tree
-Package: firmware-iwlwifi
-Pin: release a=stable,c=non-free
-Pin-Priority: 600
-
-# Propriety supporting
+# Disable PROPRIETARY-DEPENDENT packages by default
 Package: *
 Pin: release a=stable,c=contrib
+Pin-Priority: -1
+
+# ---
+
+# Enable SPECIFIC PROPRIETARY package (e.g. WiFi firmware in this case)
+Package: firmware-iwlwifi
+Pin: release a=stable,c=non-free
 Pin-Priority: 600
 ```
 
@@ -51,7 +53,7 @@ With higher numbered [pin priorities][3] prevailing over the lower ones as expla
 > P < 0
 >     prevents the version from being installed
 
-## Example case
+## Example case (WARNING!!! THIS LEAD TO A SYSTEM WITHOUT X)
 
 Installing Debian's `firmware-iwlwifi` (intel propriety firmware) package and ONLY that package on a LENOVO T460 from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free / stretch:
 
@@ -86,10 +88,20 @@ Pin-Priority: -1
 
 # ---
 
-# Enable package firmware-iwlfifi from STRETCH non-free tree:
+# Enable WIFI FIRMWARE package from STRETCH non-free tree
 Package: firmware-iwlwifi
 Pin: release n=stretch,c=non-free
 Pin-Priority: 600
+
+# Enable KERNEL package from STRETCH main tree
+Package: linux-image*
+Pin: release n=stretch,c=main
+Pin-Priority: 600
+```
+
+And than install with:
+```
+apt-get install firmware-iwlwifi/stretch && linux-image-4.9.0-1-amd64/stretch
 ```
 
 ## References:
