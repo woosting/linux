@@ -55,7 +55,7 @@ With higher numbered [pin priorities][3] prevailing over the lower ones as expla
 
 ## Example case
 
-> !!! WARNING!!! THIS LEAD TO A SYSTEM WITHOUT X !!!
+> !!! WARNING!!! THIS LEAD TO A SYSTEM WITH A BROKEN X !!!
 
 Installing Debian's `firmware-iwlwifi` (intel propriety firmware) package and ONLY that package on a LENOVO T460 from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free / stretch:
 
