@@ -1,10 +1,14 @@
 # Kill command
 
+Application: To stop a (rogue) process.
+
 ## Syntax
+
+Type: `kill [-<signal>] <%pid>` to stop a (rogue) process:
 
 ```shell
 # stop process
-$ kill [-<signal>] <%pid>
+$ kill -SIGTERM 2443
 ```
 
 ## Signals
@@ -21,7 +25,7 @@ $ kill [-<signal>] <%pid>
 
  The kernel lets go of the process without informing the process of it. An unclean kill like this could result in data loss. This is the "hardest", "roughest" and most unsafe kill signal available, and should only be used to stop something that seems unstoppable.
 
-- `-15` or `-SIGTERM` / DEFAULT - The TERM signal is sent to a process to request its termination. Unlike the KILL signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate. It should be noted that SIGINT is nearly identical to SIGTERM.
+- `-15` or `-SIGTERM` / DEFAULT - The **TERM** signal is sent to a process to request its termination. Unlike the KILL signal, it can be caught and interpreted or ignored by the process. This allows the process to perform nice termination releasing resources and saving state if appropriate. It should be noted that SIGINT is nearly identical to SIGTERM.
 
   It tells the process to stop whatever it's doing, and end itself. When you don't specify any signal, this signal is used. It should be fairly safe to perform, but better start with a "-1" or "-HUP".
 
