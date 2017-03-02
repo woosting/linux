@@ -1,59 +1,64 @@
-# Preferences
+# Apt preferences
 
-## Pinning
+Application: To have certain packages (from section components) preferred during system upgrades.
 
-In `/etc/sources.list`:
 
-```shell
-deb http://ftp.us.debian.org/debian stable main contrib non-free
-```
+## Pinning from non-free
 
-So adding the `contrib` and `non-free` components to the exisiting lines.
+Application: To install one proprietary package from the non-free section component.
 
-In `/etc/apt/preferences`:
+1. Type: `vim /etc/sources.list` to open the file for editing.
 
-```shell
-# Disable PROPRIETARY packages by default
-Package: *
-Pin: release a=stable,c=non-free
-Pin-Priority: -1
+2. Append the `contrib non-free` section components to the relevant repository lines:
 
-# Disable PROPRIETARY-DEPENDENT packages by default
-Package: *
-Pin: release a=stable,c=contrib
-Pin-Priority: -1
+  ```shell
+  deb http://ftp.us.debian.org/debian stable main contrib non-free
+  ```
 
-# ---
+3. Type: `vim /etc/apt/preferences` to open (or create) the preferences file and append it with your pinning preferences:
 
-# Enable SPECIFIC PROPRIETARY package (e.g. WiFi firmware in this case)
-Package: firmware-iwlwifi
-Pin: release a=stable,c=non-free
-Pin-Priority: 600
-```
+  ```shell
+  # Disable PROPRIETARY packages by default
+  Package: *
+  Pin: release a=stable,c=non-free
+  Pin-Priority: -1
 
-With higher numbered [pin priorities][3] prevailing over the lower ones as explained by `$ man apt_preferences`:
+  # Disable PROPRIETARY-DEPENDENT packages by default
+  Package: *
+  Pin: release a=stable,c=contrib
+  Pin-Priority: -1
 
-> Priorities (P) assigned in the APT preferences file must be positive or negative integers. They are interpreted as follows (roughly speaking):
->
->  P >= 1000
->     causes a version to be installed even if this constitutes a downgrade of the package
->
-> 990 <= P < 1000
->     causes a version to be installed even if it does not come from the target release, unless the installed version is more recent
->
-> 500 <= P < 990
->     causes a version to be installed unless there is a version available belonging to the target release or the installed version is more recent
->
-> 100 <= P < 500
->     causes a version to be installed unless there is a version available belonging to some other distribution or the installed version is more recent
->
-> 0 < P < 100
->     causes a version to be installed only if there is no installed version of the package
->
-> P < 0
->     prevents the version from being installed
+  # ---
 
-## Example case
+  # Enable SPECIFIC PROPRIETARY package (e.g. WiFi firmware in this case)
+  Package: firmware-iwlwifi
+  Pin: release a=stable,c=non-free
+  Pin-Priority: 600
+  ```
+
+  With higher numbered [pin priorities][3] prevailing over the lower ones as explained by **man apt_preferences**:
+
+  > Priorities (P) assigned in the APT preferences file must be positive or negative integers. They are interpreted as follows (roughly speaking):
+  >
+  >  P >= 1000
+  >     causes a version to be installed even if this constitutes a downgrade of the package
+  >
+  > 990 <= P < 1000
+  >     causes a version to be installed even if it does not come from the target release, unless the installed version is more recent
+  >
+  > 500 <= P < 990
+  >     causes a version to be installed unless there is a version available belonging to the target release or the installed version is more recent
+  >
+  > 100 <= P < 500
+  >     causes a version to be installed unless there is a version available belonging to some other distribution or the installed version is more recent
+  >
+  > 0 < P < 100
+  >     causes a version to be installed only if there is no installed version of the package
+  >
+  > P < 0
+  >     prevents the version from being installed
+
+### Example case
 
 > !!! WARNING!!! THIS LEAD TO A SYSTEM WITH A BROKEN X !!!
 
