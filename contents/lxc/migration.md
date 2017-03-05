@@ -1,38 +1,40 @@
-# Migrate (move) or backup (store) LXC containers
+# LXC container migration
+
+Application: To move or backup LXC containers.
 
 ## Procedure
 
-1. Shutdown the container:
+1. Issue: `lxc-stop -n <name>` to shutdown the container:
 
  ```shell
 $ lxc-stop -n $NAME
 ```
 
-2. Archive container rootfs & config:
+2. Issue: `tar --numeric-owner -czvf <container-name>.tar.gz </path/to/container>` to archive the container's _rootfs_ & _config_  preserving user and group ownerships numerically:
 
   ```shell
-$ cd /var/lib/lxc/$NAME/
-$ tar --numeric-owner -czvf <container_fs>.tar.gz ./
-```
+  $ tar --numeric-owner -czvf container-name.tar.gz /var/lib/lxc/$NAME
+  ```
 
-3. Copy the file to your new server:
-
-  ```shell
-$ rsync -avh <container_fs>.tar.gz user@newserver:/var/lib/lxc/
-```
-
-4. Extract rootfs:
+3. Issue: `rsync -avh <container-name>.tar.gz <user>@<newserver>:</path/to/containers-dir/>` to copy (rsync) the archived container to your new server's lxc-containers directory:
 
   ```shell
-$ mkdir /var/lib/lxc/$NAME/
-$ cd /var/lib/lxc/$NAME/
-$ tar --numeric-owner -xzvf <container_fs>.tar.gz ./
-```
+  $ rsync -avh container-name.tar.gz user@newserver:/var/lib/lxc/
+  ```
 
-5. Start the container on the new location
+4. Navigate to to the archived container on the new server. 
+
+6. Issue: `tar --numeric-owner -xzvf <container-name>.tar.gz </path/to/containers-dir/` to extract the container to your new server's lxc-containers directory:
+
   ```shell
-$ lxc start -n $NAME
-```
+  $ tar --numeric-owner -xzvf container-name.tar.gz /var/lib/lxc/
+  ```
+
+7. Type: `lxc start -n <container-name>` to start the container on the new location:
+
+  ```shell
+  $ lxc start -n $NAME
+  ```
 
 ## Notes
 

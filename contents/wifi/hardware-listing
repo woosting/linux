@@ -1,6 +1,6 @@
 # PCI (WiFi) hardware (chipset) listing
 
-lspci [package:[ciutils][2]] is the standard tool to query the devices connected to any pci compatible bus:
+Issue `lspci` (from the package: [ciutils][2]) to query the devices connected to any pci compatible bus:
 
 ```shell
 $ lspci -nn
@@ -27,6 +27,7 @@ $ lspci -nn
     15:00.0 CardBus bridge [0607]: Texas Instruments PCI1510 PC card Cardbus Controller [104c:ac56]
     16:00.0 Ethernet controller [0200]: ADMtek 21x4x DEC-Tulip compatible 10/100 Ethernet [1317:1985] (rev 11)
 ```
+
 # References
 
 Adapted from: [HowToIdentifyADevice PCI][1]

@@ -1,13 +1,13 @@
 # How to start Syncthing on Debian boot using init.d
 
-Syncthing is a great, open-source, decentralized file sync application available for a wide range of platforms (Windows, Linux, Mac, Android, OpenBSD...)
+Syncthing is a great, open-source, decentralized file sync application available for a wide range of platforms (Windows, Linux, Mac, Android, OpenBSD...).
 
 Installation on _Debian / Ubuntu_ is simple and well [documented][2]. There is also great general documentation for [installing and configuring Synthing][3] and how to [automatically start Syncthing][4]. However, there is one thing that the current documentation does not cover, and that is how to start Syncthing on boot with init.d, here's how:
 
 ## Procedure
 
 ### Create the startup script
-1. Add the startup script
+1. Issue: `vim /etc/init.d/syncthing` to create the startup script:
 
   ```shell
 $ vim /etc/init.d/syncthing
@@ -163,30 +163,39 @@ $ vim /etc/init.d/syncthing
 
   :
 ```
-3. Change the line: `USER=cuonic` to whatever username you want the script to run as.
+
+3. Change the line: **USER=cuonic** to whatever username you want the script to run as.
 
 ### Initialise the startup script
 
-4. Make the script executable:
+4. Issue: `chmod 755 /etc/init.d/syncthing` to make the script executable:
+
   ```shell
   $ chmod 755 /etc/init.d/syncthing
   ```
-5. Tell init.d to execute the script to startup:
+
+5. Issue: `update-rc.d syncthing defaults` to make init.d aware of the script:
+
   ```shell
   $ update-rc.d syncthing defaults
   ```
 
 ### Test the startupscript
 
-1. Test **starting** the service:
+1. Issue: `service syncthing start` to test the **starting** routine:
+
   ```shell
   $ service syncthing start
   ```
-2. Test the **status** of the service
+
+2. Issue: `service syncthing status` to test the **status** routine:
+
   ```shell
   $ service syncthing status
   ```
-3. Test **stopping** the service:
+
+3. Issue: `service syncthing start` to test the **stopping** routine:
+
   ```shell
   $ service syncthing start
   ```

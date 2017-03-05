@@ -14,19 +14,21 @@ Several distros (including arch linux) ship the needed service files with the Sy
 
 1. Create the user who should run the service, or choose an existing one.
 2. Copy `Syncthing/etc/system/syncthing@.service`into the [load path of the system instance][3] (also see Table 1. in the appendix below).
-3. Enable and start the service. Replace “myuser” with the actual Syncthing user after the `@`:
+3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
   ```shell
   $ systemctl enable syncthing@myuser.service
+  ```
+4. Issue: `systemctl start syncthing@myuser.service` to start the service:
+  ```shell
   $ systemctl start syncthing@myuser.service
   ```
 
 ### Logging
 
-- To see the logs for the system service:
+- Issue: `journalctl -e -u syncthing@<myuser>.service` to see the logs for the system service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
   ```shell
   $ journalctl -e -u syncthing@myuser.service
   ```
-  With `-e` telling the pager to jump to the very end, so that you see the most recent logs.
 
 
 ## User service
@@ -35,23 +37,26 @@ Several distros (including arch linux) ship the needed service files with the Sy
 
 1. Create the user who should run the service, or choose an existing one. _Probably this will be your own user account._
 2. Copy the `Syncthing/etc/user/syncthing.service` file into the  [load path of the user instance][3] (also see Table 2. in the appendix below). To do this without root privileges you can just use this folder under your home directory: `~/.config/systemd/user/`.
-3. Enable and start the service:
+3. Issue: `systemctl --user enable syncthing.service` to enable the service:
   ```shell
   systemctl --user enable syncthing.service
-  systemctl --user start syncthing.service
   ```
+4. Issue: `systemctl --user enable syncthing.service` to start the service:
+  ```shell
+  systemctl --user start syncthing.service
+```
+
 
 ### Logging
 
-- To see the logs for the user service:
+- Issue: `journalctl -e --user-unit=syncthing.service` to see the logs for the user service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
   ```shell
   $ journalctl -e --user-unit=syncthing.service
   ```
-  With `-e` telling the pager to jump to the very end, so that you see the most recent logs.
 
 ## Permissions
 
-If you enabled the `Ignore Permissions` option in the Syncthing client’s folder settings, then you will also need to add the line `UMask=0002` (or any other _umask setting <http://www.tech-faq.com/umask.html>_ you like) in the `[Service]` section of the `syncthing@.service file`.
+If you enabled the **Ignore Permissions** option in the Syncthing client’s folder settings, then you will also need to add the line `UMask=0002` (or any other _umask setting <http://www.tech-faq.com/umask.html>_ you like) in the `[Service]` section of the `syncthing@.service file`.
 
 
 ## Appendix: Unit load paths

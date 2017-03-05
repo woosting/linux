@@ -2,7 +2,7 @@
 
 ## Navigation
 
-- End of file: `[Esc] G$` or `[Esc] GA` (the latter also opens edit mode)
+- Issue: `[Esc] G$` to jump to the end of file (or `[Esc] GA` to also open edit mode)
 
 ## References
 

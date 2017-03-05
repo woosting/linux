@@ -36,7 +36,7 @@ Application: To install one proprietary package from the non-free section compon
   Pin-Priority: 600
   ```
 
-  With higher numbered [pin priorities][3] prevailing over the lower ones as explained by **man apt_preferences**:
+  With higher [pin priorities][3] prevailing over the lower ones as explained by **man apt_preferences**:
 
   > Priorities (P) assigned in the APT preferences file must be positive or negative integers. They are interpreted as follows (roughly speaking):
   >
@@ -58,11 +58,19 @@ Application: To install one proprietary package from the non-free section compon
   > P < 0
   >     prevents the version from being installed
 
+[~apt_preferences man page][5]
+
 ### Example case
 
-> !!! WARNING!!! THIS LEAD TO A SYSTEM WITH A BROKEN X !!!
+-----
 
-Installing Debian's `firmware-iwlwifi` (intel propriety firmware) package and ONLY that package on a LENOVO T460 from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free / stretch:
+!!! WARNING !!! WARNING !!! WARNING !!!
+
+THIS LEAD TO A BROKEN X on a LENOVO T460
+
+-----
+
+Perform the aforementioned and the following to the **/etc/apt/preferences** file to install Debian's `firmware-iwlwifi` (intel propriety firmware) package and ONLY that package from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free and stretch:
 
 ```shell
 # === STABLE ===
@@ -108,7 +116,7 @@ Pin-Priority: 600
 
 And than install with:
 ```
-apt-get install firmware-iwlwifi/stretch && linux-image-4.9.0-1-amd64/stretch
+apt-get install firmware-iwlwifi/stretch linux-image-4.9.0-1-amd64/stretch
 ```
 
 ## References:
@@ -125,3 +133,4 @@ apt-get install firmware-iwlwifi/stretch && linux-image-4.9.0-1-amd64/stretch
 [2]:https://www.debian.org/doc/manuals/apt-howto/ch-apt-get.en.html
 [3]:https://www.howtoforge.com/a-short-introduction-to-apt-pinning
 [4]:http://serverfault.com/a/580700/372187
+[5]:https://
