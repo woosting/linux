@@ -18,7 +18,7 @@ Several distros (including arch linux) ship the needed service files with the Sy
   ```shell
   $ systemctl enable syncthing@myuser.service
   ```
-4. Issue: `systemctl start syncthing@myuser.service` to start the service:
+4. Issue: `systemctl start syncthing@<myuser>.service` to start the service:
   ```shell
   $ systemctl start syncthing@myuser.service
   ```
