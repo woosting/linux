@@ -13,7 +13,7 @@ $ lxc-stop -n $NAME
 2. Issue: `tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/container>` to archive the container's _rootfs_ & _config_  preserving user and group ownerships numerically:
 
   ```shell
-  $ tar --numeric-owner -czvf container-name.tar.gz /var/lib/lxc/$NAME
+  $ tar --numeric-owner -czvf container-name.tar.gz -C /var/lib/lxc/$NAME
   ```
 
 3. Issue: `rsync -avh <container-name>.tar.gz <user>@<newserver>:</path/to/containers-dir/>` to copy (rsync) the archived container to your new server's lxc-containers directory:
@@ -27,7 +27,7 @@ $ lxc-stop -n $NAME
 6. Issue: `tar --numeric-owner -xzvf <container-name>.tar.gz -C </path/to/containers-dir/>` to extract the container to your new server's lxc-containers directory:
 
   ```shell
-  $ tar --numeric-owner -xzvf container-name.tar.gz /var/lib/lxc/
+  $ tar --numeric-owner -xzvf container-name.tar.gz -C /var/lib/lxc/
   ```
 
 7. Type: `lxc start -n <container-name>` to start the container on the new location:
