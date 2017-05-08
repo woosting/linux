@@ -10,7 +10,7 @@ Application: To move or backup LXC containers.
 $ lxc-stop -n $NAME
 ```
 
-2. Issue: `tar --numeric-owner -czvf <container-name>.tar.gz </path/to/container>` to archive the container's _rootfs_ & _config_  preserving user and group ownerships numerically:
+2. Issue: `tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/container>` to archive the container's _rootfs_ & _config_  preserving user and group ownerships numerically:
 
   ```shell
   $ tar --numeric-owner -czvf container-name.tar.gz /var/lib/lxc/$NAME
@@ -24,7 +24,7 @@ $ lxc-stop -n $NAME
 
 4. Navigate to to the archived container on the new server. 
 
-6. Issue: `tar --numeric-owner -xzvf <container-name>.tar.gz </path/to/containers-dir/>` to extract the container to your new server's lxc-containers directory:
+6. Issue: `tar --numeric-owner -xzvf <container-name>.tar.gz -C </path/to/containers-dir/>` to extract the container to your new server's lxc-containers directory:
 
   ```shell
   $ tar --numeric-owner -xzvf container-name.tar.gz /var/lib/lxc/
