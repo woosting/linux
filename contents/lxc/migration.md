@@ -16,11 +16,17 @@ $ lxc-stop -n $NAME
   $ tar --numeric-owner -czvf container-name.tar.gz -C /var/lib/lxc/$NAME
   ```
 
-3. Issue: `rsync -avh <container-name>.tar.gz <user>@<newserver>:</path/to/containers-dir/>` to copy (rsync) the archived container to your new server's lxc-containers directory:
+3. Issue: `scp <container-name>.tar.gz <user>@<newserver>:</path/to/containers-dir/>` to securely copy (scp) the archived container to your new server's lxc-containers directory:
 
   ```shell
-  $ rsync -avh container-name.tar.gz user@newserver:/var/lib/lxc/
+  $ scp container-name.tar.gz user@newserver:/var/lib/lxc/
   ```
+
+> Alternatively: issue: `rsync -avh <container-name>.tar.gz <user>@<newserver>:</path/to/containers-dir/>` to copy (rsync) the archived container to your new server's lxc-containers directory:
+>
+>  ```shell
+>  $ rsync -avh container-name.tar.gz user@newserver:/var/lib/lxc/
+>  ```
 
 4. Navigate to to the archived container on the new server. 
 
