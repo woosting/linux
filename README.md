@@ -5,7 +5,7 @@ Recommended tooling:
 
 * [GitHub][1] to contribute (!) **online**.
 * [Vim][3] to edit on **CLI**.
-* [grep -riH <pattern>][4] to search the collection contents for specific info **CLI**
+* [grep -riH <pattern> <path>][4] to search the collection contents for specific info **CLI**
    (-r recursive -i ignore-case -H print-filenames).
 * [Atom][2] to edit, preview, browse the Markdown (.md) diles on **desktops**.
 * [Sumatra PDF reader][5] to view the occasional embedded .pdf file on Microsoft Windows **desktops**.
