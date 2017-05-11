@@ -84,7 +84,7 @@ Table 1. Load path when running in system mode (--system):
 
 |Path|Description|
 |----|-----------|
-|**/etc/systemd/system**|**Local configuration**|
+|/etc/systemd/system|Local configuration|Used in Debian Jessie LXC ARM7.1 container|
 |/run/systemd/system|Runtime units|
 |/usr/lib/systemd/system|Units of installed packages|
 
