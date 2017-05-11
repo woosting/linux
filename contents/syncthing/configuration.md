@@ -17,6 +17,6 @@ and change it into:
     <address>0.0.0.0:8384</address>
 ```
 
-3. Save the file
+3. Save the file.
 
 4. Browse to: `syncthing.server.ip.address:8384` and configure the rest using its GUI.
