@@ -31,6 +31,7 @@ Several distros (including arch linux) ship the needed service files with the Sy
 systemctl status syncthing@myuser.service
 ```
 
+> **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s /Syncthing/syncthing (on Debian deratives)`.
 
 ### Logging
 
@@ -61,10 +62,7 @@ systemctl status syncthing@myuser.service
 systemctl --user status syncthing.service
 ```
 
-> **Note:** Running Syncthing as a service expects the executable to be at: ``/usr/bin/syncthing``, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location:
-```
-ln -s /Syncthing/syncthing (on Debian deratives)
-```
+> **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s /Syncthing/syncthing (on Debian deratives)`.
 
 
 ### Logging
@@ -86,7 +84,7 @@ Table 1. Load path when running in system mode (--system):
 
 |Path|Description|
 |----|-----------|
-|/etc/systemd/system|Local configuration|
+|**/etc/systemd/system**|**Local configuration**|
 |/run/systemd/system|Runtime units|
 |/usr/lib/systemd/system|Units of installed packages|
 
