@@ -54,12 +54,16 @@ systemctl status syncthing@myuser.service
   systemctl --user start syncthing.service
 ```
 
-
 ### Check the (user) service status
 
 - Issue: `systemctl --user status syncthing.service` to check if Syncthing runs properly:
 ```shell
 systemctl --user status syncthing.service
+```
+
+> **Note:** Running Syncthing as a service expects the executable to be at: ``/usr/bin/syncthing``, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location:
+```
+ln -s /Syncthing/syncthing (on Debian deratives)
 ```
 
 
@@ -69,6 +73,7 @@ systemctl --user status syncthing.service
   ```shell
   $ journalctl -e --user-unit=syncthing.service
   ```
+
 
 ## Permissions
 
