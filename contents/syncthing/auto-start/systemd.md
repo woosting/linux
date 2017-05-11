@@ -23,14 +23,21 @@ Several distros (including arch linux) ship the needed service files with the Sy
   $ systemctl start syncthing@myuser.service
   ```
 
+
+### Check the (system) service status
+
+- Issue: `systemctl status syncthing@myuser.service` to check if Syncthing runs properly:
+```shell
+systemctl status syncthing@myuser.service
+```
+
+
 ### Logging
 
 - Issue: `journalctl -e -u syncthing@<myuser>.service` to see the logs for the system service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
   ```shell
   $ journalctl -e -u syncthing@myuser.service
   ```
-
-**Note:** Running Syncthing as a system service expects the executable to be at: ``/usr/bin/syncthing``, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location::
 
 ## User service
 
@@ -45,6 +52,14 @@ Several distros (including arch linux) ship the needed service files with the Sy
 4. Issue: `systemctl --user enable syncthing.service` to start the service:
   ```shell
   systemctl --user start syncthing.service
+```
+
+
+### Check the (user) service status
+
+- Issue: `systemctl --user status syncthing.service` to check if Syncthing runs properly:
+```shell
+systemctl --user status syncthing.service
 ```
 
 
