@@ -23,3 +23,12 @@ E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
 If so, please install the apt-transport-https package and try again:
 
 `apt install apt-transport-https`
+
+
+## References
+
+Adapted from: [Syncthing][1]
+
+
+<!-- REFERENCES -->
+[1]:https://apt.syncthing.net/
