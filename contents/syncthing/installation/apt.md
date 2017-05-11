@@ -1,5 +1,7 @@
 # Syncthing installation via apt
 
+> As of Debian 9 (Strech) syncthing is available from default repositories and can thus simply be installed by issuing: `apt install syncthing`.
+
 1. Add the release PGP keys:
 
 `curl -s https://syncthing.net/release-key.txt | apt-key add -`
