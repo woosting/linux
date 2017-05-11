@@ -20,3 +20,12 @@ and change it into:
 3. Save the file.
 
 4. Browse to: `syncthing.server.ip.address:8384` and configure the rest using its GUI.
+
+
+## References
+
+The official: [Syncthing Configuration][1]
+
+
+<!-- REFERENCES -->
+[1]https://docs.syncthing.net/users/config.html
