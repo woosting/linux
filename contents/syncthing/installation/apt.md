@@ -8,7 +8,7 @@
 
 `echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list`
 
-3. Update and install syncthing*:
+3. Update* and install syncthing:
 
 `apt update && apt install syncthing`
 
