@@ -30,6 +30,7 @@ Several distros (including arch linux) ship the needed service files with the Sy
   $ journalctl -e -u syncthing@myuser.service
   ```
 
+**Note:** Running Syncthing as a system service expects the executable to be at: ``/usr/bin/syncthing``, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location::
 
 ## User service
 
