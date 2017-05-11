@@ -2,7 +2,7 @@
 
 Syncthing is generally configured from the GUI, but sometimes it is hard to access the GUI on localhost when only a CLI is available (often the case with servers). In that case do the following:
 
-1. Open the `configuration.xml`:
+1. Open the **configuration.xml**:
 
 `vim ~/.config/syncthing/config.xml`
 
