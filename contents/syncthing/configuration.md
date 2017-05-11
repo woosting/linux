@@ -28,4 +28,4 @@ The official: [Syncthing Configuration][1]
 
 
 <!-- REFERENCES -->
-[1]https://docs.syncthing.net/users/config.html
+[1]:https://docs.syncthing.net/users/config.html
