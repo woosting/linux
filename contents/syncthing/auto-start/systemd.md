@@ -23,7 +23,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
     > cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
     > ```
 
-***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
+    ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
 
 3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
   ```shell
@@ -61,7 +61,7 @@ systemctl status syncthing@myuser.service
 1. Create the user who should run the service, or choose an existing one. _Probably this will be your own user account._
 2. Copy the `Syncthing/etc/user/syncthing.service` file into the  [load path of the user instance][3] (also see Table 2. in the appendix below). To do this without root privileges you can just use this folder under your home directory: `~/.config/systemd/user/`.
 
-***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
+    ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
 
 3. Issue: `systemctl --user enable syncthing.service` to enable the service:
   ```shell
