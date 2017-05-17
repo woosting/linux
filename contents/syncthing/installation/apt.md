@@ -29,12 +29,11 @@
     apt install apt-transport-https && apt update && apt install syncthing
     ```
     
-4. Start Syncting (as user)
+4. Start Syncting (as user):
     ```shell
     syncthing
     ```
- 
-this will open a GUI that can be used for configuration if a desktop is available)
+    ***Note: If a desktop is available Synthing web-gui is displayed from localhost. This GUI that can subsequently be used to configure Syncthing. However, when syncthing is started from the CLI without a desktop present, Syncthing will have to be configured by editing its configuration file directly*
 
 ## References
 
