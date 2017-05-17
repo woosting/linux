@@ -11,6 +11,7 @@ Syncthing is generally configured from the GUI, but sometimes it is hard to acce
     ***Note:** If the config.xml does not exist yet (an empty file is showing) start syncthing (as user):*
     ```shell
     syncthing
+    [Ctrl]+[c]
     ```
 
 2. Locate:
