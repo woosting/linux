@@ -8,7 +8,7 @@ Syncthing is generally configured from the GUI, but sometimes it is hard to acce
     vim ~/.config/syncthing/config.xml
     ```
     
-    ***Note: If the config.xml does not exist yet (an empty file is showing) start syncthing (as user):
+    ***Note:** If the config.xml does not exist yet (an empty file is showing) start syncthing (as user):*
     ```shell
     syncthing
     ```
