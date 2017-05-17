@@ -21,6 +21,8 @@ Several distros (including arch linux) ship the needed service files with the Sy
     ```
 
     > Alternative: Copy from `<installdir>/etc/linux-systemd/system/syncthing@.service` (installed via wget)
+    
+    ***Alternative:** Copy from `<installdir>/etc/linux-systemd/system/syncthing@.service` (installed via wget)*
   
 
 3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
