@@ -16,11 +16,11 @@ Several distros (including arch linux) ship the needed service files with the Sy
 2. Copy `Syncthing/etc/linux-systemd/system/syncthing@.service`into the [load path of the system instance][3] (also see Table 1. in the appendix below).
 3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
   ```shell
-  $ systemctl enable syncthing@myuser.service
+  systemctl enable syncthing@myuser.service
   ```
 4. Issue: `systemctl start syncthing@<myuser>.service` to start the service:
   ```shell
-  $ systemctl start syncthing@myuser.service
+  systemctl start syncthing@myuser.service
   ```
 
 
@@ -31,13 +31,16 @@ Several distros (including arch linux) ship the needed service files with the Sy
 systemctl status syncthing@myuser.service
 ```
 
-> **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s /Syncthing/syncthing (on Debian deratives)`.
+> **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s <install-dir>/syncthing /usr/bin/syncthing` (on Debian deratives).
+>  ```
+>  ln -s <install-dir>/syncthing /usr/bin/syncthing
+>  ```
 
 ### Logging
 
 - Issue: `journalctl -e -u syncthing@<myuser>.service` to see the logs for the system service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
   ```shell
-  $ journalctl -e -u syncthing@myuser.service
+  journalctl -e -u syncthing@myuser.service
   ```
 
 ## User service
@@ -69,7 +72,7 @@ systemctl --user status syncthing.service
 
 - Issue: `journalctl -e --user-unit=syncthing.service` to see the logs for the user service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
   ```shell
-  $ journalctl -e --user-unit=syncthing.service
+  journalctl -e --user-unit=syncthing.service
   ```
 
 
