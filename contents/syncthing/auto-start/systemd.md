@@ -12,11 +12,10 @@ Several distros (including arch linux) ship the needed service files with the Sy
 
 ### Setup
 
-1. Create the user who should run the service, or choose an existing one.
-2. Copy `syncthing@.service` into the [load path of the system instance][3] (also see Table 1. in the appendix below) from either:
+1. Copy `syncthing@.service` into the [load path of the system instance][3] (See Table 1. in the appendix below) from either:
 
-    - `Syncthing/etc/linux-systemd/system/syncthing@.service` (manually installed)
-    - `/lib/systemd/system/syncthing@.service` (installed via apt on Debian) 
+    - `Syncthing/etc/linux-systemd/system/syncthing@.service` (when installed manually)
+    - `/lib/systemd/system/syncthing@.service` (when installed via apt on Debian 8) 
 
 3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
   ```shell
