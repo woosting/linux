@@ -35,7 +35,7 @@
     ```
 If a desktop is available the web-GUI of Syncthingis displayed to configure (and use) Syncthing from localhost.
 
-When syncthing is started from the CLI without a desktop present, Syncthing will have to be configured by editing its configuration file directly*
+When syncthing is started from the CLI without a desktop present (often the case with servers), Syncthing will have to be configured by editing its configuration file directly*
 
 ## References
 
