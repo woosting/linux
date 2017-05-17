@@ -28,6 +28,13 @@
     ```shell
     apt install apt-transport-https && apt update && apt install syncthing
     ```
+    
+4. Start Syncting (as user)
+    ```shell
+    syncthing
+    ```
+ 
+this will open a GUI that can be used for configuration if a desktop is available)
 
 ## References
 
