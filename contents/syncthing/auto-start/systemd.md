@@ -14,16 +14,15 @@ You have two primary options: You can set up Syncthing as a system service, or a
 
 2. Copy the service file into the [load path of the/etc/systemd/system system instance][3] (See Table 1. in the appendix below). 
 
-    ***Situational:** When installed via Apt on Debian 8:*
+   ***Situational:** When installed via Apt on Debian 8:*
 
-    ```shell
-    cp /lib/systemd/system/syncthing@.service /etc/systemd/system
-    ```
-
-    > Alternatively (when manually installed via wget):
-    > ```shell
-    > cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
-    > ```
+   ```shell
+   cp /lib/systemd/system/syncthing@.service /etc/systemd/system
+   ```
+   ***Situational:** When installed via wget, curl or other manual download:*
+   ```shell
+   cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
+   ```
 
     ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
 
