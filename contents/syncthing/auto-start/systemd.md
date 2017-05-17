@@ -34,19 +34,17 @@ You have two primary options: You can set up Syncthing as a system service, or a
     systemctl enable syncthing@<user>.service
     ```
   
-4. Issue: `systemctl start syncthing@<myuser>.service` to start the service:
+4. Start the service:
 
     ```shell
     systemctl start syncthing@myuser.service
     ```
 
+5. Check if Syncthing runs properly:
 
-### Check the (system) service status
-
-- Issue: `systemctl status syncthing@myuser.service` to check if Syncthing runs properly:
-```shell
-systemctl status syncthing@myuser.service
-```
+   ```shell
+   systemctl status syncthing@myuser.service
+   ```
 
 > **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s <install-dir>/syncthing /usr/bin/syncthing` (on Debian deratives).
 >  ```
