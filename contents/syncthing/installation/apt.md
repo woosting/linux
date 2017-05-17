@@ -12,11 +12,11 @@
     echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
     ```
 
-3. Update* and install syncthing:
-
-`apt update && apt install syncthing`
-
-*Depending on your distribution, you may see an error similar to the following when running apt-get:
+3. Update* Apt and install syncthing:
+    ```shell
+    apt update && apt install syncthing
+    ```
+    *Depending on your distribution, you may see an error similar to the following when running apt-get:
 
 ```
 E: The method driver /usr/lib/apt/methods/https could not be found.
