@@ -26,7 +26,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
     cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
     ```
 
-***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!*
+    ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!*
 
 3. Enable the service:
 
