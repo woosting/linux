@@ -29,7 +29,6 @@
     apt install apt-transport-https && apt update && apt install syncthing
     ```
 
-
 ## References
 
 Adapted from: [Syncthing][1]
