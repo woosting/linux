@@ -17,18 +17,23 @@ You have two primary options: You can set up Syncthing as a system service, or a
     ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!*
 
    ***Situational:** When installed via Apt on Debian 8:*
+   
    ```shell
    cp /lib/systemd/system/syncthing@.service /etc/systemd/system
    ```
+   
    ***Situational:** When installed via wget, curl or other manual download:*
+   
    ```shell
    cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
    ```
   
-3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
+3. Enable the service:
+
   ```shell
-  systemctl enable syncthing@myuser.service
+  systemctl enable syncthing@<user>.service
   ```
+  
 4. Issue: `systemctl start syncthing@<myuser>.service` to start the service:
   ```shell
   systemctl start syncthing@myuser.service
