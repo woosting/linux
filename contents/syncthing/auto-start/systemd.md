@@ -6,8 +6,6 @@ You have two primary options: You can set up Syncthing as a system service, or a
 
 - Running Syncthing as a user service ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a _(multiuser) desktop computer_. It avoids unnecessarily running Syncthing instances.
 
-Several distros (including arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when you setting up either the system service or the user service, as described below.
-
 ## System service
 
 ### Setup
@@ -24,7 +22,9 @@ Several distros (including arch linux) ship the needed service files with the Sy
     > ```shell
     > cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
     > ```
-    
+
+***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
+
 3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
   ```shell
   systemctl enable syncthing@myuser.service
@@ -60,6 +60,9 @@ systemctl status syncthing@myuser.service
 
 1. Create the user who should run the service, or choose an existing one. _Probably this will be your own user account._
 2. Copy the `Syncthing/etc/user/syncthing.service` file into the  [load path of the user instance][3] (also see Table 2. in the appendix below). To do this without root privileges you can just use this folder under your home directory: `~/.config/systemd/user/`.
+
+***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
+
 3. Issue: `systemctl --user enable syncthing.service` to enable the service:
   ```shell
   systemctl --user enable syncthing.service
