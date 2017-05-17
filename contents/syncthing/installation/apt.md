@@ -7,7 +7,7 @@
     curl -s https://syncthing.net/release-key.txt | apt-key add -
     ```
 
-2. Add the "stable" channel to your APT sources:
+2. Add the "stable" channel to your APT sources (as root):
     ```shell
     echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
     ```
