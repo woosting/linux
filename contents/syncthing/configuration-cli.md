@@ -5,7 +5,7 @@ Syncthing is generally configured from the GUI, but sometimes it is hard to acce
 1. Open the configuration.xml for editing using your text/xml editor of choice:
 
     ```shell
-    vim ~/.config/syncthing/config.xml`
+    vim ~/.config/syncthing/config.xml
     ```
 
 2. Locate:
