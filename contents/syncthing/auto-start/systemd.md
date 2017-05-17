@@ -12,7 +12,7 @@ Several distros (including arch linux) ship the needed service files with the Sy
 
 ### Setup
 
-1. Create the user whos credentials the service should use to run, or choose an existing one.
+1. Create the user whos userspace the service should run in, or choose an existing one.
 
 2. Copy `syncthing@.service` into the [load path of the/etc/systemd/system system instance][3] (See Table 1. in the appendix below) from either:
 
