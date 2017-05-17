@@ -33,7 +33,7 @@
     ```shell
     syncthing
     ```
-    ***Note: If a desktop is available Synthing web-gui is displayed from localhost. This GUI that can subsequently be used to configure Syncthing. However, when syncthing is started from the CLI without a desktop present, Syncthing will have to be configured by editing its configuration file directly*
+    ***Note:** If a desktop is available Syncthing web-gui is displayed from localhost. This GUI that can subsequently be used to configure Syncthing. However, when syncthing is started from the CLI without a desktop present, Syncthing will have to be configured by editing its configuration file directly*
 
 ## References
 
