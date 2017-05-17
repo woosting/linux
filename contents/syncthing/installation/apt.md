@@ -12,7 +12,7 @@
     echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
     ```
 
-3. Update* Apt and install syncthing:
+3. Update* Apt and install syncthing (as root):
     ```shell
     apt update && apt install syncthing
     ```
@@ -24,7 +24,7 @@
     >E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
     >```
 
-    If so, install the apt-transport-https package and try again:
+    If so, install the apt-transport-https package and try again (as root):
     ```shell
     apt install apt-transport-https && apt update && apt install syncthing
     ```
