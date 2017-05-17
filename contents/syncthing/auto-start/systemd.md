@@ -12,7 +12,9 @@ You have two primary options: You can set up Syncthing as a system service, or a
 
 1. Create the user whos userspace the service should run in, or choose an existing one.
 
-2. Copy the service file into the [load path of the/etc/systemd/system system instance][3] (See Table 1. in the appendix below). When installed via Apt on Debian 8:
+2. Copy the service file into the [load path of the/etc/systemd/system system instance][3] (See Table 1. in the appendix below). 
+
+When installed via Apt on Debian 8:
 
     ```shell
     cp /lib/systemd/system/syncthing@.service /etc/systemd/system
