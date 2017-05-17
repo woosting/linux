@@ -18,11 +18,11 @@
     ```
     *Depending on your distribution, you may see an error similar to the following when running apt-get:
 
-```
-E: The method driver /usr/lib/apt/methods/https could not be found.
-N: Is the package apt-transport-https installed?
-E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
-```
+    ```
+    E: The method driver /usr/lib/apt/methods/https could not be found.
+    N: Is the package apt-transport-https installed?
+    E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
+    ```
 
 If so, please install the apt-transport-https package and try again:
 
