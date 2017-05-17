@@ -18,7 +18,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
     cp /lib/systemd/system/syncthing@.service /etc/systemd/system
     ```
 
-    > Alternative (installed via wget):
+    > Alternatively (when manually installed via wget):
     > ```shell
     > cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
     > ```
