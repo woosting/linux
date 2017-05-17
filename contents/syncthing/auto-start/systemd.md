@@ -24,7 +24,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
    cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
    ```
 
-***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
+> Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
 
 3. Issue: `systemctl enable syncthing@<myuser>.service` to enable the service:
   ```shell
