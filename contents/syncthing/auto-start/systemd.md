@@ -18,6 +18,7 @@ Several distros (including arch linux) ship the needed service files with the Sy
 
     - `/lib/systemd/system/syncthing@.service` (when installed via apt on Debian 8)
     - `Syncthing/etc/linux-systemd/system/syncthing@.service` (when installed manually)
+    
     ```shell
     cp /lib/systemd/system/syncthing@.service /etc/systemd/system
     ```
