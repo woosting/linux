@@ -7,10 +7,15 @@ Syncthing is generally configured from the GUI, but sometimes it is hard to acce
     ```shell
     vim ~/.config/syncthing/config.xml
     ```
+    
+    ***Note: If the config.xml does not exist yet (an empty file is showing) start syncthing (as user):
+    ```shell
+    syncthing
+    ```
 
 2. Locate:
 ```
-    <address>localhost:8384</address>
+    <address>127.0.0.1:8384</address>
 ```
 
 and change it into:
