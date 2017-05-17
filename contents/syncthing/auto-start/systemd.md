@@ -14,10 +14,9 @@ Several distros (including arch linux) ship the needed service files with the Sy
 
 1. Create the user whos userspace the service should run in, or choose an existing one.
 
-2. Copy `syncthing@.service` into the [load path of the/etc/systemd/system system instance][3] (See Table 1. in the appendix below) from either:
+2. Copy `/lib/systemd/system/syncthing@.service` (when installed via apt on Debian 8) into the [load path of the/etc/systemd/system system instance][3] (See Table 1. in the appendix below).
 
-    - `/lib/systemd/system/syncthing@.service` (when installed via apt on Debian 8)
-    - `Syncthing/etc/linux-systemd/system/syncthing@.service` (when installed manually)
+> Alternatively: Copy `Syncthing/etc/linux-systemd/system/syncthing@.service` (when installed via wget) into the [load path of the/etc/systemd/system system instance][3] (See Table 1. in the appendix below) from either:
     
     ```shell
     cp /lib/systemd/system/syncthing@.service /etc/systemd/system
