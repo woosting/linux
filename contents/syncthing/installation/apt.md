@@ -8,8 +8,9 @@
     ```
 
 2. Add the "stable" channel to your APT sources:
-
-`echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list`
+    ```shell
+    echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
+    ```
 
 3. Update* and install syncthing:
 
