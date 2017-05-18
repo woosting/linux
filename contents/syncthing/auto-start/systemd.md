@@ -46,7 +46,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
     systemctl status syncthing@<user>.service
     ```
 
-    **Situational:** When log-file investigation is nessesary:
+6. **Situational:** When log-file investigation is nessesary:
     
     Display the logs for the system service:
     
