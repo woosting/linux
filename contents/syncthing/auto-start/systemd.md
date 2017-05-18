@@ -8,9 +8,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
 
 - Running Syncthing as a user service ensures that Syncthing only starts after the user has logged into the system (e.g., via the graphical login screen, or ssh). Thus, the user service is intended to be used on a _(multiuser) desktop computer_. It avoids unnecessarily running Syncthing instances.
 
-## System service
-
-### Setup
+## Start as System service (upon boot)
 
 1. Create the user whos userspace the service should run in, or choose an existing one.
 
@@ -48,18 +46,19 @@ You have two primary options: You can set up Syncthing as a system service, or a
     systemctl status syncthing@<user>.service
     ```
 
+    **Situational:** When log-file investigation is nessesary:
+    Display the logs for the system service:
+    
+    ```shell
+    journalctl -e -u syncthing@<user>.service
+    ```
+    
+    With: `-e` telling the pager to jump to the very end, so that you see the most recent logs
+
     > Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable: `ln -s <install-dir>/syncthing /usr/bin/syncthing`
 
-### Logging
 
-- Issue: `journalctl -e -u syncthing@<myuser>.service` to see the logs for the system service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
-  ```shell
-  journalctl -e -u syncthing@myuser.service
-  ```
-
-## User service
-
-### Set up
+## Start as User service (upon login)
 
 1. Create the user who should run the service, or choose an existing one. _Probably this will be your own user account._
 2. Copy the `Syncthing/etc/user/syncthing.service` file into the  [load path of the user instance][3] (also see Table 2. in the appendix below). To do this without root privileges you can just use this folder under your home directory: `~/.config/systemd/user/`.
