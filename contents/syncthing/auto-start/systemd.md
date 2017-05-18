@@ -12,17 +12,17 @@ You have two primary options: You can set up Syncthing as a system service, or a
 
 1. Create the user whos userspace the service should run in, or choose an existing one.
 
-2. Copy the service file into the [load path of the system instance][3] (as root): 
+2. Copy the service file into the [load path of the system instance][3] (as root):
 
-    ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!*
+    > **Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
 
-    ***Situational:** When installed via Apt on Debian 8:*
-   
+    **Situational:** When installed via Apt on Debian 8:
+
     ```shell
     cp /lib/systemd/system/syncthing@.service /etc/systemd/system
     ```
 
-    ***Situational:** When installed via wget, curl or other manual download:*
+    **Situational:** When installed via wget, curl or other manual download:
 
     ```shell
     cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
@@ -33,17 +33,17 @@ You have two primary options: You can set up Syncthing as a system service, or a
     ```shell
     systemctl enable syncthing@<user>.service
     ```
-  
+
 4. Start the service:
 
     ```shell
-    systemctl start syncthing@myuser.service
+    systemctl start syncthing@<user>.service
     ```
 
 5. Check if Syncthing runs properly:
 
    ```shell
-   systemctl status syncthing@myuser.service
+   systemctl status syncthing@<user>.service
    ```
 
 > **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s <install-dir>/syncthing /usr/bin/syncthing` (on Debian deratives).
