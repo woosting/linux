@@ -1,3 +1,5 @@
+# Auto start (system.d)
+
 Systemd is a suite of system management daemons, libraries, and utilities designed as a central management and configuration platform for the Linux computer operating system. It also offers users the ability to manage services under the user’s control with a per-user systemd instance, enabling users to start, stop, enable, and disable their own units. Service files for systemd are provided by Syncthing and can be found in [etc/linux-systemd][2].
 
 You have two primary options: You can set up Syncthing as a system service, or a user service.
