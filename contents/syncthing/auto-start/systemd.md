@@ -47,6 +47,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
     ```
 
     **Situational:** When log-file investigation is nessesary:
+    
     Display the logs for the system service:
     
     ```shell
