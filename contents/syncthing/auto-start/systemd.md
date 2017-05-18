@@ -20,7 +20,7 @@ You have two primary options: You can set up Syncthing as a system service, or a
 
     ```shell
 cp /lib/systemd/system/syncthing@.service /etc/systemd/system
-```
+    ```
 
     **Situational:** When installed via wget, curl or other manual download:
 
