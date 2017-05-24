@@ -47,13 +47,13 @@ You have two primary options: You can set up Syncthing as a system service, or a
     ```
 
 6. **Situational:** When log-file investigation is nessesary:
-    
+
     Display the logs for the system service:
-    
+
     ```shell
     journalctl -e -u syncthing@<user>.service
     ```
-    
+
     With: `-e` telling the pager to jump to the very end, so that you see the most recent logs
 
     > Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable: `ln -s <install-dir>/syncthing /usr/bin/syncthing`
