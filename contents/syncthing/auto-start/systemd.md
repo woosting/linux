@@ -20,35 +20,23 @@ You have two primary options: You can set up Syncthing as a **system service**, 
 
     - When installed via **wget, curl or other manual download**: `cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system`
 
-3. Enable the service:
+3. Enable the service: `systemctl enable syncthing@<user>.service`
 
-    ```shell
-    systemctl enable syncthing@<user>.service
-    ```
+4. Start the service: `systemctl start syncthing@<user>.service`
 
-4. Start the service:
+### Optional
 
-    ```shell
-    systemctl start syncthing@<user>.service
-    ```
+#### Check service status
 
-5. Check if Syncthing runs properly:
+Check if Syncthing runs properly: `shell systemctl status syncthing@<user>.service`
 
-    ```shell
-    systemctl status syncthing@<user>.service
-    ```
+#### Investigate log-file (journal)
 
-6. **Situational:** When log-file investigation is nessesary:
+Display the logs for the system service: `journalctl -e -u syncthing@<user>.service`
 
-    Display the logs for the system service:
+> With: `-e` telling the pager to jump to the very end, so that you see the most recent logs
 
-    ```shell
-    journalctl -e -u syncthing@<user>.service
-    ```
-
-    With: `-e` telling the pager to jump to the very end, so that you see the most recent logs
-
-    > Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable: `ln -s <install-dir>/syncthing /usr/bin/syncthing`
+> Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable: `ln -s <install-dir>/syncthing /usr/bin/syncthing`
 
 
 ## Start as User service (upon login)
