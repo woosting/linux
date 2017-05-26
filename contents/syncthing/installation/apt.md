@@ -8,18 +8,13 @@
 
 3. Update Apt and install syncthing: `apt update && apt install syncthing`
 
-    *Depending on your distribution, you may see an error similar to the following when running apt:
-
+    > In case you get any or all of the following messages (is dependent on your distribution), install *'apt-transport-https'* package first: `apt install apt-transport-https && apt update && apt install syncthing`
+    >
     >```
     >E: The method driver /usr/lib/apt/methods/https could not be found.
     >N: Is the package apt-transport-https installed?
     >E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
     >```
-
-    If so, install the apt-transport-https package and try again (as root):
-    ```shell
-    apt install apt-transport-https && apt update && apt install syncthing
-    ```
     
 4. Start Syncting (as user):
     ```shell
