@@ -5,26 +5,23 @@
 1. Add the release PGP keys:
 root@host:~ `curl -s https://syncthing.net/release-key.txt | apt-key add -`
 
-2. Add the "stable" channel to your APT sources:
+2. Add the "stable" channel to your APT sources: `echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list`
 
-`echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list`
+3. Update Apt and install syncthing: `apt update && apt install syncthing`
 
-3. Update* and install syncthing:
+    > In case you get any or all of the following messages (dependent on your distribution), install *'apt-transport-https'* package first: `apt install apt-transport-https && apt update && apt install syncthing`
+    >
+    >```
+    >E: The method driver /usr/lib/apt/methods/https could not be found.
+    >N: Is the package apt-transport-https installed?
+    >E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
+    >```
+    
+4. Start Syncting as user (!): `syncthing`
 
-`apt update && apt install syncthing`
+If a desktop is available the web-GUI of Syncthingis displayed to configure (and use) Syncthing from localhost.
 
-*Depending on your distribution, you may see an error similar to the following when running apt-get:
-
-```
-E: The method driver /usr/lib/apt/methods/https could not be found.
-N: Is the package apt-transport-https installed?
-E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
-```
-
-If so, please install the apt-transport-https package and try again:
-
-`apt install apt-transport-https`
-
+When syncthing is started from the CLI without a desktop present (often the case with servers), Syncthing will have to be configured by editing its configuration file directly.
 
 ## References
 
