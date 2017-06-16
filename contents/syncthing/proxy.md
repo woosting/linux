@@ -2,9 +2,9 @@ Syncthing can run behind a SOCKS5 proxy. This enables use behind some corporate 
 
 There is no graphical configuration to enable proxy usage in Syncthing. Instead, an environment variable `all_proxy` must be set that points to the proxy. The value of this variable is the proxy URL. Note that this environment variable is _not_ named with capital letters - it must be exactly `all_proxy`. The `Proxy settings detected` log message indicates that Syncthing is using the proxy configuration.
 
-# Linux procedure
+# GNU/Linux procedure
 
-Issue: `export all_proxy=<proxy-type>://<ip-address>:<port>` to make the environment variable (for the shell session):
+Make the environment variable (for he duration of the shell session): `export all_proxy=<proxy-type>://<ip-address>:<port>`:
 
   ```shell
   $ export all_proxy=socks5://10.20.30.40:5060
@@ -27,4 +27,4 @@ Issue: `export all_proxy=<proxy-type>://<ip-address>:<port>` to make the environ
     2. Choose either:
       - `Edit environment variables for your account`.
       - `Edit the system environment variables`.
-2. Create the environment varianle: `all_proxy` and its value.
+2. Create the environment variable: `all_proxy` and its value.
