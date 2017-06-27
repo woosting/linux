@@ -10,9 +10,9 @@ This file is intended to test stuff.
 
 1. point 3
 
-```
-looks like
-code?
-```
-
+	```
+	looks like
+	code?
+	```
+	
 1. Point Willem Oosting 2
