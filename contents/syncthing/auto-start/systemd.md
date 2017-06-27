@@ -16,7 +16,7 @@ Systemd is a suite of system management daemons, libraries, and utilities design
 
 2. Copy the service file into the [load path of the system instance][3] (as root):
 
-    > Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
+  > Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
 
     - When installed via **Apt on Debian 8**: `cp /lib/systemd/system/syncthing@.service /etc/systemd/system`
 
@@ -39,7 +39,7 @@ Display the logs for the system service: `journalctl -e -u syncthing@<user>.serv
 > Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable: `ln -s <install-dir>/syncthing /usr/bin/syncthing`
 
 
-<!-- 
+<!--
     ## Start as User service (upon login)
 
     1. Create the user who should run the service, or choose an existing one. _Probably this will be your own user account._
