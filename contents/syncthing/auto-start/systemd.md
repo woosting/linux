@@ -16,11 +16,9 @@ Systemd is a suite of system management daemons, libraries, and utilities design
 
 2. Copy the service file into the [load path of the system instance][3] (as root):
 
-  test
+	> Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
 
-  > Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
-
-    - When installed via **Apt on Debian 8**: `cp /lib/systemd/system/syncthing@.service /etc/systemd/system`
+  - When installed via **Apt on Debian 8**: `cp /lib/systemd/system/syncthing@.service /etc/systemd/system`
 
     - When installed via **wget, curl or other manual download**: `cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system`
 
