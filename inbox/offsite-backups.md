@@ -18,7 +18,7 @@
 
 ## Backup
 
-1. Set credential variables and execute the actual backup:
+1. Set [environment variables to hold credentials][1] and execute the actual backup:
 
     ```shell
     PASSPHRASE=<gpg passphrase> FTP_PASSWORD=<ssh passphrase> duplicity --full-if-older-than 1M --verbosity=8 --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup     
@@ -61,7 +61,10 @@
 
 ## Cleanup
 
-1. Perform retention cleanup:
+
+### Retention
+
+1. Perform cleanup:
 
     ```shell
     duplicity remove-older-than 3M --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
@@ -69,9 +72,17 @@
 
     With:
 
+
     `remove-older-than <time>` defining from what age old backups are to be deleted (in this case backups older than 3 months).
 
-    `remove-older-than <time>` stating that the files should actually be deleted (otherwise the files to be deleted would only be printed on screen).
+    `--force` stating that the files should actually be deleted (otherwise the files to be deleted would only be printed on screen).
+
+
+    > ```shell
+    > duplicity cleanup --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
+    > ```
+
 
  <!-- REFERENCES -->
 [1]:http://duplicity.nongnu.org/duplicity.1.html#sect6
+
