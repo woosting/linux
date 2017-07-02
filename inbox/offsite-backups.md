@@ -43,7 +43,7 @@ The examples used in this tutorial use the following [environment variables][1]:
 Set environment variables to hold credentials and execute the actual backup:
 
 ```shell
-PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity --full-if-older-than 1M --verbosity info --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
+PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity --full-if-older-than 1M --log-file <path/to/logfile> --verbosity info --num-retries 3 --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
 ```
 
 `--full-if-older-than <time>` specifying the [full-backup interval (in this case each month)][4], all others will be incremental.
@@ -98,6 +98,12 @@ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity cleanup 
 
 `--force` specifying that the files should actually be deleted (otherwise the 'files to be deleted' would only be printed on screen and not deleted).
 
+
+# Cron automation
+
+1. Create a credential file containing the environment variables
+2. Create a Makefile for both backups and cleanups
+3. Add the command to execute to the crontab
 
 # REFERENCES
 
