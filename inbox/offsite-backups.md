@@ -2,8 +2,22 @@
 
 ## Prequirements
 
-- Accessible target volume
-> The examples used in this tutorial expect an SSH accessible storage volume (however other target locations are possible).
+### Accessible target volume
+The examples used in this tutorial expect an SSH accessible storage volume (however other target locations are possible). Ensure the host fingerprint is present in the known_hosts should an SSH server be used as the backup target:
+```shell
+ssh-keyscan -t rsa -p <port> <FQDN> >> ~/.ssh/known_hosts
+```
+> Alternatively log into the ssh server to do this with an interactive shell: `ssh -p <port> <user>@<host>`
+
+### Environment variables
+
+The examples used in this tutorial use the following [environment variables][1]:
+
+- `PASSPHRASE=<gpg passphrase>` specifying the password of the GPG key to be used.
+
+- `FTP_PASSWORD=<ssh passphrase>` specifying the SSH password of the server.
+
+
 
 
 
@@ -26,15 +40,11 @@
 
 ## Backup
 
-Set [environment variables to hold credentials][1] and execute the actual backup:
+Set environment variables to hold credentials and execute the actual backup:
 
 ```shell
-PASSPHRASE=<gpg passphrase> FTP_PASSWORD=<ssh passphrase> duplicity --full-if-older-than 1M --verbosity info --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup     
+PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity --full-if-older-than 1M --verbosity info --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
 ```
-
-`PASSPHRASE=<gpg passphrase>` specifying the password of the GPG key to be used.
-
-`FTP_PASSWORD=<ssh passphrase>` specifying the SSH password of the server.
 
 `--full-if-older-than <time>` specifying the [full-backup interval (in this case each month)][4], all others will be incremental.
 
@@ -54,7 +64,7 @@ PASSPHRASE=<gpg passphrase> FTP_PASSWORD=<ssh passphrase> duplicity --full-if-ol
 Execute the restore:
 
 ```shell
-duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
+PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
 ```
 
 `--time <time>` specifying the specific backup to restore from. When omitted the most recently made backup will be used.
