@@ -80,7 +80,7 @@ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity restore 
 Cleanup old backups:
 
 ```shell
-duplicity remove-older-than 3M --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
+PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity remove-older-than 3M --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
 ```
 
 `remove-older-than <time>` specifying from what age old backups are to be deleted (in this example case: backups older than 3 months).
@@ -93,7 +93,7 @@ duplicity remove-older-than 3M --force pexpect+sftp://<USER>@<HOSTNAME>:54968/ba
 Cleanup incomplete backups:
 
 ```shell
-duplicity cleanup --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
+PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity cleanup --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
 ```
 
 `--force` specifying that the files should actually be deleted (otherwise the 'files to be deleted' would only be printed on screen and not deleted).
