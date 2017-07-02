@@ -1,5 +1,11 @@
 # Duplicity (offsite) backups
 
+## Prequirements
+
+- Accessible target volume
+> The examples used in this tutorial expect an SSH accessible storage volume (however other target locations are possible).
+
+
 
 ## Installation
 
@@ -9,80 +15,87 @@
     gpg --full-generate-key
     ```
 
-2. Install Duplicity incuding backup modules:
+    > Proposition: Use a strong encryption key size (e.g. 4096)
+
+2. Install Duplicity, including the required back-end modules:
 
     ```shell
-    apt install duplicity lftp python-crypto python-paramiko python-pexpect
+    apt install duplicity lftp python-crypto python-pexpect
     ```
 
 
 ## Backup
 
-1. Set [environment variables to hold credentials][1] and execute the actual backup:
+Set [environment variables to hold credentials][1] and execute the actual backup:
 
-    ```shell
-    PASSPHRASE=<gpg passphrase> FTP_PASSWORD=<ssh passphrase> duplicity --full-if-older-than 1M --verbosity=8 --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup     
-    ```
-    With:
+```shell
+PASSPHRASE=<gpg passphrase> FTP_PASSWORD=<ssh passphrase> duplicity --full-if-older-than 1M --verbosity info --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup     
+```
 
-    `PASSPHRASE=<gpg passphrase>` setting a variabele containing the password of the GPG key to be used.
+`PASSPHRASE=<gpg passphrase>` specifying the password of the GPG key to be used.
 
-    `FTP_PASSWORD=<ssh passphrase>` setting a variable containing the SSH password of the server.
+`FTP_PASSWORD=<ssh passphrase>` specifying the SSH password of the server.
 
-    `--full-if-older-than <time>` specifying the full-backup frequency (in this case once per month), other executions will be incremental.
+`--full-if-older-than <time>` specifying the [full-backup interval (in this case each month)][4], all others will be incremental.
 
-    `--verbosity <level>` geeft aan hoeveel output hij moet generen, de default (4) is vrij magertjes en geeft je eigenlijk alleen de samenvatting nadat de backup is afgerond. met 8 worden de files weergeven die processed worden en wat de status daarvan is. Eventuee is er ook een 9 voor debugging, maar dat zal je niet snel nodig hebben.
+`--verbosity <level>` specifying the amount of information to be printed to screen during execution (being either: `error`, `warning`, `notice`, `info`, or `debug`).
 
-    `--numeric-owner` slaat de UID op van de user i.p.v. naam (zie ook man tar)
+`--numeric-owner` to store the original uid of the files (also see: [man tar][2]).
 
-    `<ssh passphrase>` vervolgens gevolgd met de source van de files die je wilt backupen
+`</path/to/source>` specifying the location that is to be backupped.
 
-    `<ssh passphrase>` de backend (target) waar de backups naartoe geschreven moeten worden. In dit geval pexpect+sftp.
+`pexpect+sftp://<USER>@<HOSTNAME>:54968/backup` specifying the [storage backend][3] / target location (in this case: pexpect+sftp).
 
-    er zijn meerdere varianten van scp/sftp, maar deze variant lijkt het beste te performen n.a.v. mijn eigen ervaring (zie eventueel ook t.b.v. SSH backends http://duplicity.nongnu.org/duplicity.1.html#sect23)
-
+> Optionally speed up the backup process by: `--asynchronous-upload`
+> (EXPERIMENTAL) Perform file uploads asynchronously in the background, with respect to volume creation. This means that duplicity can upload a volume while, at the same time, preparing the next volume for upload. The intended end-result is a faster backup, because the local CPU and your bandwidth can be more consistently utilized. Use of this option implies additional need for disk space in the temporary storage location; rather than needing to store only one volume at a time, enough storage space is required to store two volumes.
 
 ## Restore
 
-1. Execute the restore:
+Execute the restore:
 
-    ```shell
-    duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
-    ```
+```shell
+duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
+```
 
-    With:
+`--time <time>` specifying the specific backup to restore from. When omitted the most recently made backup will be used.
 
-    `--time <time>` specifying the specific backup to restore from. When omitted the most recently made backup will be used.
-
-    optionally:
-    
-    `--file-to-restore </path/to/file>` specifying specific files to restore from the backup. When omitted the complete backup will be restored.
+> Optionally define specific files to be restored from the backup: `--file-to-restore </path/to/file>`. When omitted the complete backup will be restored.
 
 
 ## Cleanup
 
 
-### Retention
+### Retained backups
 
-1. Perform cleanup:
+Cleanup old backups:
 
-    ```shell
-    duplicity remove-older-than 3M --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
-    ```
+```shell
+duplicity remove-older-than 3M --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
+```
 
-    With:
+`remove-older-than <time>` specifying from what age old backups are to be deleted (in this example case: backups older than 3 months).
 
-
-    `remove-older-than <time>` defining from what age old backups are to be deleted (in this case backups older than 3 months).
-
-    `--force` stating that the files should actually be deleted (otherwise the files to be deleted would only be printed on screen).
+`--force` specifying that the files should actually be deleted (otherwise the 'files to be deleted' would only be printed on screen and not deleted).
 
 
-    > ```shell
-    > duplicity cleanup --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
-    > ```
+### Incomplete backups
+
+Cleanup incomplete backups:
+
+```shell
+duplicity cleanup --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
+```
+
+`--force` specifying that the files should actually be deleted (otherwise the 'files to be deleted' would only be printed on screen and not deleted).
 
 
- <!-- REFERENCES -->
+# REFERENCES
+
+- Adapted from: [Official Duplicity documentation][5]
+
+<!-- REFERENCES -->
 [1]:http://duplicity.nongnu.org/duplicity.1.html#sect6
-
+[2]:https://linux.die.net/man/1/tar
+[3]:http://duplicity.nongnu.org/duplicity.1.html#sect7
+[4]:http://duplicity.nongnu.org/duplicity.1.html#sect8
+[5]:http://duplicity.nongnu.org/duplicity.1.html
