@@ -99,12 +99,6 @@ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity cleanup 
 `--force` specifying that the files should actually be deleted (otherwise the 'files to be deleted' would only be printed on screen and not deleted).
 
 
-# Cron automation
-
-1. Create a credential file containing the environment variables
-2. Create a Makefile for both backups and cleanups
-3. Add the command to execute to the crontab
-
 # REFERENCES
 
 - Adapted from: [Official Duplicity documentation][5]
