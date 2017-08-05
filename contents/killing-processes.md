@@ -10,7 +10,7 @@ $ kill 2443
 
 > With:
 >
-> - `2443` being the process id that is to be stopped.
+> `2443` being the process id that is to be stopped.
 
 > Syntax:
 >

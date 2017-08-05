@@ -17,7 +17,7 @@ APPLICATION: Make network share(definitions)s available in GNU/Linux using the '
     # mkdir /mnt/mount-point
     ```
 
-    With: `mount-point` being the folder name to mount the share to.
+    >With: `mount-point` being the folder name to mount the share to.
 
 3. Create a credentials file and open it for editing:
 
