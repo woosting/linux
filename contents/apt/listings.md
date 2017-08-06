@@ -8,10 +8,8 @@ List all software installed from a specific component section (non-free, contrib
 $ dpkg-query -W -f='${Section}\t${Package}\n' | sort | egrep ^contrib\|^non-free
 ```
 
-> With:
->	- `dpkg` being the program to search with.
->	- `sort` to order the results.
->	- `egrep` to filter the results on the keywords: `contrib` or `non-free`.
+>	- `sort`: Order the results.
+>	- `egrep`: Filter the results on keywords (in this case:`contrib` or `non-free`).
 
 
 ## Aptitude
@@ -20,6 +18,4 @@ $ dpkg-query -W -f='${Section}\t${Package}\n' | sort | egrep ^contrib\|^non-free
 $ aptitude search '~i ?section(non-free)'
 ```
 
-> With:
->	- `Aptitude` being the program to search with.
->	- `non-free` to limit the search space to the non-free section.
+>	- `non-free`: Limit search space to non-free packages.

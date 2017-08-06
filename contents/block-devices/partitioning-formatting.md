@@ -1,24 +1,27 @@
 # Partitioning & formatting
 
-Application: To subdivide and format (write a file system) a disk (block-device).
+Partition and format (write a file system) a disk (block-device):
 
 
-## Oldschool
+## Oldschool (fdisk)
 
-Type: `fdisk` to start the oldschool CLI partition tool:
+1. Start the oldschool CLI partition tool:
 
-```shell
-$ fdisk
-```
+	```shell
+	$ fdisk
+	```
+2. Follow the interactive instructions / menu on screen.
 
 
-## Ncurses
+## Ncurses (cfdisk)
 
-Type: `cfdisk` to start the new (ncurses based) CLI partition tool:
+1. Start the new (ncurses based) CLI partition tool:
 
-```shell
-$ cfdisk
-```
+	```shell
+	$ cfdisk
+	```
+
+2. Follow the interactive instructions / menu on screen.
 
 
 ## References:

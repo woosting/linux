@@ -1,6 +1,6 @@
-# Recommended partitioning scheme
+# Disk partition scheme
 
-Application: Divide a disk into separate partitions of the right size to hold a typical Debian installation.
+Recommended disk partition sizes to hold typical Debian installations:
 
 
 ## Debian Jessie 8.7 (Desktop)

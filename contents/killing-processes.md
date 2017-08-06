@@ -6,13 +6,9 @@ Stop (rogue/frozen) processes:
 $ kill <2443>
 ```
 
->	With:
->
->	`2443` being the process id that is to be stopped.
+>	`2443`: Id of the process that is to be stopped.
 
->	Syntax:
->
->	`kill [-<signal>] <%pid>`
+>	Syntax: `kill [-<signal>] <%pid>`:
 >
 >	- `-SIGHUP` / `-1` - The **HUP** signal is sent to a process when its controlling terminal is closed. It was originally designed to notify the process of a serial line drop (HUP stands for "Hang Up"). In modern systems, this signal usually means that the controlling pseudo or virtual terminal has been closed.
 -- Processes have to be programmed to actually listen to this process and do something with it. Most daemons are programmed to re-read their configuration when they receive such a signal. This is very likely the safest kill signal there is, it should not obstruct anything.

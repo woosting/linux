@@ -1,23 +1,33 @@
 # du - Disk Usage
 
-> du (abbreviated from 'disk usage') is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system. [~Wikipedia][1]
+>	[Du][1] (abbreviated from 'disk usage') is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system.
 
 ## Simple usage
 
-Type: `du -hs` to prints disk usage **du** in a human-readable **-h** and summarized **-s** format for the current directory:
+Print disk usage for the current directory (pwd):
 
-```shell
+```
 $ du -hs
 ```
+
+>	- `-h`: Human readable.
+>	- `-s`: Summary.
 
 
 ## Advanced usage
 
-Type `du -hs /path/* | sort -h` to print disk usage **du** in a human-readable **-h** and summarized **-s** format for each individual item `*` in the provided path `/path/` (i.e. for all directories and files present in the directory path) and pipe `|` (push) the results to the program `sort` to have it presented in an ordered and human readable `-h` format:
+Print a sorted disk usage overview of all individual items (folders and files)  in a specific directory:
 
-```shell
-$ du -hs /path/* | sort -h
 ```
+$ du -hs </path/>* | sort -h
+```
+
+> - `-h`: Human-readable.
+> - `-s`: Summarized.
+> - `/path/`: directory to look in.
+> - `*`: all items.
+> - `|`: pipe (push) the results to another program.
+> - `sort`: alphabetical ordering.
 
 
 ## References
