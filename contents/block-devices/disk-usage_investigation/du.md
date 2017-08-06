@@ -10,8 +10,8 @@ Print disk usage for the current directory (pwd):
 $ du -hs
 ```
 
->	- `-h`: Human readable.
->	- `-s`: Summary.
+>	`-h`: Human readable.
+>	`-s`: Summary.
 
 
 ## Advanced usage
@@ -22,12 +22,12 @@ Print a sorted disk usage overview of all individual items (folders and files)  
 $ du -hs </path/>* | sort -h
 ```
 
-> - `-h`: Human-readable.
-> - `-s`: Summarized.
-> - `/path/`: directory to look in.
-> - `*`: all items.
-> - `|`: pipe (push) the results to another program.
-> - `sort`: alphabetical ordering.
+> `-h`: Human-readable.
+> `-s`: Summarized.
+> `/path/`: directory to look in.
+> `*`: all items.
+> `|`: pipe (push) the results to another program.
+> `sort`: alphabetical ordering.
 
 
 ## References

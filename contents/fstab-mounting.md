@@ -17,7 +17,7 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     # mkdir /mnt/<mount-point>
     ```
 
-    >	- `mount-point`: Folder to mount the share to.
+    >	`mount-point`: Folder to mount the share to.
 
 3. Create a credentials file and open it for editing:
 
@@ -32,8 +32,8 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     password=<12345>
     ```
 
-    >	- `user`: Cifs username.
-    >	- `12345`: Cifs password.
+    >	`user`: Cifs username.
+    >	`12345`: Cifs password.
 
 1. Make the credential file read only:
 
@@ -53,12 +53,12 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     //<192.168.1.100>/<share>/	/mnt/<mount-point>	cifs	user,sec=ntlm,credentials=/etc/samba/credentials	0	0
     ```
 
-    >	- `192.168.1.100`: Hosting server's IP address, or alternatively; the hostname if the network is configured for hostname resolving.
-    >	- `share`: Shared folder (and path).
-	>	- `mount-point` Previously created / designated folder to mount to.
-	>	- `cifs` Share protocol.
-    >	- `user` Allowing regular (non-root) users to mount.
-    >	- `sec=ntlm` Overriding regular security settings (for shares using old security protocols).
+    >	`192.168.1.100`: Server's IP address or hostname (if configured for hostname resolving).
+    >	`share`: Shared folder (and path).
+	>	`mount-point` Previously created / designated folder to mount to.
+	>	`cifs` Share protocol.
+    >	`user` Allowing regular (non-root) users to mount.
+    >	`sec=ntlm` Overriding regular security settings (for shares using old security protocols).
 
 3. Mount the share to the mount-point:
 
