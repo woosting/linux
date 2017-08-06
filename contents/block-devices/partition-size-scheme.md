@@ -1,6 +1,6 @@
 # Recommended partitioning scheme
 
-Application: Typical partition sizes.
+Application: Divide a disk into separate partitions of the right size to hold a typical Debian installation.
 
 
 ## Debian Jessie 8.7 (Desktop)
@@ -9,7 +9,7 @@ Application: Typical partition sizes.
 /boot    ¼ -  1 GB   Kernels (250 MB) + rescue cd image (750 MB).
 /        8 - 40 GB   Desktop programs
 /swap    4 - 24 GB   Hybernation (1.5xRAM)
-/tmp*    1 -  5 GB   DVD imaging + Mount with `nosuid,nodev,noexec`
+/tmp*    1 -  5 GB   To be able to hold entire DVD images
 /var     3 - 40 GB   Accumulating files (log/web/mail/mysql data)
 /home    3 - 80 GB   Rest
 -------------------- +
@@ -17,6 +17,8 @@ Subtotal:   190 GB
 Unallocated  56 GB   To expand LVM volumes later (easier than shrinking)
 -------------------- +
 TOTAL       246 GB
+
+*Mount with: `nosuid,nodev,noexec`
 ```
 
 
