@@ -70,64 +70,66 @@ APPLICATION: Install one proprietary package from the non-free section component
     >	prevents the version from being installed
     >	```
 
+
 ### Example case
 
 -----
-!!! WARNING !!! WARNING !!! WARNING !!!
 
-THIS LEAD TO A BROKEN X on a LENOVO T460
+!!! WARNING !!! -- This resulted in a broken X on a LENOVO T460 -- !!! WARNING !!!
 
 -----
 
-Perform the aforementioned and the following to the `/etc/apt/preferences` file to install Debian's `firmware-iwlwifi` (intel propriety firmware) package and ONLY that package from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free and stretch:
+APPLICATION: Install Debian's `firmware-iwlwifi` (Intel propriety firmware) package and the kernal-image packages from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free and stretch
 
-```shell
-# === STABLE ===
+1. Perform the aforementioned and add the following to the `/etc/apt/preferences` file, to add the specific references to the correspondingly specific packages from the correspondingly specific repositories:
 
-# Enable all packages from STABLE main tree by default,
-# with a high priority to make it the preferred source:
-Package: *
-Pin: release a=stable,c=main
-Pin-Priority: 900
+	```shell
+	# === STABLE ===
 
-# ---
+	# Enable all packages from STABLE main tree by default,
+	# with a high priority to make it the preferred source:
+	Package: *
+	Pin: release a=stable,c=main
+	Pin-Priority: 900
 
-# Disable packages from STABLE non-free tree by default:
-Package: *
-Pin: release a=stable,c=non-free
-Pin-Priority: -1
+	# ---
 
-# Disable packages from STABLE contrib tree by default:
-Package: *
-Pin: release a=stable,c=contrib
-Pin-Priority: -1
+	# Disable packages from STABLE non-free tree by default:
+	Package: *
+	Pin: release a=stable,c=non-free
+	Pin-Priority: -1
+
+	# Disable packages from STABLE contrib tree by default:
+	Package: *
+	Pin: release a=stable,c=contrib
+	Pin-Priority: -1
 
 
-# === STRETCH ===
+	# === STRETCH ===
 
-# Disable packages from STRETCH by default:
-Package: *
-Pin: release n=stretch
-Pin-Priority: -1
+	# Disable packages from STRETCH by default:
+	Package: *
+	Pin: release n=stretch
+	Pin-Priority: -1
 
-# ---
+	# ---
 
-# Enable WIFI FIRMWARE package from STRETCH non-free tree
-Package: firmware-iwlwifi
-Pin: release n=stretch,c=non-free
-Pin-Priority: 600
+	# Enable WIFI FIRMWARE package from STRETCH non-free tree
+	Package: firmware-iwlwifi
+	Pin: release n=stretch,c=non-free
+	Pin-Priority: 600
 
-# Enable KERNEL package from STRETCH main tree
-Package: linux-image*
-Pin: release n=stretch,c=main
-Pin-Priority: 600
-```
+	# Enable KERNEL package from STRETCH main tree
+	Package: linux-image*
+	Pin: release n=stretch,c=main
+	Pin-Priority: 600
+	```
 
-And than install with:
+2. Install the two packages with:
 
-```
-apt-get install firmware-iwlwifi/stretch linux-image-4.9.0-1-amd64/stretch
-```
+	```
+	apt-get install firmware-iwlwifi/stretch linux-image-4.9.0-1-amd64/stretch
+	```
 
 ## References:
 
