@@ -5,7 +5,7 @@ APPLICATION: Stop rogue/frozen processes.
 Stop a program:
 
 ```
-$ kill 2443
+$ kill <2443>
 ```
 
 >	With:
