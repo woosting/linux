@@ -1,8 +1,8 @@
 # PCI (WiFi) hardware (chipset) listing
 
-Issue `lspci` (from the package: [ciutils][2]) to query the devices connected to any pci compatible bus:
+Query devices connected to any pci compatible bus:
 
-```shell
+```
 $ lspci -nn
 
     00:00.0 Host bridge [0600]: Intel Corporation Mobile 945GM/PM/GMS, 943/940GML and 945GT Express Memory Controller Hub [8086:27a0] (rev 03)
@@ -27,6 +27,9 @@ $ lspci -nn
     15:00.0 CardBus bridge [0607]: Texas Instruments PCI1510 PC card Cardbus Controller [104c:ac56]
     16:00.0 Ethernet controller [0200]: ADMtek 21x4x DEC-Tulip compatible 10/100 Ethernet [1317:1985] (rev 11)
 ```
+
+> Requires the package: [ciutils][2]
+
 
 # References
 
