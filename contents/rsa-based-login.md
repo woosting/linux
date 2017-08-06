@@ -1,6 +1,6 @@
 # RSA-key based login
 
-APPLICATION: Log into an SSH session using an RSA key instead of a regular password for more security and/or privacy (or even convenience).
+Log into an SSH session using an RSA key instead of a regular password (for more security, privacy, or convenience):
 
 1. Open the authorized_keys file for editing on the server side:
 

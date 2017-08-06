@@ -1,8 +1,6 @@
 # Battery status check
 
-APPLICATION: Check battery status from the command line interface (CLI).
-
-Print battery power status to screen:
+Print battery power status to screen (from cli):
 
 ```
 $ acpi

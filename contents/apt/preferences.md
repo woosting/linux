@@ -1,11 +1,11 @@
 # Apt preferences
 
-APPLICATION: Prefer certain packages (from section components) during system upgrades.
+Prefer certain packages (from section components) over others during system installs and/or upgrades:
 
 
 ## Pinning from non-free
 
-APPLICATION: Install one proprietary package from the non-free section component.
+Install one proprietary package from the non-free section component:
 
 1.	Open the repository listing file for editing:
 
@@ -79,7 +79,7 @@ APPLICATION: Install one proprietary package from the non-free section component
 
 -----
 
-APPLICATION: Install Debian's `firmware-iwlwifi` (Intel propriety firmware) package and the kernal-image packages from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free and stretch
+Install Debian's `firmware-iwlwifi` (Intel propriety firmware) package and the kernal-image packages from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free and stretch:
 
 1. Perform the aforementioned and add the following to the `/etc/apt/preferences` file, to add the specific references to the correspondingly specific packages from the correspondingly specific repositories:
 

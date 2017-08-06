@@ -1,8 +1,6 @@
 # Killing processes
 
-APPLICATION: Stop rogue/frozen processes.
-
-Stop a program:
+Stop (rogue/frozen) processes:
 
 ```
 $ kill <2443>

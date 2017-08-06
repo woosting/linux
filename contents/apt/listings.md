@@ -1,10 +1,10 @@
 # Apt Listings
 
-APPLICATION: List all software installed from a particular component section (non-free, contrib, etc.):
+List all software installed from a specific component section (non-free, contrib, etc.):
 
 ## dpkg
 
-```shell
+```
 $ dpkg-query -W -f='${Section}\t${Package}\n' | sort | egrep ^contrib\|^non-free
 ```
 
@@ -16,7 +16,7 @@ $ dpkg-query -W -f='${Section}\t${Package}\n' | sort | egrep ^contrib\|^non-free
 
 ## Aptitude
 
-```shell
+```
 $ aptitude search '~i ?section(non-free)'
 ```
 

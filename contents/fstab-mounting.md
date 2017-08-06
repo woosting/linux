@@ -1,6 +1,6 @@
 # fstab mounts
 
-APPLICATION: Make network share(definitions)s available in GNU/Linux using the 'file system table' fstab.
+Make network share(definitions)s available in GNU/Linux using the 'file system table' fstab:
 
 
 ## Cifs (Windows / samba)
