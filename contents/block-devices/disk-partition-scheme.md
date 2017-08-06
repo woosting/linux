@@ -17,10 +17,11 @@ Subtotal:   190 GB
 Unallocated  56 GB   To expand LVM volumes later (easier than shrinking)
 -------------------- +
 TOTAL       246 GB
-
-*Mount with: `nosuid,nodev,noexec`
 ```
 
+```
+*Mount with: `nosuid,nodev,noexec`
+```
 
 # References
 
