@@ -1,44 +1,58 @@
 # Shrink LVM Volumes
 
-First, as is always the case when you’re modifying disk volumes, partitions, or file systems, you should really have a recent backup. A typo in one the following commands could easily destroy data. You have been warned!
+0. Create a backup of the volume's data!
 
-All of the required steps must be performed on an unmounted volume. If want to reduce the size of a non-root volume, simply unmount it. For a root volume, you’ll have to boot from a CD. Any modern live or rescue CD should work fine. I prefer [SystemRescueCD][1]. It includes almost any disk management programs you might need.
+1. Unmount the volume:
 
-1. Boot from a **live CD** or USB thumbdrive.
+	```
+	# umount </path/to/mount-point>
+	```
 
-2. Issue: `vgchange -a y` to makes any logical volumes available to the Linux. Most boot CD’s will do it automatically some time during the boot process, but repeating the command won’t hurt:
+	> `/path/to/mount-point`: Path to the moint-point of the volume.
 
-  ```shell
-  $ vgchange -a y
-  ```
+	> Boot from a [live CD][1] / USB-drive if necessary (e.g. for root volumes).
 
-2. Issue: `e2fsck -f /dev/<volume-group>/<logical-volume>` to force a file system check on the volume in question. Device names for LVM volumes follow the convention: '/dev/volume-group/logical-volume'. In this case, my volume group is named polar and the volume I’m going to shrink is named root:
+2. Make any logical volumes available to Linux:
 
-  ```shell
-  $ e2fsck -f /dev/polar/root
-  ```
+	```
+	$ vgchange -a y
+	```
 
-  _Note: This is a critical step; resizing a file system in an inconsistent state could have disastrous consequences!_
+	> Most boot CD’s will do this automatically at boot, but repeating the command won’t hurt.
 
-3. Issue: `resize2fs /dev/<volume-group>/<logical-volume> <90%-of-desired-size>G` to resize the _file system_. Use about 90% of the size you want the final volume to be. For example, in this case, I want the final volume to be _200_ gigabytes, so I’ll reduce the file system to _180_ gigabytes. Why is this necessary? When we reduce the size of the actual volume in the next step, it’s critical that the new size is greater than or equal to the size of the file system. After reading the documentation for both _resizefs_ and _lvreduce_, I still haven’t been able to find out whether they’re using standard computer gigabytes (1024^3 bytes) or drive manufacturer gigabytes (1000^3 bytes). In this case, the difference is very important. To be on the safe side, we’ll just shrink the file system a bit more than necessary and expand it to use the full space available later:
+2. Check the file system of the volume:
 
-    ```shell
-    $ resize2fs /dev/polar/root 180G
-    ```
+	```
+	$ e2fsck -f /dev/<volume-group>/<logical-volume>
+	```
 
-4. Issue: `lvreduce -L <desired-size>G /dev/<volume-group>/<logical-volume>` to reduce the size of the _logical volume_. In this case, use the actual size you want to the volume to be:
+	>_Note: Resizing a file system in an inconsistent state could have disastrous consequences!_
 
-  ```shell
-  $ lvreduce -L 200G /dev/polar/root
-  ```
+3. Resize the _file system_:
 
-5. Issue: `resize2fs /dev/<volume-group>/<logical-volume>` to grow the file system so that it uses all available space on the logical volume:
+	```
+	$ resize2fs /dev/<volume-group>/<logical-volume> <90%-of-desired-size>G
+	```
 
-  ```shell
-  $ resize2fs /dev/polar/root
-  ```
+	> Use about 90% of the size you want the final volume to be. For example, you want the final volume to be _200_ gigabytes, reduce the file system to _180_ gigabytes!
+	>
+	> > This is important because it is critical that the volume's new size is greater than or equal to the size of the file system, when we reduce the size of the actual volume in the next step!
+	> >
+	> > It is unclear whether standard computer gigabytes (1024^3 bytes) or drive manufacturer gigabytes (1000^3 bytes) are used, which is why we shrink the file system a bit more than necessary (to be on the safe side) and expand it to use the full space available later.
 
-That’s it. Enjoy your newly acquired free space.
+4. Reduce the size of the _logical volume_:
+
+	```
+	$ lvreduce -L <desired-size>G /dev/<volume-group>/<logical-volume>
+	```
+
+	> In this case, use the actual desired size (as this regards the Volume).
+
+5. Grow the _file system_ to fill all available space on the _logical volume_:
+
+	```
+	$ resize2fs /dev/<volume-group>/<logical-volume>
+	```
 
 ## References
 
