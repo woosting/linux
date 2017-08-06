@@ -14,11 +14,11 @@ Applications to find disk space hoggers:
 - **fsv** - 3D visualization.
 - **Philesight** - Web-based clone of Filelight.
 
->	Note that:
->	- Many haven't received updates for a while.
->	- Albeit more powerfull than 'du' they are also significantly bigger.
->	- Most (if not all) will have to be installed manually.
->s	- 'find' can be used to explicitly find large files from the cli.
+Notes:
+- Many haven't received updates for a while.
+- Albeit more powerfull than 'du' they are also significantly bigger.
+- Most (if not all) will have to be installed manually.
+- 'find' can be used to explicitly find large files from the cli.
 
 
 ## References
