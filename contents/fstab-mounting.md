@@ -14,7 +14,7 @@ APPLICATION: Make network share(definitions)s available in GNU/Linux using the '
 2. Create a target directory in the file-tree as the mount-point:
 
     ```
-    # mkdir /mnt/mount-point
+    # mkdir /mnt/<mount-point>
     ```
 
     >	With: `mount-point` being the folder name to mount the share to.
@@ -28,8 +28,8 @@ APPLICATION: Make network share(definitions)s available in GNU/Linux using the '
 4. Populate the file with the cifs credentials:
 
     ```
-    username=user
-    password=12345
+    username=<user>
+    password=<12345>
     ```
 
     >	With:
@@ -51,20 +51,21 @@ APPLICATION: Make network share(definitions)s available in GNU/Linux using the '
 5. Append the file with the a line defining the mount (settings):
 
     ```
-    //192.168.1.100/share/    /mnt/mount-point    cifs    user,sec=ntlm,credentials=/etc/samba/credentials 0 0
+    //<192.168.1.100>/<share>/	/mnt/<mount-point>	cifs	user,sec=ntlm,credentials=/etc/samba/credentials	0	0
     ```
 
     >	With:
-    >	- `192.168.1.100` being the server's IP address.
-    >	ALTERNATIVELY: A hostname can be used instead if the network is configured for hostname resolving.
-    >	- `share` being the actual shared folder (and path).
-    >	- `user` stating regular (non-root) users are allowed to mount.
-    >	- `sec=ntlm` overriding regular security settings (for shares using old security protocols).
+    >	- `192.168.1.100`: The hosting server's IP address, or alternatively; the hostname if the network is configured for hostname resolving.
+    >	- `share`: The actual shared folder (and path).
+	>	- `mount-point` The previously created / designated folder to mount to.
+	>	- `cifs` The share protocol.
+    >	- `user` Option allowing regular (non-root) users to mount.
+    >	- `sec=ntlm` Option overriding regular security settings (for shares using old security protocols).
 
 3. Mount the share to the mount-point:
 
     ```
-    $ mount /mnt/mount-point
+    $ mount /mnt/<mount-point>
     ```
 
-    ALTERNATIVELY: Mount everything defined in fstab: `# mount all`
+    Or mount _every_ share defined in fstab: `# mount all`
