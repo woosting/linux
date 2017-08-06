@@ -13,7 +13,7 @@ Install one proprietary package from the non-free section component:
     # vim /etc/sources.list
     ```
 
-2.	Append to the relevant repository lines with the `contrib non-free` section components:
+2.	Append the relevant repository lines with: `contrib non-free`:
 
     ```shell
     deb http://ftp.us.debian.org/debian stable main contrib non-free
@@ -75,7 +75,7 @@ Install one proprietary package from the non-free section component:
 
 -----
 
-!!! WARNING !!! -- This resulted in a broken X on a LENOVO T460 -- !!! WARNING !!!
+_!!! WARNING !!! -- This resulted in a broken X on a LENOVO T460 -- !!! WARNING !!!_
 
 -----
 

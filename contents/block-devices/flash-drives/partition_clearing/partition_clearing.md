@@ -1,169 +1,194 @@
-# Partition clearing/wiping/erasing/repairs
+# Partition clearing
 
-Application: When an USB flashdrive (usbstick / thumbdrive / key) is to be restored to its original (empty) state after it has gone bad (beyond repair by regular tooling) and have *everything* deleted from it.
+<!-- thumb-drive, USB-disk, USB-drive, USB-key, flashku -->
+<!-- wipe, erase, repair, delete, fix, format, clear -->
 
+Restore an USB flashdrive to its original (empty) state after it has gone bad (beyond repair by regular tooling)
 
 ## GNU/Linux (Debian)
 
-### Delete the old partitions that remain on the USB key:
+### Delete old partitions:
 
-1. Type: `su` and press **Enter** to become root on the (Bash) shell:
+---
+_!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!! WARNING !!!_
 
-  ```Shell
-  $ su
+---
 
-  ```
+1. Become root:
 
-2. Type: `fdisk -l` and press **Enter** to find your USB drive letter (note or remember it for later use):
+	```
+	$ su
+	```
 
-  ```Shell
-  $ fdisk -l
+2. Find your USB drive letter (note / remember it for later use):
 
-  ```
-3. Type: `fdisk /dev/sdx` (replacing **x** with _your_ drive letter) and press **Enter** to open the partitioning program _fdisk_ while targeting the correct partition:
+	```
+	# fdisk -l
+	```
 
-  ```Shell
-  $ fdisk /dev/sdx
-  ```
+3. Open the partitioning program _fdisk_ while targeting the correct partition:
 
-4. Type: `d` and press **Enter** to proceed to the section to delete a partition:
+	```
+	$ fdisk /dev/<sdx>
+	```
+	> `sdx`: designation of _your_ flashdrive.
 
-  ```shell
-  d
-  ```
+4. Proceed to the section to delete a partition:
 
-5. Type: `1` and press **Enter** to mark the first partition for deletion:
+	```
+	: d
+	```
 
-  ```shell
-  1
-  ```
+5. Mark the first partition for deletion:
 
-  _Note: This partition will be removed irretrievably once all changes are written to disk!_
+	```
+	: 1
+	```
 
-6. OPTIONALLY: Type `d` and press **Enter** to mark a next partition for deletion (fdisk should automatically select the next partition) and repeat this procedure according to your particular needs.
+	> _Note: This partition will be removed irretrievably once all changes are written to disk!_
 
-### OPTIONALLY: Create new partition(s):
+1. Mark a next partition for deletion (fdisk should automatically select the next partition):
 
-1. Type: `n` and press **Enter** to make a new partition:
+	```
+	: d
+	```
 
-  ```shell
-  n
-  ```
+2.	Repeat according to your particular needs.
 
-2. Type: `p` and press **Enter** to make this partition primary:
 
-  ```shell
-  p
-  ```
+### Create new partition(s):
 
-3. Type: `1` and press **Enter** to make this the first partition:
+1. Make a new partition:
 
-  ```shell
-  1
-  ```
+	```
+	: n
+	```
 
-4. Press: **Enter** to accept the default first cylinder.
+2. Make it a primary one:
 
-  ```shell
+	```
+	: p
+	```
 
-  ```
+3. Turn it into the first partition:
 
-5. Press: **Enter** again to accept the default last cylinder.
+	```
+	: 1
+	```
 
-  ```shell
+4. Accept the default first cylinder:
 
-  ```
+	```
+	:
+	```
 
+5. Accept the default last cylinder:
+
+	```
+	:
+	```
 
 ### Finalize the process:
 
-1. Type: `w` and press **Enter** to write the proposed (new) partition scheme to the USB key:
+1. Write the proposed (new) partition scheme to the USB key:
 
-  ```
-  w
-  ```
+	```
+	: w
+	```
 
-2. Type: `umount /dev/sdxi` (replacing **x** with _your_ partition-letter and the **i** with _your_ partition number) and press **Enter** to unmount the USB drive:
+	> _Note: This can NOT be undone!_
 
-  ```
-  $ umount /dev/sdxi
+2. Unmount the USB drive:
 
-  ```
+	```
+	$ umount /dev/<sdxi>
+	```
 
-### OPTIONALLY: Create / format a new (fat) file system:
+	> `sdxi`: _your_ drive's partition-letter and number.
 
-8. Type: `mkfs.vfat -F 32 /dev/sdx1` (replacing **x** with your USB key drive letter) to format / write a (Fat32) file system to the USB drive:
+1. Format / write a (Fat32) file system:
 
-  ```
-  $ mkfs.vfat -F 32 /dev/sdx1
+	```
+	$ mkfs.vfat -F 32 /dev/<sdx1>
+	```
 
-  ```
-
+	> `sdxi`: _your_ drive's partition-letter and number.
 
 
 ## Microsoft Windows 7
 
-### Delete any old remaining partitions that remain on the USB key:
+### Delete old partitions:
 
-1. Open a Windows command prompt as administrator (**cmd.exe**):
+---
+_!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!! WARNING !!!_
 
-  1. Click: **START > Search** to navigate to the search field.
+---
 
-  2. Type: `cmd` in the search field and press **Enter** to open the command prompt.
+1. Navigate to: `[START] > Search`
 
-2. Type: `Diskpart` and press **Enter** to open the partitioning program:
+2. Search for the command prompt program:
 
-  ```shell
-  > Diskpart
-  ```
+	```
+	> cmd
+	```
 
-3. Type: `List disk` and press **Enter** to have all disks printed on screen:
+3. Right-click `cmd.exe` to open its context menu.
 
-  ```shell
-  DISKPART> List disk
-  ```
+4. Choose: `open as administrator` to open the command prompt.
 
-4. Type: `Select Disk x` (replacing **x** with the disk-number of _your_ USB drive)  and press **Enter** to select it:
+2. Open the partitioning program:
 
-  ```shell
-  DISKPART> Select Disk X
-  ```
+	```
+	> Diskpart
+	```
 
-  _Note: This USB drive will be wiped irretrievably at the next step!_
+3. Print all disks on screen:
 
-5. Type: `Clean` and press **Enter** to actually wipe the disk:
+	```
+	DISKPART> List disk
+	```
 
-  ```shell
-  DISKPART> Clean
-  ```
+4. Select the disk:
 
-  _Note: This can not be undone!_
+	```
+	DISKPART> Select Disk X
+	```
 
-### OPTIONALLY: Create new partition(s):
+	>`X`: _your_ USB drive's disk-number.
 
-1. Type: `Create Partition Primary` and press **Enter** to make a primary partition:
+5. Wipe the disk:
 
-  ```shell
-  DISKPART> Create Partition Primary
-  ```
+	```
+	DISKPART> Clean
+	```
 
-2. Type: `Activate` and press **Enter** to mark the partition active:
+	> _Note: This can NOT be undone!_
 
-  ```shell
-  DISKPART> Activate
-  ```
+### Create new partition(s):
 
-3. Type: `Format fs=Fat32 Quick` and press **Enter** to write (format) the file-system (Fat32) to the active partition:
+1. Make a primary partition:
 
-  ```shell
-  DISKPART> Format fs=Fat32 Quick
-  ```
+	```
+	DISKPART> Create Partition Primary
+	```
 
-4. Type: `Exit` and press **Enter** to leave the partition program Diskpart:
+2. Mark it active:
 
-  ```shell
-  DISKPART> Exit
-  ```
+	```
+	DISKPART> Activate
+	```
+
+3. Write the (Fat32) file-system (format) to the active partition:
+
+	```
+	DISKPART> Format fs=Fat32 Quick
+	```
+
+4. Leave the partitioning program:
+
+	```
+	DISKPART> Exit
+	```
 
   ![Diskpart](assets/diskpart-procedure.png)
 
@@ -171,8 +196,10 @@ Application: When an USB flashdrive (usbstick / thumbdrive / key) is to be resto
 
 ## Alternatives
 
-- GUI oriented (Windows) tool: [SDFormatter][2]
-- GUI oriented (Windows) tool: [BOOTICE][3]
+### Windows
+
+- GUI oriented tool: [SDFormatter][2]
+- GUI oriented tool: [BOOTICE][3]
 
 
 
