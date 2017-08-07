@@ -17,7 +17,7 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     # mkdir /mnt/<mount-point>
     ```
 
-    >	`mount-point`: Folder to mount the share to.
+    >	With: `mount-point` being the folder to mount the share to.
 
 3. Create a credentials file and open it for editing:
 
@@ -32,8 +32,8 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     password=<12345>
     ```
 
-    >	`user`: Cifs username.
-    >	`12345`: Cifs password.
+    >	With: `user` being the cifs username.
+    >	With: `12345` being the cifs password.
 
 1. Make the credential file read only:
 
@@ -53,12 +53,12 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     //<192.168.1.100>/<share>/	/mnt/<mount-point>	cifs	user,sec=ntlm,credentials=/etc/samba/credentials	0	0
     ```
 
-    >	`192.168.1.100`: Server's IP address or hostname (if configured for hostname resolving).
-    >	`share`: Shared folder (and path).
-	>	`mount-point` Previously created / designated folder to mount to.
-	>	`cifs` Share protocol.
-    >	`user` Allowing regular (non-root) users to mount.
-    >	`sec=ntlm` Overriding regular security settings (for shares using old security protocols).
+    >	With: `192.168.1.100` being the server's IP address (or hostname).
+    >	With: `share` being the shared folder (and possibly path to it).
+	>	With: `mount-point` being the previously designated folder to mount to.
+	>	With: `cifs` declaring the share protocol to be used.
+    >	With: `user` declaring regular (non-root) users are allowed to mount.
+    >	With: `sec=ntlm` declaring regular security settings should be overridden (for shares using old security protocols).
 
 3. Mount the share to the mount-point:
 
@@ -66,4 +66,4 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     $ mount /mnt/<mount-point>
     ```
 
-    Or mount _every_ share defined in fstab: `# mount all`
+    >	Or `# mount all` to mount _every_ share defined in fstab. 
