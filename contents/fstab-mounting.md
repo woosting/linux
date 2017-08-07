@@ -66,4 +66,4 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     $ mount /mnt/<mount-point>
     ```
 
-    >	Or `# mount all` to mount _every_ share defined in fstab. 
+    >	Or: `# mount all` to mount _every_ share defined in fstab. 
