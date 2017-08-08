@@ -65,7 +65,8 @@ Display the logs for the system service:
 $ journalctl -e -u syncthing@<user>.service
 ```
 
-> With: `-e` telling the pager to jump to the very end, so that you see the most recent logs
+> With:
+>	`-e` telling the pager to jump to the very end, so that you see the most recent logs
 
 > Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable:
 > ```
@@ -75,7 +76,7 @@ $ journalctl -e -u syncthing@<user>.service
 
 ## Permissions
 
-If **Ignore Permissions** option is set in the Syncthing client’s folder settings, then the line `UMask=0002` (or any other _umask setting <http://www.tech-faq.com/umask.html>_ you like) also needs to be set in the `[Service]` section of the `syncthing@.service file`.
+If **Ignore Permissions** is set in the Syncthing client’s folder settings, then the line `UMask=0002` (or any other _umask setting <http://www.tech-faq.com/umask.html>_ you like) also needs to be set in the `[Service]` section of the `syncthing@.service file`.
 
 
 ## Appendix: Unit load paths
@@ -87,7 +88,9 @@ Table 1. Load path when running in system mode (--system):
 |/etc/systemd/system|Local configuration|
 |/run/systemd/system|Runtime units|
 |/usr/lib/systemd/system|Units of installed packages|
-> With: `/etc/systemd/system` known to have been successfully used in a Debian Jessie LXC ARM7.1 container!
+
+>	With:
+>	`/etc/systemd/system` known to have been successfully used in a Debian Jessie LXC ARM7.1 container!
 
 
 <!--

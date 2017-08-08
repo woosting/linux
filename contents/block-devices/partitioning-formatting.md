@@ -7,7 +7,7 @@ Partition and format (write a file system) a disk (block-device):
 
 1. Start the oldschool CLI partition tool:
 
-	```shell
+	```
 	$ fdisk
 	```
 2. Follow the interactive instructions / menu on screen.
@@ -17,7 +17,7 @@ Partition and format (write a file system) a disk (block-device):
 
 1. Start the new (ncurses based) CLI partition tool:
 
-	```shell
+	```
 	$ cfdisk
 	```
 

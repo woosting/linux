@@ -1,4 +1,4 @@
-# Wifi non-free driver list
+# Non-free WiFi driver list
 
 # References
 

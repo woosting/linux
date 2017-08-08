@@ -18,9 +18,9 @@ Snapshot a subvolume:
 $ btrfs subvolume snapshot <path/to/source> <path/to/target>
 ```
 
-> Snapshots can only be made of subvolumes (so originals have to be created as such)!
-
-> Snapshots become individual subvolumes themselves.
+> Notes:
+> - Snapshots can only be made of subvolumes (so originals have to be created as such)!
+> - Snapshots become individual subvolumes themselves.
 
 
 ## Delete subvolumes
