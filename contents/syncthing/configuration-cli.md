@@ -16,7 +16,7 @@ Syncthing is generally configured from the GUI, but sometimes it is hard to acce
 
 3. Save the file.
 
-4. Use your desktop webbroswer and surf to: `<syncthing.server.ip.address>:8384`
+4. Use your desktop webbroswer and surf to: `http://<syncthing.server.ip.address>:8384`
 
 The remaining configuration can be done from the web/interface.
 
