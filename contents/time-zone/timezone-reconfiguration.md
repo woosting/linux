@@ -1,6 +1,6 @@
-# Timezone configuration
+# Timezone reconfiguration
 
-To reconfigure the timezone of a Debian instance:
+To reconfigure the timezone in Debian:
 
 ```
 # dpkg-reconfigure tzdata
