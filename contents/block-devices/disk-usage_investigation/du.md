@@ -1,4 +1,4 @@
-# du - Disk Usage
+# du (Disk Usage)
 
 >	[Du][1] (abbreviated from 'disk usage') is a standard Unix program used to estimate file space usage—space used under a particular directory or files on a file system.
 
