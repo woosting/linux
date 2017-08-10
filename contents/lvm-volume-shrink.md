@@ -1,4 +1,4 @@
-# Shrink LVM Volumes
+# LVM volume shrink
 
 0. Create a backup of the volume's data!
 
