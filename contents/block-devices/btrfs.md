@@ -7,6 +7,7 @@ Replace lxc-snaphot functionality should it be bugged (as is the case for the op
 ## Create subvolumes
 
 Create a subvolume:
+
 ```
 $ btrfs subvolume create <path/to/target>
 ```

@@ -31,7 +31,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	```
 	$ fdisk /dev/<sdx>
 	```
-	> `sdx`: designation of _your_ flashdrive.
+	> With: `sdx`: designation of _your_ flashdrive.
 
 4. Proceed to the section to delete a partition:
 
@@ -104,8 +104,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	$ umount /dev/<sdxi>
 	```
 
-	> With:
-	> `sdxi` being _your_ drive's partition-letter and number.
+	> With: `sdxi` being _your_ drive's partition-letter and number.
 
 1. Format / write a (Fat32) file system:
 
@@ -113,8 +112,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	$ mkfs.vfat -F 32 /dev/<sdx1>
 	```
 
-	> With:
-	> `sdxi` being _your_ drive's partition-letter and number.
+	> With: `sdxi` being _your_ drive's partition-letter and number.
 
 
 ## Microsoft Windows 7
@@ -155,8 +153,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	```
 	DISKPART> Select Disk X
 	```
-	>	With:
-	>	`X` being _your_ USB drive's disk-number.
+	>	With: `X` being _your_ USB drive's disk-number.
 
 5. Wipe the disk:
 
@@ -192,7 +189,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	DISKPART> Exit
 	```
 
-  ![Diskpart](assets/diskpart-procedure.png)
+	![Diskpart](assets/diskpart-procedure.png)
 
 
 

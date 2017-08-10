@@ -8,8 +8,7 @@
 	# umount </path/to/mount-point>
 	```
 
-	> With:
-	> `/path/to/mount-point`: Path to the moint-point of the volume.
+	> With: `/path/to/mount-point`: specifying the path to the moint-point of the volume.
 
 	> Boot from a [live CD][1] / USB-drive if necessary (e.g. for root volumes).
 

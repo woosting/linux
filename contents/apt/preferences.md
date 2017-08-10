@@ -46,8 +46,7 @@ Install one proprietary package from the non-free section component:
     Pin-Priority: 600
     ```
 
-    >	With:
-	>	High [pin priorities][3] prevailing over the lower (see: [apt_preferences man page][5]):
+    >	With: High [pin priorities][3] prevailing over the lower (see: [apt_preferences man page][5]):
     >
     >	```
     >	Priorities (P) assigned in the APT preferences file must be positive or negative integers. They are interpreted as follows (roughly speaking):
