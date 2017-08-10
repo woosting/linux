@@ -1,8 +1,16 @@
 # List PPAs
 
-- List all PPAs: `apt-cache policy`
+- List all PPAs:
 
-- List PPAs filtered on keyword: `apt-cache policy | grep <keyword>`
+	```
+	apt-cache policy
+	```
+
+- List PPAs filtered on keyword:
+
+	```
+	apt-cache policy | grep <keyword>
+	```
 
 ## References
 

@@ -1,11 +1,13 @@
 # Encrypted archive
 
-To create an encrypted zip file with 7z archiver:
+## 7z archiver
+
+### Create
 ```shell
 7za a -tzip -p<PASSWORD> -mem=AES256 <archive-name>.zip file1.pdf file2.txt file3.doc
 ```
 
-To uncompress a zip file that is encrypted with 7za command:
+### Uncompress
 ```shell
 7za e <archive-name>.zip
 ```
