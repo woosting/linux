@@ -4,4 +4,4 @@
 
 - https://github.com/tpope/vim-pathogen
 
-- https://github.com/garbas/vim-snipmate/blob/master/doc/SnipMate.txt
+-  https://github.com/garbas/vim-snipmate/blob/master/doc/SnipMate.txt
