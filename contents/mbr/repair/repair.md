@@ -19,36 +19,62 @@ The process is almost same for Windows 10 / 8 / 7. First and foremost you need a
 
 4. **Click 'Automatic repair'** to get into the Automatic Repair menu.
 
-{{./pasted_image001.png}}
+5. **Click on command prompt** to be able to use the 'Bootrec.exe' tool.
 
-==== Step 4: ====
+6. **Issue the following commands**:
 
-We need to use the **Bootrec.exe** tool. Click on command prompt and type in the following commands, one after the other:
+	```
+	> bootrec /RebuildBcd
+	> bootrec /fixMbr
+	> bootrec /fixboot
+	> Exit
+	```
+	![Windows recovery menu](assets/03_fix-commands.png)
 
-{{./pasted_image002.png}}
+7. **Reboot the system**.
 
-* ''bootrec /RebuildBcd''
-* ''bootrec /fixMbr''
-* ''bootrec /fixboot''
-* ''Exit''
+8. **Run some additional commands**, if required:
 
-Now go ahead and reboot your system. In some cases you may need to run some additional commands.
+	```
+	> bootsect /nt60 SYS
+	> bootsect /nt60 ALL
+	```
 
-{{./pasted_image003.png}}
+	![Windows recovery menu](assets/04_additional-commands.png)
 
-* **bootsect /nt60 SYS** or **bootsect /nt60 ALL**
 
-It’s wise to backup MBR or [[http://www.thewindowsclub.com/create-recovery-drive-windows-8|create a System Recovery Disk]] so that in case something like this happens you don’t have to run for the Windows Recovery Disk. To create a system recovery drive in Windows 8, follow these steps:
+## Prevention
 
-* Press ''Win'' + R and type in **RecoveryDrive.exe**
+[Create a system recovery disk][1] with the latter for Windows 8:
 
-{{./pasted_image004.png}}
+1. **Open a DOS command prompt** to have a CLI:
 
-* Click **Next**
+ 	```
+	[Win]+[R]
+	```
 
-* Once you insert the **USB drive** it will start creating the Recovery for you’re USB drive.
+2. **Start the recovery drive utility** from the CLI:
 
-You can also check out [[https://www.youtube.com/watch?v=3xkMT8Hyhqc|this video I created for Windows 7]].
+ 	```
+	> RecoveryDrive.exe
+	```
 
-===== Referneces =====
-Adapted from: http://www.thewindowsclub.com/repair-master-boot-record-mbr-windows
+	![Windows recovery menu](assets/05_recovery-drive-creation-tool.png)
+
+3. **Click  Next** to proceed to the next step:
+
+4. **Insert an USB drive** and the program will start creating the Recovery (USB) drive.
+
+> Alternatively make a backup of a functional Master Boot Record (MBR).
+
+## References
+
+Adapted from (The windows club): [Repair Master Boot Record (MBR) Windows][3]
+Also see: [Create a System Recovery Disk][1]
+Also see: [Video for Windows 7][2]
+
+<!-- REFERENCES -->
+
+[1]:http://www.thewindowsclub.com/create-recovery-drive-windows-8
+[2]:https://www.youtube.com/watch?v=3xkMT8Hyhqc
+[3]:http://www.thewindowsclub.com/repair-master-boot-record-mbr-windows
