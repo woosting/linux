@@ -1,12 +1,6 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-16T18:09:52+01:00
+# Rules -- Password security
 
-====== rules ======
-Created Monday 16 January 2017
-
-===== Procedure =====
-@strongness @rules to prevent @passwords from being hacked by social engineering, brute force or dictionary attack method, and keep your online accounts safe:
+Prevent being hacked by social engineering, brute force or dictionary attacks:
 
 1. Do not use the same password, security question and answer for multiple important accounts.
 
@@ -84,6 +78,12 @@ Created Monday 16 January 2017
 
 37. Distrust and remove bad SSL certificates from your Web browser, otherwise you will NOT be able to ensure the confidentiality and integrity of the HTTPS connections which use these certificates.
 
-===== References =====
-Original: http://passwordsgenerator.net/
 
+## References
+
+Adapted from: [Passwordgenerator.net][1]
+
+
+<!-- REFERENCES -->
+
+[1]:http://passwordsgenerator.net/
