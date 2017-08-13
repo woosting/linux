@@ -1,8 +1,1 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-16T22:44:56+01:00
-
-====== rsa-key ======
-Created Monday 16 January 2017
-
 @rsa is used to @connect to other computers (e.g. @push / @pull to / from a @github server). It is a @key system that uses a @private and @public @keypair as a means of @authentication (as an automated alternative to manual passwords).
