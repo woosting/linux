@@ -1,4 +1,4 @@
-# Backup
+# Backup Master Boot Record (MBR)
 
 > The Master Boot Record (MBR) is a special type of boot sector for Ms Windows, placed at the very beginning of the storage device. It tells your computer what to do when it starts. It also contains information on how your hard drive is partitioned. If the MBR is damaged or corrupted, whether by a boot sector virus, malware or by other means, you may find that the data on your hard drive is irretrievably lost.
 

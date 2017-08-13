@@ -1,4 +1,4 @@
-# Missing Bootmgr fix (Windows 10/8/7)
+# Fix missing Bootmgr -- Windows 10 / 8 / 7
 
 > A missing bootmgr is one of the most common boot issues in the Windows ecosystem. This can be fixed using a Win7 boot cd.
 ![BOOTMBR is missing](assets/01_boot-mgr-missing.png)
@@ -7,9 +7,9 @@
 
 2. **Reboot the System** to be prompted with: `Press any key to boot from disk`:
 
-	![Press any key to boot from CD.](assets/02_press-any-key.png)
-
 	> This step requires a corresponding boot preference order set in the BIOS or UEFI!
+
+	![Press any key to boot from CD.](assets/02_press-any-key.png)
 
 2.	**Press Enter** to be presented with the `Install Windows` dialog:
 
