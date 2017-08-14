@@ -3,28 +3,36 @@
 > Time Protocol (NTP) is a networking protocol for clock synchronization between computer systems over networks. ~ [Wikipedia][1]
 
 1. Install ntp:
-```shell
-$ apt-get install ntp
-```
+
+	```
+	$ apt install ntp
+	```
+
 2. Copy the corresponding local ntp server list from: [local sources archive][2]/[continent][3]/[country][4].
-3. Open the configuration file (with your text editor of choice):
-    ```shell
+
+3. Open the ntp configuration file for editing:
+
+    ```
     $ vim /etc/ntp.conf
     ```
-4. Change the `server pool.ntp.org` line to `server XX.pool.ntp.org`:
+4. Change the `server pool.ntp.org` line to `server <XX>.pool.ntp.org`:
+
 	```shell
-  # pool: <http://www.pool.ntp.org/join.html>
-  server 0.XX.pool.ntp.org
-  server 1.XX.pool.ntp.org
-  server 2.XX.pool.ntp.org
-  server 3.XX.pool.ntp.org
-  ```
-  Where XX is your continent or two letter country code (obtained from the local sources archive).
+	# pool: <http://www.pool.ntp.org/join.html>
+	server 0.<XX>.pool.ntp.org
+	server 1.<XX>.pool.ntp.org
+	server 2.<XX>.pool.ntp.org
+	server 3.<XX>.pool.ntp.org
+	```
+
+  	> With: `XX` being your continent or two letter country code (obtained from the local sources archive).
+
 5. Check whether the time is indeed correct now:
-```shell
-$ date
-Wed, Feb 15, 2017 10:30:18 AM
-```
+
+	```
+	$ date
+	Wed, Feb 15, 2017 10:30:18 AM
+	```
 
 ## REFERENCES
 Adapted from: [NTP - Debian Wiki][5]
