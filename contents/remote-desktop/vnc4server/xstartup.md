@@ -1,15 +1,15 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-16T18:34:27+01:00
+# xstartup
 
-====== xstartup ======
-Created Monday 16 January 2017
+----
 
-__THIS PAGE STILL NEEDS HEAVY EDITING__
-(it is a merely a references dump momenterally)
+**THIS PAGE NEEDS REVISING**
+It is merely a reference dump currently!
 
-My crurrent @xstartup at `~///.vnc/xstartup//`:
-{{{code: lang="sh" linenumbers="True"
+----
+
+My crurrent `~/.vnc/xstartup/`:
+
+```sh
  #!/bin/sh
 
 	#xrdb $HOME/.Xresources
@@ -24,4 +24,4 @@ My crurrent @xstartup at `~///.vnc/xstartup//`:
 	# -- EDIT FOR LXDE
 	/usr/bin/lxsession -s LXDE &
 	#exec startlxde -geometry 1920x1080 -geometry 1024x768
-}}}
+```
