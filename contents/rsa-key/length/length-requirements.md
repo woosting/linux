@@ -1,9 +1,4 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-16T23:29:13+01:00
-
-====== length ======
-Created Monday 16 January 2017
+# Length requirements
 
 In the first decade of the 21th century, and counting, on a given year no RSA key bigger than `(year - 2000) * 32 + 512 [bits]` has been openly factored other than by exploitation of a flaw of the key generator (a pitfall [observed][1] in poorly implemented devices [including Smart Cards][2]). This linear estimate of _academic_ factoring progress should be used neither for long-term predictions (after 2016 or 1024-bits); nor for _choosing_ a key length so as to be safe from attacks with high confidence (or, equivalently, conforming to standards with that aim), a goal best served by this website on [keylength][3].
 
@@ -16,7 +11,7 @@ _Update_: I emphasize that the above is about attacks _actually performed_ by _a
 By 2015, the main _practical_ threat to systems still using 1024-bit RSA to protect commercial assets often is _not_ factorization of a public modulus (but rather, penetration of the IT infrastructure by other means, such as hacking, and trust in digital certificates issued to entities that should not be trusted). With 2048 bits or more we are safe from that factorization threat for perhaps two decades, with fair (but not absolute) confidence.
 
 _Update 2_: Factorization progress is best shown on a graph (to get at the the raw data e.g. to make a better graph, edit this answer):
-{{./pasted_image.png}}
+	![Size computation-power risk function](assets/size-computation_risk-function.png)
 (This also shows the linear approximation at the beginning of this answer, which actually is a conjecture at even odds for the \[2000-2016\] period that I made privately circa 2002, and [committed publicly in 2004 (in French)][12]. Also pictured are the three single events that I know of hostile factorization of an RSA key (other than copycats of these events, or exploitation of flawed key generator):
 
 + The [Blacknet PGP Key][13] in 1995. Alec Muffett, Paul Leyland, Arjen Lenstra and Jim Gillogly covertly factored a 384-bit RSA key that was used to PGP-encipher "the BlackNet message" spammed over many usenet newsgroup. There was no monetary loss.
@@ -27,7 +22,13 @@ _Update 2_: Factorization progress is best shown on a graph (to get at the the r
 
 _Update 3_: Definitely, 512-bit RSA is no longer providing sizable security. Despite that, [reportedly][19], certificates with this key size have been recently issued by official Certification Authorities, and used to sign malware, possibly by mean of an hostile factorization.
 
-> REFERENCE: https://crypto.stackexchange.com/questions/1978/how-big-an-rsa-key-is-considered-secure-today/1982#1982
+## References
+
+> Adapted from: StackExchange
+> [How big an rsa key is considered secure today][20]
+
+
+<!-- REFERENCES -->
 
   [1]: http://eprint.iacr.org/2012/064
   [2]: http://smartfacts.cr.yp.to/
@@ -48,3 +49,4 @@ _Update 3_: Definitely, 512-bit RSA is no longer providing sizable security. Des
   [17]: http://www.ticalc.org/archives/news/articles/14/145/145154.html
   [18]: http://www.unitedti.org/forum/index.php?showtopic=8888&st=0&p=135113&#entry135113
   [19]: https://groups.google.com/forum/?fromgroups#!topic/mozilla.dev.security.policy/cn1sBm2ibWo
+  [20]:https://crypto.stackexchange.com/questions/1978/how-big-an-rsa-key-is-considered-secure-today/1982#1982

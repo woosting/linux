@@ -15,7 +15,7 @@ Have the vnc4server serve video of various resolutions:
 		```
 		$ xrandr
 		```
-		> The options should correspond with the values used starting the server (in step 1).
+		> NOTE: The options should correspond with the values used starting the server (in step 1).
 
 	2. Change the resolution:
 
@@ -23,12 +23,13 @@ Have the vnc4server serve video of various resolutions:
 		$ xrandr -s <1280x1024>
 		```
 
-		> Also a "mode" can be choosen by using the number presented after executing `xrandr` without any arguments.
+		> ALTERNATIVE: a "mode" can be choosen by using the number presented after executing `xrandr` without any arguments.
 
 
 ## References
 
-Adapted from (StackOverflow): [Article][1]
+> StackOverflow:
+[Article][1]
 
 
 <!-- REFERENCES -->

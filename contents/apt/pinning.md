@@ -73,11 +73,11 @@ Install one proprietary package from the non-free section component:
 
 ### Example case
 
------
+---
 
 _!!! WARNING !!! -- This resulted in a broken X on a LENOVO T460 -- !!! WARNING !!!_
 
------
+---
 
 Install Debian's `firmware-iwlwifi` (Intel propriety firmware) package and the kernal-image packages from the stretch (testing at the moment of writing) repository, while suppressing all other packages from non-free and stretch:
 

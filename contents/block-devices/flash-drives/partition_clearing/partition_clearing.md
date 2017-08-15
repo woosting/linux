@@ -9,10 +9,10 @@ Restore an USB flashdrive to its original (empty) state after it has gone bad (b
 
 ### Delete old partitions:
 
----
+-----
 _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!! WARNING !!!_
 
----
+-----
 
 1. Become root:
 
@@ -119,10 +119,10 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 
 ### Delete old partitions:
 
----
+-----
 _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!! WARNING !!!_
 
----
+-----
 
 1. Navigate to: `[START] > Search`
 

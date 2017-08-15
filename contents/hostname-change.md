@@ -26,7 +26,7 @@ Use the Systemd "monolith" to change the hostname:
 # hostnamectl set-hostname <mymachine>
 ```
 
-> This method depends on dbus so be sure to install that first if it isn't already!
+> NOTE: This method depends on dbus so be sure to install that first if it isn't already!
 
 ## References
 * Adapted from (Debian wiki): [How to change hostname][1] [[PDF]][2]

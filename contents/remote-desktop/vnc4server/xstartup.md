@@ -1,11 +1,11 @@
 # xstartup
 
-----
+-----
 
 **THIS PAGE NEEDS REVISING**
 It is merely a reference dump currently!
 
-----
+-----
 
 My crurrent `~/.vnc/xstartup/`:
 

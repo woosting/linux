@@ -2,10 +2,10 @@
 
 ## Simple
 
-Find files in a folder and its children (recursively) on a filesystem:
+Find files (recursively):
 
 ```
-find </search/start/path/> -name '<search-string>'
+$ find </search/start/path/> -name '<search-string>'
 ```
 
 > Note the `'` (single quote) characters around the search-string!
@@ -15,7 +15,7 @@ find </search/start/path/> -name '<search-string>'
 Find files ignoring the search string's case:
 
 ```
-find </search/start/path/> -iname '<search-string>'
+$ find </search/start/path/> -iname '<search-string>'
 ```
 
 > Note the prefix "i" in `-iname` (other than that it is identical)!
@@ -26,7 +26,7 @@ find </search/start/path/> -iname '<search-string>'
 Find files from a specific uid while excluding (pruning) specific directories from the search:
 
 ```
-find </search/start/path/> -type d \( -path </dir1> -o -path </dir2> \) -prune -o -uid <503>
+$ find </search/start/path/> -type d \( -path </dir1> -o -path </dir2> \) -prune -o -uid <503>
 ```
 
 >	With:
