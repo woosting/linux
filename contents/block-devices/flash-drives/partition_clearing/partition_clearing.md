@@ -31,7 +31,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	```
 	$ fdisk /dev/<sdx>
 	```
-	> With: `sdx`: designation of _your_ flashdrive.
+	> `sdx` - _your_ flashdrive.
 
 4. Proceed to the section to delete a partition:
 
@@ -45,7 +45,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	: 1
 	```
 
-	> _Note: This partition will be removed irretrievably once all changes are written to disk!_
+	> _CAUTION: This partition will be removed irretrievably once all changes are written to disk!_
 
 1. Mark a next partition for deletion (fdisk should automatically select the next partition):
 
@@ -96,7 +96,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	: w
 	```
 
-	> _Note: This can NOT be undone!_
+	> _CAUTION: This can NOT be undone!_
 
 2. Unmount the USB drive:
 
@@ -104,7 +104,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	$ umount /dev/<sdxi>
 	```
 
-	> With: `sdxi` being _your_ drive's partition-letter and number.
+	> `sdxi` - _your_ drive's partition-letter and number.
 
 1. Format / write a (Fat32) file system:
 
@@ -112,7 +112,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	$ mkfs.vfat -F 32 /dev/<sdx1>
 	```
 
-	> With: `sdxi` being _your_ drive's partition-letter and number.
+	> `sdxi` - _your_ drive's partition-letter and number.
 
 
 ## Microsoft Windows 7
@@ -123,6 +123,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!! WARNING !!!_
 
 -----
+
 
 1. Navigate to: `[START] > Search`
 
@@ -153,7 +154,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	```
 	DISKPART> Select Disk X
 	```
-	>	With: `X` being _your_ USB drive's disk-number.
+	> `X` - _your_ USB drive's disk-number.
 
 5. Wipe the disk:
 
@@ -161,7 +162,7 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 	DISKPART> Clean
 	```
 
-	> _Note: This can NOT be undone!_
+	> _CAUTION: This can NOT be undone!_
 
 ### Create new partition(s):
 
@@ -204,10 +205,18 @@ _!!! WARNING !!! -- This irreversibly removes *everything* from the drive --- !!
 
 ## References
 
-- Adapted from: [Pendrivelinux][1]
+> Adapted from: Pendrivelinux
+> [Restoring your usb key partition][1]
 
 
 <!-- References -->
 [1]:https://www.pendrivelinux.com/restoring-your-usb-key-partition/
-[2]: https://www.sdcard.org/downloads/formatter_4
+[2]:https://www.sdcard.org/downloads/formatter_4
 [3]:http://bbs.wuyou.net/forum.php?mod=viewthread&tid=57675&extra=page%3D1&page=1
+
+
+<!-- NGREP ONELINERS
+
+>>> Find out usb drive device letter: # fdisk -l
+
+-->

@@ -19,11 +19,10 @@ To define a log rotation scheme:
 	}
 	```
 
-	> With:
-	> `size 1k` specifying to only rotate if the file size exceeds a specified size (1k).
-	> `create 700 root root` creating the file, with permissions (700), for user (root), and group (root).
-	> `rotate 4` limiting the amount of log file rotations (4), aka retention.
-	> `compress` declaring the file must be compressed.
+	> `size 1k` - rotation trigger file size (1k).
+	> `create 700 root root` - creation, with user permissions (700), for user (root), and group (root).
+	> `rotate 4` - rotation limit (4) / amount of files retained (4).
+	> `compress` - compress rolled (previous) log files.
 
 	> ```
 	> ALL OPTIONS:
@@ -51,7 +50,8 @@ To define a log rotation scheme:
 
 
 ## References
-Adapted from: [Ultimate guide to configure logrotate utility][1]
+>	Adapted from: Linuxroutes
+>	[Ultimate guide to configure logrotate utility][1]
 
 
 <!-- REFERENCES -->

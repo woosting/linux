@@ -20,9 +20,10 @@
    # apt install steam
    ```
 
-# References
+## References
 
-Adapted from linuxconfig.org: [How to install Steam client on Debian 9 Stretch Linux][1]
+> Adapted from: linuxconfig.org
+> [How to install Steam client on Debian 9 Stretch Linux][1]
 
 <!-- REFERENCES -->
 [1]:https://linuxconfig.org/how-to-install-steam-client-on-debian-9-stretch-linux

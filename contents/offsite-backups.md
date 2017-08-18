@@ -4,14 +4,14 @@
 
 1. 	Ensure to have a target volume accessible.
 
-	>	This tutorial uses an SSH accessible storage volume, but other target locations are possible too.
+	>	NOTE: This tutorial uses an SSH accessible storage volume, but other target locations are possible too.
 
 2. Add the target host's fingerprint to the known_hosts (if not present already):
 
 	```
 	$ ssh-keyscan -t rsa -p <port> <FQDN> >> ~/.ssh/known_hosts
 	```
-	> Alternatively log into the ssh server to have it added:
+	> ALTERNATIVE: Log into the ssh server to have it added:
 	> ```
 	> $ ssh -p <port> <user>@<host>
 	> ```
@@ -34,7 +34,7 @@
 	$ gpg --full-generate-key
     ```
 
-    > Use a strong encryption key size (e.g. 4096)
+    > ADVICE: Use a strong encryption key size (e.g. 4096)
 
 2. Install Duplicity, including the required back-end modules:
 
@@ -51,28 +51,26 @@ Set environment variables to hold credentials and execute the actual backup:
 PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity --full-if-older-than 1M --log-file <path/to/logfile> --verbosity info --num-retries 3 --numeric-owner </path/to/source> pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
 ```
 
-> With:
-> `--full-if-older-than <time>` specifying the [full-backup interval (in the case above: 1M each month)][4], others will be incremental.
-> `--verbosity <level>` specifying the information elaboration to be printed to screen (from little to a lot: `error`, `warning`, `notice`, `info`, or `debug`).
-> `--numeric-owner` storing the original uid of the files (also see: [man tar][2]).
-> `</path/to/source>` specifying the directory that must be backupped.
-> `pexpect+sftp://<USER>@<HOSTNAME>:54968/backup` specifying the [storage backend][3] / target location (in this case: pexpect+sftp).
+> `--full-if-older-than <time>` - [full-backup interval][4] (1M), others will be incremental.
+> `--verbosity <level>` log elaboration level (`error`, `warning`, `notice`, `info`, or `debug`).
+> `--numeric-owner` - storing the original uid of the files (see: [man tar][2]).
+> `</path/to/source>` - directory to backup.
+> `pexpect+sftp://<USER>@<HOSTNAME>:54968/backup` - [storage backend][3] / target location.
 
-> Optionally:
-> `--asynchronous-upload` speeding up the backup process.
-> -- (EXPERIMENTAL) Perform file uploads asynchronously in the background, with respect to volume creation. This means that duplicity can upload a volume while, at the same time, preparing the next volume for upload. The intended end-result is a faster backup, because the local CPU and your bandwidth can be more consistently utilized. Use of this option implies additional need for disk space in the temporary storage location; rather than needing to store only one volume at a time, enough storage space is required to store two volumes.
+> `--asynchronous-upload` speeding up the backup process (EXPERIMENTAL). Perform file uploads asynchronously in the background, with respect to volume creation. This means that duplicity can upload a volume while, at the same time, preparing the next volume for upload. The intended end-result is a faster backup, because the local CPU and your bandwidth can be more consistently utilized. Use of this option implies additional need for disk space in the temporary storage location; rather than needing to store only one volume at a time, enough storage space is required to store two volumes.
 
 ## Restore
 
-- Execute the restore:
+Restore from a previously made backup:
 
-	```
-	PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
-	```
+```
+PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
+```
 
-	> With: `--time <time>` specifying the specific backup to restore from. When omitted the most recently made backup will be used.
+> `--time <time>` - backup to restore from (default: most recent backup).
 
-	> Optionally: `--file-to-restore </path/to/file>` defining specific files to be restored from the backup. When omitted the complete backup will be restored.
+> ADDITIONAL OPTION:
+> `--file-to-restore </path/to/file>` - specific file to be restored from the backup (default: all files).
 
 
 ## Cleanup
@@ -83,9 +81,8 @@ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity --full-i
 PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity remove-older-than 3M --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
 ```
 
-> With:
-> `remove-older-than <time>` specifying from what age old backups are to be deleted (in this example case, 3M: backups older than 3 months).
-> `--force` specifying that the files should actually be deleted (otherwise the 'files to be deleted' would only be printed on screen and not deleted).
+> `remove-older-than <time>` - retention time (3M: three months).
+> `--force` - actually delete (default: print to screen only).
 
 ### Incomplete backups:
 
@@ -93,12 +90,13 @@ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity remove-o
 PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity cleanup --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
 ```
 
-> With: `--force` specifying that the files should actually be deleted (otherwise the 'files to be deleted' would only be printed on screen and not deleted).
+> `--force` - actually delete (default: print to screen only).
 
 
-# REFERENCES
+## References
 
-- Adapted from: [Official Duplicity documentation][5]
+> Adapted from: Nongnu
+> [Official Duplicity documentation][5]
 
 <!-- REFERENCES -->
 [1]:http://duplicity.nongnu.org/duplicity.1.html#sect6
@@ -106,3 +104,14 @@ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity cleanup 
 [3]:http://duplicity.nongnu.org/duplicity.1.html#sect7
 [4]:http://duplicity.nongnu.org/duplicity.1.html#sect8
 [5]:http://duplicity.nongnu.org/duplicity.1.html
+
+
+<!-- NGREP ONELINERS
+
+>>> Duplicity (backup): $ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
+
+>>> Duplicity (restore): $ PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity restore --time 1W pexpect+sftp://<USER>@<HOSTNAME>:54968/backup /target
+
+>>> Duplicity (clean-up): PASSPHRASE='<gpg passphrase>' FTP_PASSWORD='<ssh passphrase>' duplicity cleanup --force pexpect+sftp://<USER>@<HOSTNAME>:54968/backup
+
+-->

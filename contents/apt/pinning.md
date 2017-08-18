@@ -128,15 +128,22 @@ Install Debian's `firmware-iwlwifi` (Intel propriety firmware) package and the k
 2. Install the two packages with:
 
 	```
-	apt-get install firmware-iwlwifi/stretch linux-image-4.9.0-1-amd64/stretch
+	# apt-get install firmware-iwlwifi/stretch linux-image-4.9.0-1-amd64/stretch
 	```
 
 ## References:
 
-- Adapted from (Debian Wiki): [AptPreferences][1]
-- Adapted from (APT HOWTO - Obsolete Documentation): [Chapter 3 - Managing packages][2]
-- Adapted from (HowtoForge): [A Short Introduction To Apt-Pinning][3]
-- Adapted from (ServerFault): [How do I enable non-free packages on Debian?][4]
+> Adapted from: Debian Wiki
+> [AptPreferences][1]
+
+> Adapted from: Debian (obsolete) docs - Apt how-to
+> [Chapter 3 - Managing packages][2]
+
+> Adapted from: HowtoForge
+> [A Short Introduction To Apt-Pinning][3]
+
+> Adapted from: (ServerFault)
+> [How do I enable non-free packages on Debian?][4]
 
 
 <!-- REFERENCES -->

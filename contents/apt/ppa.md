@@ -13,50 +13,48 @@ If you’re a Ubuntu user, you may be familiar with [ppa-purge][2]. It’s a han
 1. Remove the PPA from `/etc/apt/sources.list` or `/etc/apt/sources.list.d/` directory:
 
 	```
-	rm /etc/apt/sources.list.d/<ppa>
+	# rm /etc/apt/sources.list.d/<ppa>
 	```
 
 2. Update the Apt database:
 
 	```
-	apt update
+	# apt update
 	```
 
 3. Find any packages that are now obsolete:
 
 	```
-	aptitude search '?obsolete'
+	# aptitude search '?obsolete'
 	```
 
 4. Remove the listed obsolete packages:
 
 	```
-	apt purge <package>
+	# apt purge <package>
 	```
 
 5. Remove leftover dependencies:
 
 	```
-	apt-get autoremove
+	# apt-get autoremove
 	```
 
 6. Reinstall as necessary:
 
 	```
-	apt install <package>
+	# apt install <package>
 	```
 
-It’s not quite the automated tool that ppa-purge is, but it’s a pretty good start.`
+It’s not quite the automated tool that ppa-purge is, but it’s a pretty good start.
 
 ## References
 
-### Listing
+> Adapted from: Stackoverflow
+> [How to get a list of repositories apt get is checking][1]
 
-Adapted from Stackoverflow: [How to get a list of repositories apt get is checking][1]
-
-### Removal and roll back (Debian)
-
-Adapted from [Flinsarmy][3]
+> Adapted from: Flinsarmy
+> [Remove a ppa and roll back changes in Debian][3]
 
 <!-- REFERENCES -->
 

@@ -2,6 +2,14 @@
 
 Make a custom colored GTK color scheme for custom desktop environment themes:
 
+-----
+
+**THIS PAGE NEEDS REVISING**
+Step one's path is to be provided!
+
+-----
+
+
 1. Open the file for editing:
 
     ```

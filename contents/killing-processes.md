@@ -6,11 +6,9 @@ Stop (rogue/frozen) processes:
 $ kill <2443>
 ```
 
->	With: `2443` being the pid of the process that is to be stopped.
+>	`2443` - pid of the process that is to be stopped.
 
 >	Syntax: `kill [-<signal>] <%pid>`:
->	>	With:
->	>
 >	>	`-SIGHUP` / `-1` - The **HUP** signal is sent to a process when its controlling terminal is closed. It was originally designed to notify the process of a serial line drop (HUP stands for "Hang Up"). In modern systems, this signal usually means that the controlling pseudo or virtual terminal has been closed.
 -- Processes have to be programmed to actually listen to this process and do something with it. Most daemons are programmed to re-read their configuration when they receive such a signal. This is very likely the safest kill signal there is, it should not obstruct anything.
 >	>
@@ -26,11 +24,20 @@ $ kill <2443>
 
 ## References
 
-- Adapted from: [The 3 most important "kill" signals on the Linux/UNIX command line][1]
-- Adapted from: [Linux and Unix kill command][5]
-- Also see: [Linux and Unix Signals][4]
-- Also see: [How To Kill Processes Using Linux][2]
-- Also see: [How To Use ps, kill, and nice to Manage Processes in Linux][3]
+>	Adapted from: Meinit
+>	[The 3 most important "kill" signals on the Linux/UNIX command line][1]
+
+>	Adapted from: Computerhope
+>	[Linux and Unix kill command][5]
+
+>	Also see: Computerhope
+>	[Linux and Unix Signals][4]
+
+>	Also see: Lifewire
+>	[How To Kill Processes Using Linux][2]
+
+>	Also see: Digitalocean
+>	[How To Use ps, kill, and nice to Manage Processes in Linux][3]
 
 <!-- REFERENCES -->
 
@@ -39,3 +46,15 @@ $ kill <2443>
 [3]:https://www.digitalocean.com/community/tutorials/how-to-use-ps-kill-and-nice-to-manage-processes-in-linux
 [4]:http://www.computerhope.com/unix/signals.htm
 [5]:http://www.computerhope.com/unix/ukill.htm
+
+
+<!-- NGREP ONELINERS
+
+>>> Cifs / samba client toolign: cifs-utils
+
+>>> Kill (gracefully): $ kill -1 <2443>
+>>> Kill ([Ctrl]+[c]): $ kill -2 <2443>
+>>> Kill (normally):   $ kill <2443>
+>>> Kill (harshly):    $ kill -9 <2443>
+
+-->

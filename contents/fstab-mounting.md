@@ -17,8 +17,7 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     # mkdir /mnt/<mount-point>
     ```
 
-    >	With:
-	>	`mount-point` being the folder to mount the share to.
+	>	`mount-point` - folder to mount the share to.
 
 3. Create a credentials file and open it for editing:
 
@@ -33,9 +32,8 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     password=<12345>
     ```
 
-    >	With:
-	> `user` being the cifs username.
-    > `12345` being the cifs password.
+	> `user` - cifs username
+    > `12345` - cifs password
 
 1. Make the credential file read only:
 
@@ -55,13 +53,12 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
     //<192.168.1.100>/<share>/	/mnt/<mount-point>	cifs	user,sec=ntlm,credentials=/etc/samba/credentials	0	0
     ```
 
-	>	With:
-    >	`192.168.1.100` being the server's IP address (or hostname).
-    >	`share` being the shared folder (and possibly path to it).
-	>	`mount-point` being the previously designated folder to mount to.
-	>	`cifs` declaring the share protocol to be used.
-    >	`user` declaring regular (non-root) users are allowed to mount.
-    >	`sec=ntlm` declaring regular security settings should be overridden (for shares using old security protocols).
+    >	`192.168.1.100` - server's IP address or hostname.
+    >	`share` - remote folder on the server (and possibly path to it).
+	>	`mount-point` - local folder to mount to.
+	>	`cifs` - share protocol to be used.
+    >	`user` - allowing regular (non-root) users to mount.
+    >	`sec=ntlm` - overriding regular security settings (using old protocols).
 
 3. Mount the share to the mount-point:
 
@@ -74,3 +71,10 @@ Make network share(definitions)s available in GNU/Linux using the 'file system t
 	>	```
 	>	# mount all
 	>	```
+
+
+<!-- NGREP ONELINERS
+
+>>> Cifs / samba client toolign: cifs-utils
+
+-->

@@ -7,4 +7,6 @@ $ acpi
 Battery 1: Charging, 39%, 00:30:56 until charged
 ```
 
-<!-- REFERENCES -->
+<!-- NGREP ONELINERS
+>>> Battery power status: $ acpi
+-->
