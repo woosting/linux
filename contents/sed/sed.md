@@ -2,6 +2,43 @@
 
 Sed is a text manipulation program often used for text substitution in existing files.
 
+## Operation
+
+### Substitute text
+
+Substitute text:
+
+```
+$ sed 's/<original>/<new>/g'
+```
+
+> `s` - Substitute
+> `g` - take entire line into consideration.
+
+### Append / prepend lines
+
+- Append a line _after_ a pattern:
+
+	```
+	$ sed -i '/<pattern>/a \
+		<line1>\
+		<line2>' <inputfile>
+	```
+
+- Prepend the lines _before_ a pattern:
+
+	```
+	$ sed -i '/<pattern>/i \
+		<line1>\
+		<line2>' <inputfile>
+	```
+
+	> `-i` - replace In-place
+	> `pattern` - string to search / match
+	> `line1` and `line2` - text to append / prepend
+	> `inputfile` - original file
+
+
 ## Escape syntax
 
 Characters should be escaped when they are to be used literally instead of being interpreted functionally.
@@ -34,31 +71,6 @@ Sed's escape charachter is the: `\` (backslash) character. Which specific charac
 
 	> NOTE: The 'shell' escape example depicts the _complete_ string to escape a single `'` (single quote character), whereas the Sed specific examples above only state the characters that have to be escaped (with a backslash).
 
-## Operation
-
-### Append / prepend lines
-
-- Append a line _after_ a pattern:
-
-	```
-	sed -i '/<pattern>/a \
-		<line1>\
-		<line2>' <inputfile>
-	```
-
-- Prepend the lines _before_ a pattern:
-
-	```
-	sed -i '/<pattern>/i \
-		<line1>\
-		<line2>' <inputfile>
-	```
-
-	> `-i` - replace In-place
-	> `pattern` - string to search / match
-	> `line1` and `line2` - text to append / prepend
-	> `inputfile` - original file
-
 
 ## References
 
@@ -78,6 +90,7 @@ Sed's escape charachter is the: `\` (backslash) character. Which specific charac
 
 <!-- NGREP ONELINERS
 
+>>> Sed substitute text:                      $ sed 's/<original>/<new>/g'
 >>> Sed escape characters - search-pattern:   $.*/[\]^
 >>> Sed escape characters - replacement-text: &\/
 >>> Sed escape characters - add single quote: '\''
