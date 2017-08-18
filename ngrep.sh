@@ -13,5 +13,5 @@ while [ -h "$SOURCE" ]; do # resolve $SOURCE until the file is no longer a symli
 done
 SCRIPT_PATH="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
-grep -irh --color "^>>>.*"$1".*: " ${SCRIPT_PATH}/contents/
+grep -irh --color '^>>>.*'$1'.*: .*[\$#]' ${SCRIPT_PATH}/contents/
 
