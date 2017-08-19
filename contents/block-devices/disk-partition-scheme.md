@@ -23,10 +23,10 @@ TOTAL       246 GB
 *Mount with: `nosuid,nodev,noexec`
 ```
 
-# References
+## References
 
-- Redhat: [Recommended Partitioning Scheme][1]
-
+> Adapted from: Redhat
+> [Recommended Partitioning Scheme][1]
 
 
 <!-- REFERENCES -->

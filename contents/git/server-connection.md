@@ -21,7 +21,7 @@ Enable Git pushes/pulls to Github:
 		IdentitiesOnly yes
 	```
 
-	> With: `IdentitiesOnly yes` preventing [sending the identity file matching the default filename for each protocol][3]. Otherwise, if a file named '~/.ssh/id_rsa' (the default) exists it would get used _before_ '~/.ssh/id_rsa.github'.
+	> `IdentitiesOnly yes` - preventing [sending the identity file matching the default filename for each protocol][3]. Otherwise, if a file named '~/.ssh/id_rsa' (the default) exists it would get used _before_ '~/.ssh/id_rsa.github'.
 
 
 ## Closed network (proxy)
@@ -30,7 +30,7 @@ Enable Git pushes/pulls to Github:
 
 Using an RSA-key with open_ssh _from behind a proxy on Windows_ (using connect.exe):
 
-> Using a http.proxy does _not_ work for _ssh_ so ssh connection should be [proxied manually][6].
+> NOTE: Using a http.proxy does _not_ work for _ssh_ so ssh connection should be [proxied manually][6].
 
 
 1. Open the ssh config file for editing:
@@ -61,17 +61,17 @@ Using an RSA-key with open_ssh _from behind a proxy on Windows_ (using connect.e
 	  IdentitiesOnly yes
 	  ```
 
-	  > with: `proxy.server.name:port` being the proxy server IP (or hostname) and port number.
+	  > `proxy.server.name:port` - proxy server IP (or hostname) and port number.
 
 	  > \+ Paths to id_rsa
 
-	  > On Linux file systems,  `~/.ssh/config`'s file permission must be 600. On NTFS (Windows) partitions, such permissions do not exist.
+	  > NOTE: On Linux file systems,  `~/.ssh/config`'s file permission must be 600. On NTFS (Windows) partitions, such permissions do not exist.
 
-	  > Most mysgit versions include [connect.exe][5]. In case yours does not than you must download/compile [connect.c][4] manually.
+	  > NOTE: Most mysgit versions include [connect.exe][5]. In case yours does not than you must download/compile [connect.c][4] manually.
 
-	  > If your proxy requires NTLM authentication, you can use [cntlm][7] (See [StackOverflow][8] for more info).
+	  > NOTE: If your proxy requires NTLM authentication, you can use [cntlm][7] (See [StackOverflow][8] for more info).
 
-	  > If a 'socks4 proxy' is to be used then change `-S` to `-H`:
+	  > ALTERNATIVE: If a 'socks4 proxy' is to be used then change `-S` to `-H`:
 	  > ```
 	  > ProxyCommand connect -H proxy.server.name:1080 %h %p
 	  > ...
@@ -83,11 +83,13 @@ Using an RSA-key with open_ssh _from behind a proxy on Windows_ (using connect.e
 Using an RSA-key via Putty (plink) _from behind a proxy on Windows_:
 
 1. Install Git choosing `plink` instead of 'open ssh'.
-2. Set _Putty's 'Default settings' to the proxy settings
-	> plink uses the 'Default settings'.
-3. Generate SSH private-public key pair (using Putty's keygen).
+2. Set _Putty's_ 'Default settings' to the proxy settings
+	> NOTE: plink uses the 'Default settings'.
+
+2. Generate SSH private-public key pair (using Putty's keygen).
 4. Load the created private.ppk to Pageant.
-	> Pageant is Putty's RSA-key agent for Ms. Windows.
+	> NOTE: Pageant is Putty's RSA-key agent for Ms. Windows.
+
 5. Convert the public key to the open_ssh format (using Putty's keygen).
 6. Register the result (the public key in open_ssh format) on Github as an allowed key.
 
@@ -95,9 +97,14 @@ Using an RSA-key via Putty (plink) _from behind a proxy on Windows_:
 ## References:
 
 ### Open connection
-* Adapted from (StackOverflow): [Specify private SSH-key to use when executing shell command with or without Ruby?][1]
-* Also see (StackOverflow): [Best way to use multiple SSH private keys on one client][2]
-* Also see (ServerFault): [How could I stop ssh offering a wrong key?][3]
+> Adapted from: StackOverflow
+> [Specify private SSH-key to use when executing shell command with or without Ruby?][1]
+
+> Also see: StackOverflow
+> [Best way to use multiple SSH private keys on one client][2]
+
+> Also see: ServerFault
+> [How could I stop ssh offering a wrong key?][3]
 
 
 ### Closed connection
@@ -105,7 +112,8 @@ Using an RSA-key via Putty (plink) _from behind a proxy on Windows_:
 
 #### Openssh
 
-* Adapted from (proxy ssh tunnel): [SSH in git behind proxy on windows 7][9]
+> Adapted from: StackOverflow
+[SSH in git behind proxy on windows 7][9]
 
 
 <!-- REFERENCES -->

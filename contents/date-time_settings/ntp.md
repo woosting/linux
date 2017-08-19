@@ -25,7 +25,7 @@
 	server 3.<XX>.pool.ntp.org
 	```
 
-  	> With: `XX` being your continent or two letter country code (obtained from the local sources archive).
+  	> `XX` - continent or two letter country code (obtained from the local sources archive).
 
 5. Check whether the time is indeed correct now:
 
@@ -35,7 +35,9 @@
 	```
 
 ## REFERENCES
-Adapted from: [NTP - Debian Wiki][5]
+
+> Adapted from: Debian wiki
+> [NTP][5]
 
 <!-- REFERENCES -->
 

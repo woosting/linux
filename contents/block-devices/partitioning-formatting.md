@@ -26,8 +26,11 @@ Partition and format (write a file system) a disk (block-device):
 
 ## References:
 
-- Adapted from: [Partitioning with fdisk (TLDP how-to)][1]
-- Adapted from: [Appendix: Using cfdisk to partition your harddisk (TLDP how-to)][2]
+> Adapted from: Tldp.org
+> [Fdisk Partitioning][1]
+
+> Adapted from: Tldp.org
+[Using cfdisk to partition your harddisk (TLDP how-to)][2]
 
 
 <!-- REFERENCES -->

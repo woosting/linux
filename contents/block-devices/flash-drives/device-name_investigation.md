@@ -19,3 +19,9 @@ Find out how an USB flash-drive is registered as in the file-tree (e.g. /dev/sdx
 	```
 
 4. Look for the difference between the two lists.
+
+<!-- NGREP ONELINERS
+
+>>> List (block / usb) device tree: $ lsblk
+
+-->

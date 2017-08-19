@@ -19,9 +19,9 @@ Snapshot a subvolume:
 $ btrfs subvolume snapshot <path/to/source> <path/to/target>
 ```
 
-> Notes:
-> - Snapshots can only be made of subvolumes (so originals have to be created as such)!
-> - Snapshots become individual subvolumes themselves.
+> NOTE: Snapshots can only be made of subvolumes (so originals have to be created as such)!
+
+> NOTE: Snapshots become individual subvolumes themselves.
 
 
 ## Delete subvolumes
@@ -32,8 +32,12 @@ $ btrfs subvolume delete <path/to/target>
 
 
 ## References
-- Adapted from: [BTRFS begineer tutorial (part 1)][1]
-- Adapted from: [BTRFS begineer tutorial (part 2)][2]
+
+>Adapted from: Linux.com
+>[How manage btrfs storage pools subvolumes and snapshots linux part 1 (part 1)][1]
+
+>Adapted from:
+[How create and manage btrfs snapshots and rollbacks linux (part 2)][2]
 
 
 
@@ -43,3 +47,14 @@ $ btrfs subvolume delete <path/to/target>
 [2]: https://www.linux.com/learn/how-create-and-manage-btrfs-snapshots-and-rollbacks-linux-part-2
 [3]:https://btrfs.wiki.kernel.org/index.php/Main_Page
 [4]:https://omnia.turris.cz/en/
+
+
+<!-- NGREP ONELINERS
+
+>>> Create a btrfs subvolume:   $ btrfs subvolume create <path/to/target>
+
+>>> Snapshot a btrfs subvolume: $ btrfs subvolume snapshot <path/to/source> <path/to/target>
+
+>>> Delete a btrfs subvolume:   $ btrfs subvolume delete <path/to/target>
+
+-->

@@ -8,7 +8,7 @@ To change the passphrase of full disk encryption:
 
 1. Boot from the disk and note what block device is to be unlocked.
 
-	> It is mentioned when the password is requested.
+	> NOTE: It is mentioned when the password is requested.
 
 3. Make a backup:
 
@@ -16,9 +16,9 @@ To change the passphrase of full disk encryption:
 	# cryptsetup luksHeaderBackup /dev/<sdxi> --header-backup-file </backup/path>
 	```
 
-	> Replace `luksHeaderBackup` by `luksHeaderRestore` to restore the old keys.
+	> ALTERNATIVE: Replace `luksHeaderBackup` by `luksHeaderRestore` to restore the old keys.
 
-	> _Note: Store the header backup on a secure place (preferably another LUKS partition on a USB stick)_.
+	> _CAUTION: Store the header backup on a secure place (preferably another LUKS partition on a USB stick)_.
 
 4. Add the new key:
 
@@ -34,11 +34,12 @@ To change the passphrase of full disk encryption:
 	# cryptsetup luksRemoveKey /dev/<sdxi>
 	```
 
-	> _Note: Only remove the old key when the new one is tested successfully!_
+	> _CAUTION: Only remove the old key when the new one is tested successfully!_
 
 # References:
 
-- Adapted from (StackExchange/superuse): [How to change pass phrase of full disk encryption?][1]
+> Adapted from: StackExchange (Superuser)
+> [How to change pass phrase of full disk encryption?][1]
 
 
 <!-- REFERENCES -->
