@@ -2,7 +2,7 @@
 
 Move or backup LXC containers:
 
-> _Note: For overlay backed containers the container the new one is based off of should be migrated too._
+> NOTE: For overlay backed containers the container the new one is based off of should be migrated too.
 
 
 1. Shutdown the container:
@@ -17,12 +17,12 @@ Move or backup LXC containers:
 	$ tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/container>
 	```
 
-	> With: `--numeric-owner` to preserves user / group ownerships numerically.
-	> > _Note: IMPORTANT for the moved container to function correctly!_
+	> `--numeric-owner` preserving user / group ownerships _numerically_.
+	> > NOTE: IMPORTANT for the moved container to function correctly:
 	> >
 	> > _Without it, the container may not boot because the uid/gids get mangled in the extracted filesystem. When tar creates an archive with that flag raised, it preserves user / group ownership information. By default, when extracting, tar tries to resolve the archive user/group ownership names with the ids on the system running tar. This is intended to ensure that user ownership is resolved on the new system, in case the UID numeric values differ between systems. This is bad for an LXC filesystem because the numeric uid/gid ownership is intended to be preserved for the whole filesystem. If it gets resolved to a different value, bad things happen._
 	>
-	> Warnings about skipped socket files should be ignorable without issues e.g.: `//tar: /var/lib/lxc/$NAME/rootfs/dev/log: socket ignored//`.
+	> NOTE: Warnings about skipped socket files should be ignorable without issues e.g.: `//tar: /var/lib/lxc/$NAME/rootfs/dev/log: socket ignored//`.
 
 3. Securely copy (scp) the archived container to your new server's lxc-containers directory:
 
@@ -30,7 +30,7 @@ Move or backup LXC containers:
 	$ scp <container-name>.tar.gz <user>@<newserver>:</path/to/containers-dir/>
 	```
 
-	> With: `/path/to/containers-dir/` typically being: `/var/lib/lxc/` (on regular GNU/Linux systems)
+	> `/path/to/containers-dir/` - typically: `/var/lib/lxc/` (on regular GNU/Linux systems)
 
 4. Navigate to to the archived container on the new server.
 
@@ -49,9 +49,17 @@ Move or backup LXC containers:
 
 ## References
 
-- Adapted from (StackOverflow): [How do I Backup / Move LXC containers?][1]
+> Adapted from: StackOverflow
+> [How do I Backup / Move LXC containers?][1]
 
 
 <!-- REFERENCES -->
 
 [1]:http://stackoverflow.com/questions/23427129/how-do-i-backup-move-lxc-containers/34194341#34194341
+
+
+<!-- NGREP ONELINERS
+
+>>> Archive / backup an LXC container: $ tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/container>
+
+-->

@@ -1,5 +1,6 @@
 # HDMI video & Analogue audio
-To prevent LXDE to switch the _audio_ device to HDMI too once an HDMI _video_ device is plugged in (e.g. when wanting to send digital video to a TV and analogue audio to a separate audio receiver):
+
+Prevent LXDE to switch the _audio_ device to HDMI too once an HDMI _video_ device is plugged in (e.g. when wanting to send digital video to a TV and analogue audio to a separate audio receiver):
 
 - Pavucontrol
 

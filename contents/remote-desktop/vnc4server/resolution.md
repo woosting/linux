@@ -28,10 +28,19 @@ Have the vnc4server serve video of various resolutions:
 
 ## References
 
-> StackOverflow:
+> Adapted from: StackOverflow:
 [Article][1]
 
 
 <!-- REFERENCES -->
 
 [1]:http://stackoverflow.com/a/8388065/6737459
+
+
+<!-- NGREP ONELINERS
+
+>>> Start vnc server:             $ vnc4server -geometry <1920x1200> -geometry <1280x1024>
+>>> Recall vnc resolution option: $ xrandr
+>>> Change vnc resolution:        $ xrandr -s <1280x1024>
+
+-->

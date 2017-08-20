@@ -2,7 +2,7 @@
 
 To fix a missing login on TTYs other than TTY 0 on an LXC hosted container.
 
-> Symptoms: `lxc-attach -n <containername>` and `lxc-console -n <countainername> -t 0` (note the tty 0 reference) are functional but _other_ TTYs are not.. (there; input is simply echoed on screen instead).
+> SYMPTOMS: `lxc-attach -n <containername>` and `lxc-console -n <countainername> -t 0` (note the tty 0 reference) are functional but _other_ TTYs are not.. (there; input is simply echoed on screen instead).
 
 1. Copy the getty service file (in the container):
 
@@ -23,4 +23,10 @@ To fix a missing login on TTYs other than TTY 0 on an LXC hosted container.
 
 ## References
 
-Adapted from: https://wiki.debian.org/LXC
+> Adapted from: Debian wiki
+> [LXC][1]
+
+
+<!-- REFERENCES -->
+
+[1]:https://wiki.debian.org/LXC

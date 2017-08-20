@@ -1,12 +1,12 @@
 # Repair Master Boot Record (MBR) -- Windows 10 / 8 / 7
 
-> Common reasons why MBRs get corrupted are: malware infections, improper shutdowns, Linux Grub being installed and Windows is not able to detect it. On some occasions, you may get the Bootmgr is missing error. In such cases you can run the rebuild or repair MBR to fix these issues.
+> SYMPTOMS: Common reasons why MBRs get corrupted are: malware infections, improper shutdowns, Linux Grub being installed and Windows is not able to detect it. On some occasions, you may get the Bootmgr is missing error. In such cases you can run the rebuild or repair MBR to fix these issues.
 
 The process is almost same for Windows 10 / 8 / 7. First and foremost you need a Windows 8 or Windows 7 installation DVD.
 
 1. **Boot the system while pressing [F8]** to go into the 'Windows Recovery Menu':
 
-	> Unlike other version Windows 8’s recovery menu has the Metro UI style:
+	> NOTE: Unlike other version Windows 8’s recovery menu has the Metro UI style:
 
 	![Windows recovery menu](assets/01_windows-recovery-menu.png)
 
@@ -65,13 +65,18 @@ The process is almost same for Windows 10 / 8 / 7. First and foremost you need a
 
 4. **Insert an USB drive** and the program will start creating the Recovery (USB) drive.
 
-> Alternatively make a backup of a functional Master Boot Record (MBR).
+> ALTERNATIVE: Make a backup of a functional Master Boot Record (MBR).
 
 ## References
 
-Adapted from (The windows club): [Repair Master Boot Record (MBR) Windows][3]
-Also see: [Create a System Recovery Disk][1]
-Also see: [Video for Windows 7][2]
+>	Adapted from: The windows club
+>	[Repair Master Boot Record (MBR) Windows][3]
+
+>	Also see: The windows club
+>	[Create a System Recovery Disk][1]
+
+>	Also see: Youtube
+>	[Video for Windows 7][2]
 
 <!-- REFERENCES -->
 

@@ -81,7 +81,8 @@ Prevent being hacked by social engineering, brute force or dictionary attacks:
 
 ## References
 
-Adapted from: [Passwordgenerator.net][1]
+> Adapted from: Passwordgenerator.net
+> [Passwordgenerator.net][1]
 
 
 <!-- REFERENCES -->
