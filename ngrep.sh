@@ -60,5 +60,5 @@ getInput "$@"
 if [ "$SEARCHMETHOD" = "normal" ]; then
 	grep -ir --color $2 ${SCRIPT_PATH}/contents/
 else
-	grep -ir --color '^>>>.*'$1'.*: .*[\$#]' ${SCRIPT_PATH}/contents/
+	grep -ir --color '^>>>.*'$1'.*: ' ${SCRIPT_PATH}/contents/
 fi

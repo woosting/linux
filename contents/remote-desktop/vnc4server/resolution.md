@@ -28,8 +28,8 @@ Have the vnc4server serve video of various resolutions:
 
 ## References
 
-> Adapted from: StackOverflow:
-[Article][1]
+> Adapted from: StackOverflow
+> [Article][1]
 
 
 <!-- REFERENCES -->

@@ -198,7 +198,8 @@ Syncthing is a great, open-source, decentralized file sync application available
 	```
 
 ## References
-Adapted from: [How to start Syncthing on Debian boot (Cuonic by Liam Jack)][1]
+> Adapted from: Cuonic (Liam Jack)
+> [How to start Syncthing on Debian boot][1]
 
 
 <!-- REFERENCES -->

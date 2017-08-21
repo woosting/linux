@@ -17,7 +17,7 @@ Systemd is a suite of system management daemons, libraries, and utilities design
 	```
 	# adduser <username>
 	```
-	> Follow instructions on screen.
+2. Follow instructions on screen.
 
 2. Copy the service file into the [load path of the system instance][3] (as root):
 
@@ -33,7 +33,7 @@ Systemd is a suite of system management daemons, libraries, and utilities design
 		# cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
 		```
 
-	> Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
+	> NOTE: Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
 
 3. Enable the service:
 
@@ -65,9 +65,9 @@ Display the logs for the system service:
 $ journalctl -e -u syncthing@<user>.service
 ```
 
-> With: `-e` telling the pager to jump to the very end, so that you see the most recent logs
+> `-e` jump to the end, so that you see the most recent logs
 
-> Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable:
+> NOTE: Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable:
 > ```
 > ln -s <install-dir>/syncthing /usr/bin/syncthing
 > ```
@@ -88,7 +88,7 @@ Table 1. Load path when running in system mode (--system):
 |/run/systemd/system|Runtime units|
 |/usr/lib/systemd/system|Units of installed packages|
 
-> `/etc/systemd/system` is known to have been successfully used in a Debian Jessie LXC ARM7.1 container!
+> NOTE: `/etc/systemd/system` is known to have been successfully used in a Debian Jessie LXC ARM7.1 container!
 
 
 <!--
@@ -140,7 +140,9 @@ Table 2. Load path when running in user mode (--user).
 -->
 
 ## References
-Adapted from: [Starting Syncthing Automatically (Official Syncthing documentation)][1]
+
+> Adapted from: Official Syncthing documentation
+> [Starting Syncthing Automatically][1]
 
 
 <!-- REFERENCES -->

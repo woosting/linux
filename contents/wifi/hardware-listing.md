@@ -28,12 +28,13 @@ $ lspci -nn
     16:00.0 Ethernet controller [0200]: ADMtek 21x4x DEC-Tulip compatible 10/100 Ethernet [1317:1985] (rev 11)
 ```
 
-> Requires the package: [ciutils][2]
+> NOTE: Requires the package: [ciutils][2]
 
 
 # References
 
-Adapted from: [HowToIdentifyADevice PCI][1]
+> Adapted from: Debian Wiki
+> [How to identify a device PCI][1]
 
 
 <!-- REFERENCES -->

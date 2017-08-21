@@ -4,7 +4,7 @@ In the first decade of the 21th century, and counting, on a given year no RSA ke
 
 The current factoring record is [768 bits, by the end of 2009][4], and quoting this:
 
-> it is not unreasonable to expect that 1024-bit RSA moduli can be factored well within the next decade by an academic effort.
+> NOTE: It is not unreasonable to expect that 1024-bit RSA moduli can be factored well within the next decade by an academic effort.
 
 _Update_: I emphasize that the above is about attacks _actually performed_ by _academics_. So far, hackers have always been some years behind (see below). On the other hand, it is quite conceivable that well funded government agencies are many years _ahead_ in the factoring game. They have [the hardware and CPU time][5]. And there are so many 1024-bit keys around that it is likely a worthwhile technique to be in a position to break these. It is one of the most credible and [conjectured][6] explanation for [claims of cryptanalytic breakthrough by the NSA][7]. Also, dedicated hardware could change the picture someday; e.g. as outlined by Daniel Bernstein and Tanja Lange: [_Batch NFS_][8] (in [proceedings of SAC 2014][9], to appear; also in [Cryptology ePrint Archive][10], November 2014).
 

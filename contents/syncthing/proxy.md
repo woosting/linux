@@ -1,15 +1,17 @@
-Syncthing can run behind a SOCKS5 proxy. This enables use behind some (corporate) firewalls, tunneling via SSH, and over Tor. The Syncthing instance behind the proxy is limited to outbound connections - it can not listen for incoming connections via the proxy. It is however possible to receive incoming connections via Relaying.
+# Proxy
 
-There is no graphical configuration to enable proxy usage in Syncthing. Instead, an environment variable `all_proxy` must be set that points to the proxy. The value of this variable is the proxy URL. Note that this environment variable is _not_ named with capital letters - it must be exactly `all_proxy`. The `Proxy settings detected` log message indicates that Syncthing is using the proxy configuration.
+> NOTE: Syncthing can run behind a SOCKS5 proxy. This enables use behind some (corporate) firewalls, tunneling via SSH, and over Tor. The Syncthing instance behind the proxy is limited to outbound connections - it can not listen for incoming connections via the proxy. It is however possible to receive incoming connections via Relaying.
+>
+> There is no graphical configuration to enable proxy usage in Syncthing. Instead, an environment variable `all_proxy` must be set that points to the proxy. The value of this variable is the proxy URL. Note that this environment variable is _not_ named with capital letters - it must be exactly `all_proxy`. The `Proxy settings detected` log message indicates that Syncthing is using the proxy configuration.
 
-# GNU/Linux
+## GNU/Linux
 
 1. Make the environment variable (for he duration of the shell session):
 
 	```
 	$ export all_proxy=<proxy-type>://<ip-address>:<port>
 	```
-	>	Example:
+	>	EXAMPLE:
 	>	```
 	>	$ export all_proxy=socks5://10.20.30.40:5060
 	>	```
@@ -24,7 +26,7 @@ There is no graphical configuration to enable proxy usage in Syncthing. Instead,
 	```
 
 
-# Windows 7
+## Windows 7
 
 1. Open the environment variable dialog via (either):
 	- Computer properties:
@@ -38,3 +40,10 @@ There is no graphical configuration to enable proxy usage in Syncthing. Instead,
 			- **Edit environment variables for your account.**
 	      	- **Edit the system environment variables.**
 2. Create the environment variable: `all_proxy` and its value.
+
+
+<!-- NGREP ONELINERS
+
+>>> Syncthing proxy environment variable: $ export all_proxy=<proxy-type>://<ip-address>:<port>
+
+-->

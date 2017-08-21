@@ -6,11 +6,12 @@
  	```
 	[Esc] G$
 	```
-	> Or: `[Esc] GA` to also open 'edit mode' with the same command.
+	> ALTERNATIVE: `[Esc] GA` to also open 'edit mode' with the same command.
 
 ## References
 
-- Adapted from stackoverflow: [Move cursor to end of file in vim][1]
+> Adapted from: StackOverflow
+> [Move cursor to end of file in vim][1]
 
 
 <!-- REFERENCES -->

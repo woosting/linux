@@ -7,10 +7,10 @@ Syncthing is generally configured from the GUI, but sometimes it is hard to acce
 1. Open the configuration.xml for editing:
 
 	```
-	vim ~/.config/syncthing/config.xml
+	$ vim ~/.config/syncthing/config.xml
 	```
 
-    > If a config.xml does not exist yet (an empty file is presented) first start (and stop) syncthing as the user that is to run Syncthing!
+    > NOTE: If a config.xml does not exist yet (an empty file is presented) first start (and stop) syncthing as the user that is to run Syncthing!
 
 2. Locate: `<address>127.0.0.1:8384</address>` and change it into `<address>0.0.0.0:8384</address>`
 
@@ -18,12 +18,12 @@ Syncthing is generally configured from the GUI, but sometimes it is hard to acce
 
 4. Use your desktop webbroswer and surf to: `http://<syncthing.server.ip.address>:8384`
 
-The remaining configuration can be done from the web/interface.
+	>	NOTE: The remaining configuration can be done from this web/interface.
 
 
 ## References
 
-The official: [Syncthing Configuration][1]
+> Adapted from: Official Syncthing documentation > [Syncthing Configuration][1]
 
 
 <!-- REFERENCES -->

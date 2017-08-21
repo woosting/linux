@@ -1,5 +1,12 @@
 # Syncthing manual installation
 
+-----
+
+**THIS PAGE NEEDS WORK**
+It is missing examples!
+
+-----
+
 1. Grab the [latest (stable) release][1] of Syncthing for your operating system:
 
 	```
@@ -8,7 +15,7 @@
 2. Unpack it:
 	```
 	```
-	> There will be a binary called `syncthing` (or `syncthing.exe` on Ms. Windows).
+	> NOTE There will be a binary called `syncthing` (or `syncthing.exe` on Ms. Windows).
 
 2. Start the executable (double-clicking it in a graphical environment should work, but using a CLI terminal better illustrates what happens):
 
@@ -34,16 +41,17 @@
 	[ANSMX] 15:57:13 INFO: Completed initial scan (rw) of folder default
 	```
 
-	> First Syncthing generates a configuration file, some keys and then starts the admin GUI in a browser; remaining available on: https://localhost:8384/
+	> NOTE: First Syncthing generates a configuration file, some keys and then starts the admin GUI in a browser; remaining available on: https://localhost:8384/
 	>
 	> Cookies are essential for GUI functionality!
 
-At this point Syncthing will also have set up a folder called `default` for you, in a directory called `Sync` in your home directory. You can use this as a starting point, then remove it or add more folders later.
+	> NOTE: Syncthing will also set up a folder called `default`, in a directory called `Sync` in your home directory. You can use this as a starting point, then remove it or add more folders later.
 
 
 ## References
 
-Adapted from: [Getting Started - Syncthing][2]
+> Adapted from: Official Syncthing documentation
+> [Getting Started - Syncthing][2]
 
 <!-- REFERENCES -->
 [1]:https://github.com/syncthing/syncthing/releases
