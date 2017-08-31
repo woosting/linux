@@ -1,8 +1,9 @@
-# Wifi non-free driver list
+# Non-free WiFi driver list
 
 # References
 
-Adapted from (Debian Wiki): [WiFi][1]
+> Adapted from: Debian Wiki
+> [WiFi driver list][1]
 
 <!-- REFERENCES -->
 

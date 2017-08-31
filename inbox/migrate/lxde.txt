@@ -1,7 +1,0 @@
-Content-Type: text/x-zim-wiki
-Wiki-Format: zim 0.4
-Creation-Date: 2017-01-15T21:31:16+01:00
-
-====== lxde ======
-Created Sunday 15 January 2017
-
