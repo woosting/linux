@@ -2,11 +2,16 @@
 
 ## Navigation
 
-- Issue: `[Esc] G$` to jump to the end of file (or `[Esc] GA` to also open edit mode)
+-  Jump to the end of file:
+ 	```
+	[Esc] G$
+	```
+	> ALTERNATIVE: `[Esc] GA` to also open 'edit mode' with the same command.
 
 ## References
 
-- Adapted from stackoverflow: [Move cursor to end of file in vim][1]
+> Adapted from: StackOverflow
+> [Move cursor to end of file in vim][1]
 
 
 <!-- REFERENCES -->

@@ -1,8 +1,8 @@
 # Disk usage investigators
 
-Application: To find disk space hoggers.
+Applications to find disk space hoggers:
 
-- **NCurses Disk Usage** - Ncdu is a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don't have an entire graphical setup available, but it is a useful tool even on regular desktop systems. Ncdu aims to be fast, simple and easy to use, and should be able to run in any minimal POSIX-like environment with ncurses installed.
+- **Ncdu** - 'NCurses Disk Usage' is a disk usage analyzer with an ncurses interface. It is designed to find space hogs on a remote server where you don't have an entire graphical setup available, but it is a useful tool even on regular desktop systems. Ncdu aims to be fast, simple and easy to use, and should be able to run in any minimal POSIX-like environment with ncurses installed.
 - **gt5** - Quite similar to ncdu, but a different approach.
 - **tdu** - Another small ncurses-based disk usage visualization utility.
 - **TreeSize** - GTK, using a treeview.
@@ -14,17 +14,16 @@ Application: To find disk space hoggers.
 - **fsv** - 3D visualization.
 - **Philesight** - Web-based clone of Filelight.
 
-_Notes:_
-
-  - Many in the aforementioned list haven't received updates for a while.
-  - Albeit more powerfull than 'du' they are also significantly bigger.
-  - Most (if not all) will have to be installed manually.
-  - Use 'find' to explicitly find large files from the cli.
+> NOTE: Many haven't received updates for a while.
+> NOTE: Albeit more powerfull than 'du' they are also significantly bigger.
+> NOTE: Most (if not all) will have to be installed manually.
+> NOTE: 'find' can be used to explicitly find large files from the cli too.
 
 
 ## References
 
-Adapted from: [Rainnic in the Clouds][1]
+> Adapted from: Altervista
+> [Rainnic in the Clouds][1]
 
 
 <!-- REFERENCES -->

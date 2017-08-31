@@ -12,71 +12,70 @@ Systemd is a suite of system management daemons, libraries, and utilities design
 
 ## Start as System service (upon boot)
 
-1. Create the user whos userspace the service should run in, or choose an existing one.
+1. Create a user who's user-space the service should run in (if not present already):
+
+	```
+	# adduser <username>
+	```
+2. Follow instructions on screen.
 
 2. Copy the service file into the [load path of the system instance][3] (as root):
 
-    > Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
+    - When installed via _Apt_ on Debian 8:
 
-    - When installed via **Apt on Debian 8**: `cp /lib/systemd/system/syncthing@.service /etc/systemd/system`
+		```
+		# cp /lib/systemd/system/syncthing@.service /etc/systemd/system
+		```
 
-    - When installed via **wget, curl or other manual download**: `cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system`
+    - When installed via _wget, curl or other manual download_:
 
-3. Enable the service: `systemctl enable syncthing@<user>.service`
+		```
+		# cp <installdir>/etc/linux-systemd/system/syncthing@.service /etc/systemd/system
+		```
 
-4. Start the service: `systemctl start syncthing@<user>.service`
+	> NOTE: Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip this step!
 
-## Check service status
+3. Enable the service:
 
-Check if Syncthing runs properly: `systemctl status -l syncthing@<user>.service`
+	```
+	# systemctl enable syncthing@<user>.service
+	```
 
-## Investigate log-file (journal)
+4. Start the service:
 
-Display the logs for the system service: `journalctl -e -u syncthing@<user>.service`
+	```
+	# systemctl start syncthing@<user>.service
+	```
 
-> With: `-e` telling the pager to jump to the very end, so that you see the most recent logs
+## Troubleshooting
 
-> Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable: `ln -s <install-dir>/syncthing /usr/bin/syncthing`
+### Check service status
 
+Check if Syncthing runs properly:
 
-<!--
-    ## Start as User service (upon login)
+```
+$ systemctl status -l syncthing@<user>.service
+```
 
-    1. Create the user who should run the service, or choose an existing one. _Probably this will be your own user account._
-    2. Copy the `Syncthing/etc/user/syncthing.service` file into the  [load path of the user instance][3] (also see Table 2. in the appendix below). To do this without root privileges you can just use this folder under your home directory: `~/.config/systemd/user/`.
+### Investigate log-file (journal)
 
-        ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
+Display the logs for the system service:
 
-    3. Issue: `systemctl --user enable syncthing.service` to enable the service:
-      ```shell
-      systemctl --user enable syncthing.service
-      ```
-    4. Issue: `systemctl --user enable syncthing.service` to start the service:
-      ```shell
-      systemctl --user start syncthing.service
-    ```
+```
+$ journalctl -e -u syncthing@<user>.service
+```
 
-    ### Check the (user) service status
+> `-e` jump to the end, so that you see the most recent logs
 
-    - Issue: `systemctl --user status syncthing.service` to check if Syncthing runs properly:
-    ```shell
-    systemctl --user status syncthing.service
-    ```
+> NOTE: Running Syncthing as a service expects the executable to be at: */usr/bin/syncthing* (on Debian deratives), so (at least) make a symbolic link to the executable from that location should Syncthing fail to start with the journal stating it can not find the executable:
+> ```
+> ln -s <install-dir>/syncthing /usr/bin/syncthing
+> ```
 
-    > **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s /Syncthing/syncthing (on Debian deratives)`.
-
-
-    ### Logging
-
-    - Issue: `journalctl -e --user-unit=syncthing.service` to see the logs for the user service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
-      ```shell
-      journalctl -e --user-unit=syncthing.service
-      ```
--->
 
 ## Permissions
 
-If you enabled the **Ignore Permissions** option in the Syncthing client’s folder settings, then you will also need to add the line `UMask=0002` (or any other _umask setting <http://www.tech-faq.com/umask.html>_ you like) in the `[Service]` section of the `syncthing@.service file`.
+If _'Ignore Permissions'_ is set in the Syncthing client’s folder settings, then the line `UMask=0002` (or any other _umask setting <http://www.tech-faq.com/umask.html>_ you like) also needs to be set in the `[Service]` section of the `syncthing@.service file`.
 
 
 ## Appendix: Unit load paths
@@ -88,9 +87,44 @@ Table 1. Load path when running in system mode (--system):
 |/etc/systemd/system|Local configuration|
 |/run/systemd/system|Runtime units|
 |/usr/lib/systemd/system|Units of installed packages|
-> Note: The first one was sucessfully used in a Debian Jessie LXC ARM7.1 container!
+
+> NOTE: `/etc/systemd/system` is known to have been successfully used in a Debian Jessie LXC ARM7.1 container!
+
 
 <!--
+## Start as User service (upon login)
+
+1. Create the user who should run the service, or choose an existing one. _Probably this will be your own user account._
+2. Copy the `Syncthing/etc/user/syncthing.service` file into the  [load path of the user instance][3] (also see Table 2. in the appendix below). To do this without root privileges you can just use this folder under your home directory: `~/.config/systemd/user/`.
+
+    ***Note:** Several distros (among which Arch linux) ship the needed service files with the Syncthing package. If your distro provides a systemd service file for Syncthing, you can skip step 2 when setting up either the system service or the user service*
+
+3. Issue: `systemctl --user enable syncthing.service` to enable the service:
+  ```shell
+  systemctl --user enable syncthing.service
+  ```
+4. Issue: `systemctl --user enable syncthing.service` to start the service:
+  ```shell
+  systemctl --user start syncthing.service
+```
+
+### Check the (user) service status
+
+- Issue: `systemctl --user status syncthing.service` to check if Syncthing runs properly:
+```shell
+systemctl --user status syncthing.service
+```
+
+> **Note:** Running Syncthing as a service expects the executable to be at: **/usr/bin/syncthing**, so (at least) make a symbolic link to the executable from that location should it fail to start and the journal states it can not find the executable at that location: `ln -s /Syncthing/syncthing (on Debian deratives)`.
+
+
+### Logging
+
+- Issue: `journalctl -e --user-unit=syncthing.service` to see the logs for the user service, with `-e` telling the pager to jump to the very end, so that you see the most recent logs:
+  ```shell
+  journalctl -e --user-unit=syncthing.service
+  ```
+
 Table 2. Load path when running in user mode (--user).
 
 |Path|Description|
@@ -106,7 +140,9 @@ Table 2. Load path when running in user mode (--user).
 -->
 
 ## References
-Adapted from: [Starting Syncthing Automatically (Official Syncthing documentation)][1]
+
+> Adapted from: Official Syncthing documentation
+> [Starting Syncthing Automatically][1]
 
 
 <!-- REFERENCES -->
