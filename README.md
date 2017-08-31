@@ -24,7 +24,7 @@ A collection of GNU/Linux (Debian) related notes; stored mostly for personal ref
 
 ## Online
 
-* [GitHub][1] to contribute (!).
+* [GitHub][1] to view AND contribute (!).
 
 However, the contents should perfectly be readeable in any text-only editor, as markdown syntax is used.
 
