@@ -11,7 +11,7 @@ A collection of GNU/Linux (Debian) related notes; stored mostly for personal ref
 	$ grep -ri "<pattern>" contents/
 	```
 	> `-r` recursive
-	> `-i` ignore-case)
+	> `-i` ignore-case
 
 	> ALTERNATIVE: Use the provided `ngrep.sh <pattern>` (NotesGREP) to [grep][4] (search) the collection contents for info _specifically marked to be of use on CLI_ .
 
