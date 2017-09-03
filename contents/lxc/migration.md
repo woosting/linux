@@ -14,7 +14,7 @@ Move or backup LXC containers:
 2. Archive the container's _rootfs_ & _config_:
 
 	```
-	$ tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/container>
+	$ tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/containers-dir> <container>
 	```
 
 	> `--numeric-owner` preserving user / group ownerships _numerically_.
