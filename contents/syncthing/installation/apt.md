@@ -1,41 +1,43 @@
 # Syncthing installation via apt
 
-> NOTE: As of Debian 9 (Stretch) Syncthing can be installed from the official repository making this how-to obsolete (THIS NEEDS TESTING!):
->	```
->	# apt install syncthing
->	```
-
-1. Add the release PGP keys:
-	```
-	# curl -s https://syncthing.net/release-key.txt | apt-key add -
-	```
-	>	NOTE: Don't overlook the `-` at the end.
-
-2. Add the "stable" channel to your APT sources:
-
-	```
-	# echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
-	```
-
-3. Update Apt and install syncthing:
-
+1. Install the application:
 	```
 	# apt install syncthing
 	```
 
-    >	NOTE: In case you get any (or all) of the following messages (dependent on your distribution):
-    >
-    >	```
-    >	E: The method driver /usr/lib/apt/methods/https could not be found.
-    >	N: Is the package apt-transport-https installed?
-    >	E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
-    >	```
-	>	Install the _'apt-transport-https'_ package first:
+	> NOTE: Pre Debian 9 (Stretch) Syncthing can not be installed from the official repository instead do the foloowing:
+	>
+	> 1. Add the release PGP keys:
 	>	```
-	>	# apt install apt-transport-https && apt update && apt install syncthing
+	>	# curl -s https://syncthing.net/release-key.txt | apt-key add -
 	>	```
+	>	>	NOTE: Don't overlook the `-` at the end.
+	>
+	> 2. Add the "stable" channel to your APT sources:
+	>
+	>	```
+	>	# echo "deb https://apt.syncthing.net/ syncthing stable" | tee /etc/apt/sources.list.d/syncthing.list
+	>	```
+	>
+	> 3. Update Apt and install syncthing:
+	>
+	>	```
+	>	# apt install syncthing
+	>	```
+	>
+	>    >	NOTE: In case you get any (or all) of the following messages (dependent on your distribution):
+	>    >
+	>    >	```
+	>    >	E: The method driver /usr/lib/apt/methods/https could not be found.
+	>    >	N: Is the package apt-transport-https installed?
+	>    >	E: Failed to fetch https://apt.syncthing.net/dists/syncthing/InRelease
+	>    >	```
+	>	>	Install the _'apt-transport-https'_ package first:
+	>	>	```
+	>	>	# apt install apt-transport-https && apt update && apt install syncthing
+	>	>	```
 
-4. Start Syncting as user (!):
+2. Start Syncting as user (!):
 
 	```
 	$ syncthing
