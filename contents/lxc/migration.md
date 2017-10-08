@@ -25,7 +25,7 @@ Move or backup LXC containers:
 	> ALTERNATIVELY: Ommit the snapshots directory:
 	>
 	> ```
-	> $ tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/containers-dir> --exclude='radicale/snaps' <container>
+	> $ tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/containers-dir> --exclude='<container>/snaps' <container>
 	> ```
 	>
 	> NOTE: Warnings about skipped socket files should be ignorable without issues e.g.: `//tar: /var/lib/lxc/$NAME/rootfs/dev/log: socket ignored//`.
