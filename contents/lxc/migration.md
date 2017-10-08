@@ -22,7 +22,7 @@ Move or backup LXC containers:
 	> >
 	> > _Without it, the container may not boot because the uid/gids get mangled in the extracted filesystem. When tar creates an archive with that flag raised, it preserves user / group ownership information. By default, when extracting, tar tries to resolve the archive user/group ownership names with the ids on the system running tar. This is intended to ensure that user ownership is resolved on the new system, in case the UID numeric values differ between systems. This is bad for an LXC filesystem because the numeric uid/gid ownership is intended to be preserved for the whole filesystem. If it gets resolved to a different value, bad things happen._
 	>
-	> ALTERNATIVELY: Ommit de snapshots directory:
+	> ALTERNATIVELY: Ommit the snapshots directory:
 	>
 	> ```
 	> $ tar --numeric-owner -czvf <container-name>.tar.gz -C </path/to/containers-dir> --exclude='radicale/snaps' <container>
