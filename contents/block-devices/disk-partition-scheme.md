@@ -23,6 +23,14 @@ TOTAL       246 GB
 *Mount with: `nosuid,nodev,noexec`
 ```
 
+## Swap advice:
+|Amount of RAM in the system|Recommended swap space|Recommended swap space if allowing for hibernation|
+|---|---|---|
+|⩽ 2GB|2x RAM amount|3x RAM amount|
+|> 2GB – 8GB|equal RAM amount|2x RAM amount|
+|> 8GB – 64GB|At least 4GB|1.5x RAM|
+|> 64GB|At least 4GB|Hibernation not recommended|
+
 ## References
 
 > Adapted from: Redhat
