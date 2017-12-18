@@ -29,7 +29,7 @@ TOTAL       246 GB
 |less than 2GB|2x RAM amount|3x RAM amount|
 |2GB – 8GB|equal to RAM amount|2x RAM amount|
 |8GB – 64GB|4GB to 0.5x RAM amount|1.5x RAM amount|
-|64GB|At least 4GB|Hibernation not recommended|
+|more than 64GB|At least 4GB|Hibernation not recommended|
 
 ## References
 
