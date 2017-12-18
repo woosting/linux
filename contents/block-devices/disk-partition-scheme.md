@@ -3,20 +3,20 @@
 Recommended disk partition sizes to hold typical Debian installations:
 
 
-## Debian Jessie 8.7 (Desktop)
+## Debian Jessie 9.3 (Desktop)
 
 ```
-/boot    ¼ -  1 GB   Kernels (250 MB) + rescue cd image (750 MB).
-/        8 - 40 GB   Desktop programs
-/swap    4 - 24 GB   Hybernation (1.5xRAM)
-/tmp*    1 -  5 GB   To be able to hold entire DVD images
-/var     3 - 40 GB   Accumulating files (log/web/mail/mysql data)
-/home    3 - 80 GB   Rest
+/boot    ¼  -   1  -   1 GB   Kernels (250 MB) + rescue cd image (750 MB).
+/       10  -  20  -  40 GB   Desktop programs
+/swap    4  -  12  -  24 GB   Hybernation (1.5xRAM)
+/tmp*    1  -   5  -   5 GB   To be able to hold entire DVD images
+/var     3  -   8  -  32 GB   Accumulating files (apt/log/web/mail/mysql data)
+/home    5  -  74  -  80 GB   Rest
+--------------------------- +
+Sub:    24  - 120  - 190 GB
+         8  -  40  -  64 GB   Unalocated to be able to expand LVM volumes later (easier than shrinking)
 -------------------- +
-Subtotal:   190 GB
-Unallocated  56 GB   To expand LVM volumes later (easier than shrinking)
--------------------- +
-TOTAL       246 GB
+TOTAL   32  - 160  - 256 GB
 ```
 
 ```
