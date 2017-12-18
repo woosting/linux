@@ -26,10 +26,10 @@ TOTAL       246 GB
 ## Swap advice:
 |Amount of RAM in the system|Recommended swap space|Recommended swap space if allowing for hibernation|
 |---|---|---|
-|⩽ 2GB|2x RAM amount|3x RAM amount|
-|> 2GB – 8GB|equal RAM amount|2x RAM amount|
-|> 8GB – 64GB|At least 4GB|1.5x RAM|
-|> 64GB|At least 4GB|Hibernation not recommended|
+|less than 2GB|2x RAM amount|3x RAM amount|
+|2GB – 8GB|equal RAM amount|2x RAM amount|
+|8GB – 64GB|4GB to 0.5x RAM|1.5x RAM|
+|64GB|At least 4GB|Hibernation not recommended|
 
 ## References
 
@@ -39,4 +39,4 @@ TOTAL       246 GB
 
 <!-- REFERENCES -->
 
-[1]:https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/6/html/Installation_Guide/s2-diskpartrecommend-ppc.html#id4394007
+[1]:https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-disk-partitioning-setup-x86#sect-custom-partitioning-x86
