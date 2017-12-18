@@ -2,16 +2,16 @@
 
 To inquire volumes:
 
-- List the physical volumes:
+- List the Physical Volumes:
 
 	```
 	# pvdisplay
 	```
-- List the Volume groups:
+- List the Volume Groups:
 	```
 	# vgdisplay
 	```
-- List the Logical Volume groups:
+- List the Logical Volumes:
 	```
 	# lvdisplay
 	```
