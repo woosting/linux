@@ -42,3 +42,8 @@ I also read, that some people could fix it, by turning off the WiFi button durin
 <!-- REFERENCES -->
 [1]: https://www.mjmwired.net/kernel/Documentation/rfkill.txt
 [2]: http://www.geekmind.net/2011/01/linux-wifi-operation-not-possible-due.html
+
+<!-- NGREP ONELINERS
+>>> Un block WiFi: $ rfkill unblock wifi
+>>> WiFi block status: $ fkill list all
+-->
