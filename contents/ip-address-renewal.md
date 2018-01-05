@@ -10,11 +10,11 @@
 	```
 3. Request new IP from DHCP server (alert on error):
 	```
-	sudo dhclient -1 <interface>
+	# dhclient -1 <interface>
 	```
 4. Check IP:
 	```
-	ip addr
+	$ ip addr
 	```
   
 > NOTE: Debian 9.3 (Stretch) and Ubuntu 16.04 LTS confirmed!
