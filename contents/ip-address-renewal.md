@@ -1,4 +1,4 @@
-# IP-Adress renewal
+# IP-Address renewal
 
 1. Review the installed interfaces to find the related device designation:
 	```
