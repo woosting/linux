@@ -9,9 +9,9 @@
 
 ## Either:
 
-- sudo setpci -v -s 08:03.1 0xCA=0x57
-- sudo setpci -v -s 08:03.1 0xCB=0x02
-- sudo setpci -v -s 08:03.1 0xCA=0x00
+- `# setpci -v -s 08:03.1 0xCA=0x57`
+- `# setpci -v -s 08:03.1 0xCB=0x02`
+- `# setpci -v -s 08:03.1 0xCA=0x00`
 
 > Adapted from: Debian User Forums [Ricoh Co Ltd R5C822 SD/SDIO/MMC/MS/MSPro Host Adapter][1]
 
