@@ -1,4 +1,4 @@
-# Install SD card reader
+# Install SD card reader (DELL Inspiron 6400)
 
 > From `lspci`:
 >
